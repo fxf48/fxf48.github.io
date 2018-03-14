@@ -20,123 +20,23 @@ a {
     color: #fff;
 }
 
-.red {
-    color: red;
-}
-
 body {
     font-size: 18px;
-    color: #fff;
+
     background: center top;
     background-color: #050100;
 }
 
-.ls5 {
-    letter-spacing: 5px;
-}
-
-/*字间距5像素*/
-
-.ml50 {
-    margin-left: 50px;
-}
-
-.ml80 {
-    margin-left: 80px;
-}
-
-.ml10 {
-    margin-left: 10px;
-}
-
-.ml20 {
-    margin-left: 20px;
-}
-
-.mr20 {
-    margin-right: 20px;
-}
-
-.mt10 {
-    margin-top: 10px;
-}
-
-.mt30 {
-    margin-top: 30px;
-}
-
-.mb30 {
-    margin-bottom: 30px;
-}
-
-.mb10 {
-    margin-bottom: 10px;
-}
-
-.span5 {
-    display: inline-block;
-    width: 6px;
-    height: 12px;
-    background-color: #391823;
-    margin-right: 5px;
-}
-
-.span5_r {
-    display: inline-block;
-    width: 6px;
-    height: 12px;
-    background-color: #ff2370;
-    margin-right: 5px;
-}
-
-.fbold {
-    font-weight: bold;
-}
-
-h1 {
-    font-weight: 100;
-    font-size: 55px;
-}
-
-h1 span {
-    color: #e3db0c
-}
-
-.clear:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
-
-.clear {
-    height: 1%;
-}
-
 .top1 {
+    color: #fff;
     margin: 0 auto;
     background: center no-repeat;
     width: 1000px;
 }
 
-.top_qu {
-    line-height: 30px;
-    float: right;
-    margin-right: 50px;
-    color: #fff;
-}
-
-.top_qu a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-}
-
 .big_bt {
     margin: 10px auto 0;
     background: url(../images/big_bt2.png) center top no-repeat;
-    /*background: url(../images/img1.jpg) center top no-repeat;*/
     width: 779px;
     height: 452px;
     position: relative;
@@ -150,11 +50,9 @@ h1 span {
     font-weight: bold;
     text-align: center;
 }
-
 .b_box {
     min-width: 1000px;
 }
-
 .body1 {
     margin: 0 auto;
     background: url(../images/top_bg.jpg) center top no-repeat;
@@ -194,13 +92,12 @@ h1 span {
     text-shadow: 0 0 5px #663;
     font-size: 46px;
     font-weight: bold;
-    background: url(../images/btn1.png);
+    background: #ec7d5c;
     display: block;
     width: 357px;
     height: 84px;
     line-height: 82px;
 }
-
 .video {
     margin: 30px auto 0;
     display: block;
