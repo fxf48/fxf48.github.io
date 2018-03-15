@@ -165,8 +165,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/45.mp3'
     }, {
         name: '左脸颊',
-        artist: "世界第一帅娃 试听版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/46.mp3'
+        artist: "世界第一帅娃 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/046%E3%80%8A%E5%B7%A6%E8%84%B8%E9%A2%8A%E3%80%8B.m4a'
     }, {
         name: 'GEEDの証',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/47.mp3'
