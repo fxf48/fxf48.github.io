@@ -95,7 +95,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/25%E4%BF%AE%E7%82%BC%E7%88%B1%E6%83%85.flac'
     }, {
         name: '美杜莎的温柔',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/26%E7%BE%8E%E6%9D%9C%E8%8E%8E%E7%9A%84%E6%B8%A9%E6%9F%94.flac'
+        artist: "筱筱 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/26%E3%80%8A%E7%BE%8E%E6%9D%9C%E8%8E%8E%E7%9A%84%E6%B8%A9%E6%9F%94%E3%80%8B.m4a'
     }, {
         name: '我和我的祖国',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/27%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84%E7%A5%96%E5%9B%BD.flac'
@@ -164,6 +165,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/45.mp3'
     }, {
         name: '左脸颊',
+        artist: "世界第一帅娃 完整版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/46.mp3'
     }, {
         name: 'GEEDの証',
