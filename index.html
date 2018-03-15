@@ -4,7 +4,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <title>FXF48 第二届金曲大赏 BEST10 演唱会</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.7.0/APlayer.min.css">
@@ -124,39 +123,19 @@
 
         <div id="aplayer" style="width: 690px;  margin: 30px auto 0;display: block;"></div>
         <a href="https://zhongchou.modian.com/item/11744.html" class="tp_btn">点我投票</a>
-        <div style="width: 300px;height: 300px;display: block;"/>
+        <!--<div style="width: 300px;height:100%;display: block;"/>-->
         <!--<img src="images/img2.jpg" alt="赛程安排" class="video"/>-->
     </div>
 
 </div>
-
+<script src="js/b10list.js"></script>
 <script>
     const ap = new APlayer({
-        container: document.getElementById('aplayer'),
-        listFolded: false,
-        listMaxHeight: '90px',
-        audio: [{
-            name: 'start dash!',
-            artist: 'μ’s',
-            url: 'http://7xp06y.com1.z0.glb.clouddn.com/music1.mp3',
-            cover: 'http://7xp06y.com1.z0.glb.clouddn.com/music1cover.jpg'
-        }, {
-            name: 'start dash!',
-            artist: 'μ’s',
-            url: 'http://7xp06y.com1.z0.glb.clouddn.com/music1.mp3',
-            cover: 'http://7xp06y.com1.z0.glb.clouddn.com/music1cover.jpg'
-        }, {
-            name: 'start dash!',
-            artist: 'μ’s',
-            url: 'http://7xp06y.com1.z0.glb.clouddn.com/music1.mp3',
-            cover: 'http://7xp06y.com1.z0.glb.clouddn.com/music1cover.jpg'
-        }, {
-            name: 'start dash!',
-            artist: 'μ’s',
-            url: 'http://7xp06y.com1.z0.glb.clouddn.com/music1.mp3',
-            cover: 'http://7xp06y.com1.z0.glb.clouddn.com/music1cover.jpg'
-        }]
-    });
+            container: document.getElementById('aplayer'),
+            listFolded: false,
+            listMaxHeight: '90px',
+            audio: playerlist
+        });
 </script>
 
 </body>
