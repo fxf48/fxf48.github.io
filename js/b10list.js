@@ -2,7 +2,7 @@ const coverUrl = "http://7xp06y.com1.z0.glb.clouddn.com/b10/FXF48logo.png";
 const defaultArtist = "匿名 试听版";
 
 
-const playerlist = [
+var playerlist = [
     {
         name: '演员',
         artist: "匿名 试听版",
