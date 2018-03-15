@@ -23,7 +23,7 @@ a {
 body {
     font-size: 18px;
     height: 100%;
-    background: url(../images/top_bg.jpg) center top no-repeat;
+    background: url(http://7xp06y.com1.z0.glb.clouddn.com/b10/top_bg.jpg) center top no-repeat;
     background-color: #050100;
     /*background: center top;*/
     /*background-color: #050100;*/
@@ -38,7 +38,7 @@ body {
 
 .big_bt {
     margin: 10px auto 0;
-    background: url(../images/big_bt.png) center top no-repeat;
+    background: url(http://7xp06y.com1.z0.glb.clouddn.com/b10/big_bt.png) center top no-repeat;
     width: 779px;
     height: 452px;
     position: relative;
