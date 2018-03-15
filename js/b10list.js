@@ -108,6 +108,115 @@ const playerlist = [
     }, {
         name: '寄明月',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/31%E5%AF%84%E6%98%8E%E6%9C%88.flac'
+    },
+    {
+        name: 'girl crush',
+        artist: "匿名 试听版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/32.mp3'
+    },
+    {
+        name: '牵丝戏',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/33.mp3'
+    },
+    {
+        name: '说散就散',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/34.mp3'
+    }, {
+        name: '小毛驴',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/35.mp3'
+    }, {
+        name: '挪威的森林',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/36.mp3'
+    }, {
+        name: '逍遥叹',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/37.mp3'
+    }, {
+        name: '爱与希望',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/38.mp3'
+    }, {
+        name: '女の子のスカートが突然めくれたりしないかなあ',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/39.mp3'
+    }, {
+        name: '体面',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/40.mp3'
+    },
+    {
+        name: '樱花草',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/41.mp3'
+    },
+    {
+        name: '青春不败',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/42.mp3'
+    },
+    {
+        name: 'Ice Queen',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/43.mp3'
+    },
+    {
+        name: '漂洋过海来看你',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/44.mp3'
+    },
+    {
+        name: '有何不可',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/45.mp3'
+    }, {
+        name: '左脸颊',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/46.mp3'
+    }, {
+        name: 'GEEDの証',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/47.mp3'
+    }, {
+        name: '成都',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/48.mp3'
+    }, {
+        name: '安静',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/49.mp3'
+    }, {
+        name: '虫之诗',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/50.mp3'
+    },
+    {
+        name: '欠一个拥抱',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/51.mp3'
+    },
+    {
+        name: '糖',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/52.mp3'
+    },
+    {
+        name: '时光正好',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/53.mp3'
+    },
+    {
+        name: '一人我饮酒醉',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/54.mp3'
+    },
+    {
+        name: '成长的路口',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/55.mp3'
+    }, {
+        name: '人质',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/56.mp3'
+    }, {
+        name: '黑天鹅',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/57.mp3'
+    }, {
+        name: '红昭愿',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/58.mp3'
+    }, {
+        name: '小手拉大手',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/59.mp3'
+    }, {
+        name: '掉了',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/60.mp3'
+    },
+    {
+        name: '夜蝶',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/61.mp3'
+    },
+    {
+        name: '新贵妃醉酒',
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/62.mp3'
     }
 ];
 
