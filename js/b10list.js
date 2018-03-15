@@ -62,7 +62,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/16%E4%B8%A4%E5%8F%AA%E8%80%81%E8%99%8E.flac'
     }, {
         name: '胡事托',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/17%E8%83%A1%E4%BA%8B%E6%89%98.flac'
+        artist: "阿七米德 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/17%E3%80%8A%E8%83%A1%E4%BA%8B%E6%89%98%E3%80%8B.mp3'
     }, {
         name: '斑马斑马',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/18%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC.flac'
@@ -214,7 +215,8 @@ var playerlist = [
     },
     {
         name: '夜蝶',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/61.mp3'
+        artist: "大A&13 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/061%E3%80%8A%E5%A4%9C%E8%9D%B6%E3%80%8B.m4a'
     },
     {
         name: '新贵妃醉酒',
