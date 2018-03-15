@@ -118,3 +118,11 @@ for (var i = 0; i < playerlist.length; i++) {
         playerlist[i].cover = coverUrl;
     }
 }
+
+const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    listFolded: false,
+    listMaxHeight: '120px',
+    audio: playerlist
+});
+
