@@ -36,7 +36,8 @@ var playerlist = [
     },
     {
         name: '直到那一天',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/10%E7%9B%B4%E5%88%B0%E9%82%A3%E4%B8%80%E5%A4%A9.flac'
+        artist: "筱筱 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/10%E3%80%8A%E7%9B%B4%E5%88%B0%E9%82%A3%E4%B8%80%E5%A4%A9%E3%80%8B.m4a'
     },
     {
         name: '寒夜',
