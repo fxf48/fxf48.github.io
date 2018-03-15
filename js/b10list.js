@@ -178,7 +178,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/49.mp3'
     }, {
         name: '虫之诗',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/50.mp3'
+        artist: "Odelay 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/050%E3%80%8A%E8%99%AB%E4%B9%8B%E8%AF%97%E3%80%8B.mp3'
     },
     {
         name: '欠一个拥抱',
