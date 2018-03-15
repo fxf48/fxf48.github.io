@@ -44,7 +44,8 @@ const playerlist = [
     },
     {
         name: '蠢蠢',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/12%E8%A0%A2%E8%A0%A2.flac'
+        artist: "Demi 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/12%E3%80%8A%E8%A0%A2%E8%A0%A2%E3%80%8B.mp3'
     },
     {
         name: '消愁',
@@ -70,7 +71,8 @@ const playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/19%E9%99%8D%E8%90%BD%E4%BC%9E.flac'
     }, {
         name: '采茶纪',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/20%E9%87%87%E8%8C%B6%E7%BA%AA.flac'
+        artist: "南炫Nexo 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/20%E3%80%8A%E9%87%87%E8%8C%B6%E7%BA%AA%E3%80%8B.m4a'
     },
     {
         name: '石中花',
