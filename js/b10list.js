@@ -37,7 +37,7 @@ var playerlist = [
     },
     {
         name: '直到那一天',
-        artist: "筱筱 完整版",
+        artist: "筱筱的sleep 完整版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/10%E3%80%8A%E7%9B%B4%E5%88%B0%E9%82%A3%E4%B8%80%E5%A4%A9%E3%80%8B.m4a'
     },
     {
@@ -97,7 +97,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/25%E4%BF%AE%E7%82%BC%E7%88%B1%E6%83%85.flac'
     }, {
         name: '美杜莎的温柔',
-        artist: "筱筱 完整版",
+        artist: "筱筱的sleep 完整版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/26%E3%80%8A%E7%BE%8E%E6%9D%9C%E8%8E%8E%E7%9A%84%E6%B8%A9%E6%9F%94%E3%80%8B.m4a'
     }, {
         name: '我和我的祖国',
@@ -149,7 +149,8 @@ var playerlist = [
     },
     {
         name: '樱花草',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/41.mp3'
+        artist: "浪浪 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/041%E3%80%8A%E6%A8%B1%E8%8A%B1%E8%8D%89%E3%80%8B.mp3'
     },
     {
         name: '青春不败',
@@ -179,6 +180,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/48.mp3'
     }, {
         name: '安静',
+        artist: "小朋友初一 试听版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/49.mp3'
     }, {
         name: '虫之诗',
