@@ -115,7 +115,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/30%E7%A5%9E%E9%AD%82%E9%A2%A0%E5%80%92.flac'
     }, {
         name: '寄明月',
-        artist: "辰书 完整版",
+        artist: "辰书 试听版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/31%E5%AF%84%E6%98%8E%E6%9C%88.flac'
     },
     {
@@ -165,7 +165,8 @@ var playerlist = [
     },
     {
         name: '漂洋过海来看你',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/44.mp3'
+        artist: "光转琉璃 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/044%E3%80%8A%E6%BC%82%E6%B4%8B%E8%BF%87%E6%B5%B7%E6%9D%A5%E7%9C%8B%E4%BD%A0%E3%80%8B.m4a'
     },
     {
         name: '有何不可',
