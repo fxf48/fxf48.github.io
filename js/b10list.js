@@ -138,6 +138,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/37.mp3'
     }, {
         name: '爱与希望',
+        artist: "光转琉璃 试听版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/38.mp3'
     }, {
         name: '女の子のスカートが突然めくれたりしないかなあ',
