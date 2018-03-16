@@ -71,7 +71,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/18%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC.flac'
     }, {
         name: '降落伞',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/19%E9%99%8D%E8%90%BD%E4%BC%9E.flac'
+        artist: "筱筱的sleep 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/19%E3%80%8A%E9%99%8D%E8%90%BD%E4%BC%9E%E3%80%8B.m4a'
     }, {
         name: '采茶纪',
         artist: "南铉Nexo 完整版",
