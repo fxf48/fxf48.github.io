@@ -115,6 +115,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/30%E7%A5%9E%E9%AD%82%E9%A2%A0%E5%80%92.flac'
     }, {
         name: '寄明月',
+        artist: "辰书 完整版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/31%E5%AF%84%E6%98%8E%E6%9C%88.flac'
     },
     {
