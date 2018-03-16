@@ -14,7 +14,8 @@ var playerlist = [
     },
     {
         name: '繁华落尽',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/03%E7%B9%81%E5%8D%8E%E8%90%BD%E5%B0%BD.flac'
+        artist: "是你的小白丶 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/03%E3%80%8A%E7%B9%81%E5%8D%8E%E8%90%BD%E5%B0%BD%E3%80%8B.m4a'
     }, {
         name: '至此流落天涯',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/04%E8%87%B3%E6%AD%A4%E6%B5%81%E8%90%BD%E5%A4%A9%E6%B6%AF.flac'
@@ -73,7 +74,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/19%E9%99%8D%E8%90%BD%E4%BC%9E.flac'
     }, {
         name: '采茶纪',
-        artist: "南炫Nexo 完整版",
+        artist: "南铉Nexo 完整版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/20%E3%80%8A%E9%87%87%E8%8C%B6%E7%BA%AA%E3%80%8B.m4a'
     },
     {
@@ -192,7 +193,8 @@ var playerlist = [
     },
     {
         name: '时光正好',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/53.mp3'
+        artist: "xky_ike 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/053%E3%80%8A%E6%97%B6%E5%85%89%E6%AD%A3%E5%A5%BD%E3%80%8B.m4a'
     },
     {
         name: '一人我饮酒醉',
