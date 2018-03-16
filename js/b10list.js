@@ -193,6 +193,7 @@ var playerlist = [
     },
     {
         name: '欠一个拥抱',
+        artist: "A-LAer 试听版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/51.mp3'
     },
     {
