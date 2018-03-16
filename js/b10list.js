@@ -174,6 +174,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/47.mp3'
     }, {
         name: '成都',
+        artist: "浪浪 试听版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/48.mp3'
     }, {
         name: '安静',
