@@ -107,7 +107,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/28%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%B8%8B.flac'
     }, {
         name: '夜车',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/29%E5%A4%9C%E8%BD%A6.flac'
+        artist: "阿贝 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/29%E3%80%8A%E5%A4%9C%E8%BD%A6%E3%80%8B.mp3'
     }, {
         name: '神魂颠倒',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/30%E7%A5%9E%E9%AD%82%E9%A2%A0%E5%80%92.flac'
