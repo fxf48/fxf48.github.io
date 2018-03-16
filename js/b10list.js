@@ -200,8 +200,8 @@ var playerlist = [
     },
     {
         name: '一人我饮酒醉',
-        artist: "日益沉迷fxf 试听版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/54.mp3'
+        artist: "日益沉迷fxf 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/054%E3%80%8A%E4%B8%80%E4%BA%BA%E6%88%91%E9%A5%AE%E9%85%92%E9%86%89%E3%80%8B.m4a'
     },
     {
         name: '成长的路口',
