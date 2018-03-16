@@ -199,6 +199,7 @@ var playerlist = [
     },
     {
         name: '一人我饮酒醉',
+        artist: "日益沉迷fxf 试听版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/54.mp3'
     },
     {
