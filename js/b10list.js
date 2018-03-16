@@ -141,8 +141,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/37.mp3'
     }, {
         name: '爱与希望',
-        artist: "光转琉璃 试听版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/38.mp3'
+        artist: "光转琉璃 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/038%E3%80%8A%E7%88%B1%E4%B8%8E%E5%B8%8C%E6%9C%9B%E3%80%8B.m4a'
     }, {
         name: '女の子のスカートが突然めくれたりしないかなあ',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/39.mp3'
