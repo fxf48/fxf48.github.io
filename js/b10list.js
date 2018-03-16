@@ -84,7 +84,8 @@ var playerlist = [
     },
     {
         name: '等你下课',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/22%E7%AD%89%E4%BD%A0%E4%B8%8B%E8%AF%BE.flac'
+        artist: "A-LAer 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/22%E3%80%8A%E7%AD%89%E4%BD%A0%E4%B8%8B%E8%AF%BE%E3%80%8B.m4a'
     }, {
         name: '霜雪千年',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/23%E9%9C%9C%E9%9B%AA%E5%8D%83%E5%B9%B4.flac'
