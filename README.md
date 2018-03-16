@@ -1,2 +1,2 @@
 # fxf48.github.io
-this project is just for test
+FXF48 第二届金曲大赏 BEST10 演唱会活动页
