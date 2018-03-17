@@ -5,7 +5,7 @@ const defaultArtist = "匿名 试听版";
 var playerlist = [
     {
         name: '演员',
-        artist: "匿名 试听版",
+        artist: "小朋友初一 试听版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/01%E6%BC%94%E5%91%98.flac'
     },
     {
