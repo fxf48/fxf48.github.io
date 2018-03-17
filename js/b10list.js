@@ -62,7 +62,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/15%E3%80%8A%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC%E3%80%8B.m4a'
     }, {
         name: '两只老虎',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/16%E4%B8%A4%E5%8F%AA%E8%80%81%E8%99%8E.flac'
+        artist:"阿哲 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/16%E3%80%8A%E4%B8%A4%E5%8F%AA%E8%80%81%E8%99%8E%E3%80%8B.m4a'
     }, {
         name: '胡事托',
         artist: "阿七米德 完整版",
@@ -128,7 +129,8 @@ var playerlist = [
     },
     {
         name: '牵丝戏',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/33.mp3'
+        artist:"浪浪 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/33%E3%80%8A%E7%89%B5%E4%B8%9D%E6%88%8F%E3%80%8B.mp3'
     },
     {
         name: '说散就散',
