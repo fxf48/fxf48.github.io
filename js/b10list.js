@@ -232,6 +232,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/058%E3%80%8A%E7%BA%A2%E6%98%AD%E6%84%BF%E3%80%8B.m4a'
     }, {
         name: '小手拉大手',
+        artist: "Yuki 试听版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/59.mp3'
     }, {
         name: '掉了',
