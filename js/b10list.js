@@ -187,8 +187,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/48.mp3'
     }, {
         name: '安静',
-        artist: "小朋友初一 试听版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/49.mp3'
+        artist: "小朋友初一 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/049%E3%80%8A%E5%AE%89%E9%9D%99%E3%80%8B.m4a'
     }, {
         name: '虫之诗',
         artist: "Odelay 完整版",
