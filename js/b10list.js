@@ -58,7 +58,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/14%E5%87%A0%E5%88%86%E4%B9%8B%E5%87%A0.flac'
     }, {
         name: '钢铁之翼',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/15%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC.flac'
+        artist:"夕枫晚照 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/15%E3%80%8A%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC%E3%80%8B.'
     }, {
         name: '两只老虎',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/16%E4%B8%A4%E5%8F%AA%E8%80%81%E8%99%8E.flac'
@@ -103,7 +104,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/26%E3%80%8A%E7%BE%8E%E6%9D%9C%E8%8E%8E%E7%9A%84%E6%B8%A9%E6%9F%94%E3%80%8B.m4a'
     }, {
         name: '我和我的祖国',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/27%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84%E7%A5%96%E5%9B%BD.flac'
+        artist:"触角天国 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/27%E3%80%8A%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84%E7%A5%96%E5%9B%BD%E3%80%8B.m4a'
     }, {
         name: '富士山下',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/28%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%B8%8B.flac'
