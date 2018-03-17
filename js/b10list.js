@@ -72,7 +72,7 @@ var playerlist = [
     }, {
         name: '斑马斑马',
         artist: "正义的坑坑哒 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/18%E3%80%8A%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC'
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/18%E3%80%8A%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC%E3%80%8B.m4a'
     }, {
         name: '降落伞',
         artist: "筱筱的sleep 完整版",
