@@ -59,7 +59,7 @@ var playerlist = [
     }, {
         name: '钢铁之翼',
         artist:"夕枫晚照 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/15%E3%80%8A%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC%E3%80%8B.'
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/15%E3%80%8A%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC%E3%80%8B.m4a'
     }, {
         name: '两只老虎',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/16%E4%B8%A4%E5%8F%AA%E8%80%81%E8%99%8E.flac'
