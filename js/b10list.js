@@ -138,7 +138,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/35.mp3'
     }, {
         name: '挪威的森林',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/36.mp3'
+        artist:" DiDi 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/36%E3%80%8A%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E3%80%8B.m4'
     }, {
         name: '逍遥叹',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/37.mp3'
@@ -164,7 +165,8 @@ var playerlist = [
     },
     {
         name: 'Ice Queen',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/43.mp3'
+        artist:"阿钰 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/043%E3%80%8AICE%20QUEEN%E3%80%8B.mp3'
     },
     {
         name: '漂洋过海来看你',
