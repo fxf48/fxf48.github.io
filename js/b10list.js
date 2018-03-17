@@ -5,8 +5,8 @@ const defaultArtist = "匿名 试听版";
 var playerlist = [
     {
         name: '演员',
-        artist: "匿名 试听版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/01%E6%BC%94%E5%91%98.flac'
+        artist: "小朋友初一 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/01%E3%80%8A%E6%BC%94%E5%91%98%E3%80%8B.m4a'
     },
     {
         name: '双生花',
@@ -27,7 +27,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/06%E6%96%B0%E8%88%AA%E8%B7%AF.flac'
     }, {
         name: '美しき者',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/07%E7%BE%8E%E3%81%97%E3%81%8D%E8%80%85.flac'
+        artist: "阿钰 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/07%E3%80%8A%E7%BE%8E%E3%81%97%E3%81%8D%E8%80%85%E3%80%8B.m4a'
     }, {
         name: 'When we are to you',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/08When%20we%20are%20to%20you.flac'
@@ -37,7 +38,7 @@ var playerlist = [
     },
     {
         name: '直到那一天',
-        artist: "筱筱 完整版",
+        artist: "筱筱的sleep 完整版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/10%E3%80%8A%E7%9B%B4%E5%88%B0%E9%82%A3%E4%B8%80%E5%A4%A9%E3%80%8B.m4a'
     },
     {
@@ -58,20 +59,24 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/14%E5%87%A0%E5%88%86%E4%B9%8B%E5%87%A0.flac'
     }, {
         name: '钢铁之翼',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/15%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC.flac'
+        artist:"夕枫晚照 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/15%E3%80%8A%E9%92%A2%E9%93%81%E4%B9%8B%E7%BF%BC%E3%80%8B.m4a'
     }, {
         name: '两只老虎',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/16%E4%B8%A4%E5%8F%AA%E8%80%81%E8%99%8E.flac'
+        artist:"阿哲 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/16%E3%80%8A%E4%B8%A4%E5%8F%AA%E8%80%81%E8%99%8E%E3%80%8B.m4a'
     }, {
         name: '胡事托',
         artist: "阿七米德 完整版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/17%E3%80%8A%E8%83%A1%E4%BA%8B%E6%89%98%E3%80%8B.mp3'
     }, {
         name: '斑马斑马',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/18%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC.flac'
+        artist: "正义的坑坑哒 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/18%E3%80%8A%E6%96%91%E9%A9%AC%E6%96%91%E9%A9%AC'
     }, {
         name: '降落伞',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/19%E9%99%8D%E8%90%BD%E4%BC%9E.flac'
+        artist: "筱筱的sleep 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/19%E3%80%8A%E9%99%8D%E8%90%BD%E4%BC%9E%E3%80%8B.m4a'
     }, {
         name: '采茶纪',
         artist: "南铉Nexo 完整版",
@@ -83,7 +88,8 @@ var playerlist = [
     },
     {
         name: '等你下课',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/22%E7%AD%89%E4%BD%A0%E4%B8%8B%E8%AF%BE.flac'
+        artist: "A-LAer 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/22%E3%80%8A%E7%AD%89%E4%BD%A0%E4%B8%8B%E8%AF%BE%E3%80%8B.m4a'
     }, {
         name: '霜雪千年',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/23%E9%9C%9C%E9%9B%AA%E5%8D%83%E5%B9%B4.flac'
@@ -97,23 +103,27 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/25%E4%BF%AE%E7%82%BC%E7%88%B1%E6%83%85.flac'
     }, {
         name: '美杜莎的温柔',
-        artist: "筱筱 完整版",
+        artist: "筱筱的sleep 完整版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/26%E3%80%8A%E7%BE%8E%E6%9D%9C%E8%8E%8E%E7%9A%84%E6%B8%A9%E6%9F%94%E3%80%8B.m4a'
     }, {
         name: '我和我的祖国',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/27%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84%E7%A5%96%E5%9B%BD.flac'
+        artist:"触角天国 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/27%E3%80%8A%E6%88%91%E5%92%8C%E6%88%91%E7%9A%84%E7%A5%96%E5%9B%BD%E3%80%8B.m4a'
     }, {
         name: '富士山下',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/28%E5%AF%8C%E5%A3%AB%E5%B1%B1%E4%B8%8B.flac'
     }, {
         name: '夜车',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/29%E5%A4%9C%E8%BD%A6.flac'
+        artist: "阿贝 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/29%E3%80%8A%E5%A4%9C%E8%BD%A6%E3%80%8B.mp3'
     }, {
         name: '神魂颠倒',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/30%E7%A5%9E%E9%AD%82%E9%A2%A0%E5%80%92.flac'
+        artist: "北婶 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/30%E3%80%8A%E7%A5%9E%E9%AD%82%E9%A2%A0%E5%80%92%E3%80%8B.m4a'
     }, {
         name: '寄明月',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/31%E5%AF%84%E6%98%8E%E6%9C%88.flac'
+        artist: "辰书 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/31%E3%80%8A%E5%AF%84%E6%98%8E%E6%9C%88%E3%80%8B.mp3'
     },
     {
         name: 'girl crush',
@@ -122,33 +132,40 @@ var playerlist = [
     },
     {
         name: '牵丝戏',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/33.mp3'
+        artist:"浪浪 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/33%E3%80%8A%E7%89%B5%E4%B8%9D%E6%88%8F%E3%80%8B.mp3'
     },
     {
         name: '说散就散',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/34.mp3'
+        artist:"滕王阁主 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/34%E3%80%8A%E8%AF%B4%E6%95%A3%E5%B0%B1%E6%95%A3%E3%80%8B.m4a'
     }, {
         name: '小毛驴',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/35.mp3'
     }, {
         name: '挪威的森林',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/36.mp3'
+        artist:" DiDi 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/36%E3%80%8A%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E3%80%8B.m4'
     }, {
         name: '逍遥叹',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/37.mp3'
     }, {
         name: '爱与希望',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/38.mp3'
+        artist: "光转琉璃 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/038%E3%80%8A%E7%88%B1%E4%B8%8E%E5%B8%8C%E6%9C%9B%E3%80%8B.m4a'
     }, {
         name: '女の子のスカートが突然めくれたりしないかなあ',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/39.mp3'
+        artist: "13 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/039%E3%80%8A%E5%A5%B3%E3%81%AE%E5%AD%90%E3%81%AE%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%88%E3%81%8C%E7%AA%81%E7%84%B6%E3%82%81%E3%81%8F%E3%82%8C%E3%81%9F%E3%82%8A%E3%81%97%E3%81%AA%E3%81%84%E3%81%8B%E3%81%AA%E3%81%82%E3%80%8B.m4a'
     }, {
         name: '体面',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/40.mp3'
+        artist:"滕王阁主 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/040%E3%80%8A%E4%BD%93%E9%9D%A2%E3%80%8B.m4a'
     },
     {
         name: '樱花草',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/41.mp3'
+        artist: "浪浪 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/041%E3%80%8A%E6%A8%B1%E8%8A%B1%E8%8D%89%E3%80%8B.mp3'
     },
     {
         name: '青春不败',
@@ -156,11 +173,13 @@ var playerlist = [
     },
     {
         name: 'Ice Queen',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/43.mp3'
+        artist:"阿钰 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/043%E3%80%8AICE%20QUEEN%E3%80%8B.mp3'
     },
     {
         name: '漂洋过海来看你',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/44.mp3'
+        artist: "光转琉璃 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/044%E3%80%8A%E6%BC%82%E6%B4%8B%E8%BF%87%E6%B5%B7%E6%9D%A5%E7%9C%8B%E4%BD%A0%E3%80%8B.m4a'
     },
     {
         name: '有何不可',
@@ -174,10 +193,12 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/47.mp3'
     }, {
         name: '成都',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/48.mp3'
+        artist: "浪浪 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/048%E3%80%8A%E6%88%90%E9%83%BD%E3%80%8B.mp3'
     }, {
         name: '安静',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/49.mp3'
+        artist: "小朋友初一 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/049%E3%80%8A%E5%AE%89%E9%9D%99%E3%80%8B.m4a'
     }, {
         name: '虫之诗',
         artist: "Odelay 完整版",
@@ -185,7 +206,8 @@ var playerlist = [
     },
     {
         name: '欠一个拥抱',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/51.mp3'
+        artist: "A-LAer 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/051%E3%80%8A%E6%AC%A0%E4%B8%80%E4%B8%AA%E6%8B%A5%E6%8A%B1%E3%80%8B.m4a'
     },
     {
         name: '糖',
@@ -198,7 +220,8 @@ var playerlist = [
     },
     {
         name: '一人我饮酒醉',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/54.mp3'
+        artist: "日益沉迷fxf 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/054%E3%80%8A%E4%B8%80%E4%BA%BA%E6%88%91%E9%A5%AE%E9%85%92%E9%86%89%E3%80%8B.m4a'
     },
     {
         name: '成长的路口',
@@ -211,10 +234,12 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/57.mp3'
     }, {
         name: '红昭愿',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/58.mp3'
+        artist: "南铉Nexo 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/058%E3%80%8A%E7%BA%A2%E6%98%AD%E6%84%BF%E3%80%8B.m4a'
     }, {
         name: '小手拉大手',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/59.mp3'
+        artist: "Yuki 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/059%E3%80%8A%E5%B0%8F%E6%89%8B%E6%8B%89%E5%A4%A7%E6%89%8B%E3%80%8B.m4a'
     }, {
         name: '掉了',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/60.mp3'
