@@ -94,6 +94,15 @@ body {
     line-height: 82px;
 }
 
+.tp_m {
+    color: white;
+    margin: 35px auto 0;
+    width: 690px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 36px;
+    text-align: center;
+}
 
 
 /*头部动态效果*/
