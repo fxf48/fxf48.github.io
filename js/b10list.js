@@ -10,6 +10,7 @@ var playerlist = [
     },
     {
         name: '双生花',
+        artist: "阿七 试听版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/02%E5%8F%8C%E7%94%9F%E8%8A%B1.flac'
     },
     {
@@ -21,7 +22,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/04%E8%87%B3%E6%AD%A4%E6%B5%81%E8%90%BD%E5%A4%A9%E6%B6%AF.flac'
     }, {
         name: '南山南',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/05%E5%8D%97%E5%B1%B1%E5%8D%97.flac'
+        artist: "凉城旧梦 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/05%E3%80%8A%E5%8D%97%E5%B1%B1%E5%8D%97%E3%80%8B.m4a'
     }, {
         name: '新航路',
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/06%E6%96%B0%E8%88%AA%E8%B7%AF.flac'
@@ -34,7 +36,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/08When%20we%20are%20to%20you.flac'
     }, {
         name: '南山南',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/09%E5%8D%97%E5%B1%B1%E5%8D%97.flac'
+        artist: "北婶 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/09%E3%80%8A%E5%8D%97%E5%B1%B1%E5%8D%97%E3%80%8B.mp3'
     },
     {
         name: '直到那一天',
@@ -148,7 +151,8 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/36%E3%80%8A%E6%8C%AA%E5%A8%81%E7%9A%84%E6%A3%AE%E6%9E%97%E3%80%8B.m4'
     }, {
         name: '逍遥叹',
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/37.mp3'
+        artist:" MZ 完整版",
+        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/37%E3%80%8A%E9%80%8D%E9%81%A5%E5%8F%B9%E3%80%8B.m4a'
     }, {
         name: '爱与希望',
         artist: "光转琉璃 完整版",
