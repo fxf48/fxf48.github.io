@@ -315,7 +315,7 @@ var top10list = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/26%E3%80%8A%E7%BE%8E%E6%9D%9C%E8%8E%8E%E7%9A%84%E6%B8%A9%E6%9F%94%E3%80%8B.m4a'
     }, {
         name: '梦与星光的海上（非参赛作品）',
-        artist: "fxf solo cut",
+        artist: "冯·小奶音·晓·攻气十足·菲",
         url: ' http://7xp06y.com1.z0.glb.clouddn.com/b10/%E4%B8%80%E6%97%A0%E6%89%80%E6%9C%89%E6%9C%89%E6%A2%A6%E8%80%8C%E5%B7%B2%20solo%20cut.mp3'
     }
 
