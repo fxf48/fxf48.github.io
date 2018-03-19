@@ -359,7 +359,7 @@ var playerlist = [
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/05%E3%80%8A%E5%8D%97%E5%B1%B1%E5%8D%97%E3%80%8B.m4a'
     }, {
         name: '新航路',
-        artist: "向阳花开的春天 完整版",
+        artist: "向阳花开的地方 完整版",
         url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/06%E3%80%8A%E6%96%B0%E8%88%AA%E8%B7%AF%E3%80%8B.m4a'
     }, {
         name: '美しき者',
