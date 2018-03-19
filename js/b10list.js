@@ -612,6 +612,11 @@ var playerlist = [
     }
 ];
 
+for (var i = 0; i < playerlist.length; i++) {
+    if (playerlist[i].cover === undefined) {
+        playerlist[i].cover = coverUrl;
+    }
+}
 const ap = new APlayer({
     container: document.getElementById('aplayer'),
     listFolded: false,
