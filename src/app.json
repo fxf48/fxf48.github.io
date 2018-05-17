@@ -1,0 +1,194 @@
+
+{
+  "metadata": {
+    "type": "App"
+  },
+  "project": {
+    "gammaInput": false,
+    "gammaOutput": false,
+    "shadows": true,
+    "vr": false
+  },
+  "camera": {
+    "metadata": {
+      "version": 4.5,
+      "type": "Object",
+      "generator": "Object3D.toJSON"
+    },
+    "object": {
+      "uuid": "3EBDCFDC-D990-437B-8F17-DCED2638519A",
+      "type": "PerspectiveCamera",
+      "name": "Camera",
+      "matrix": [0.707107,0,-0.707107,0,-0.235702,0.942809,-0.235702,0,0.666667,0.333333,0.666667,0,10.225443,5.112722,10.225443,1],
+      "fov": 50,
+      "zoom": 1,
+      "near": 0.1,
+      "far": 10000,
+      "focus": 10,
+      "aspect": 1.33752,
+      "filmGauge": 35,
+      "filmOffset": 0
+    }
+  },
+  "scene": {
+    "metadata": {
+      "version": 4.5,
+      "type": "Object",
+      "generator": "Object3D.toJSON"
+    },
+    "geometries": [
+      {
+        "uuid": "7F8DB263-5CB3-49E4-AA1E-8E935535F338",
+        "type": "IcosahedronGeometry",
+        "radius": 20,
+        "detail": 1
+      },
+      {
+        "uuid": "8FEE3F08-E16F-422D-8875-7EEBADAB36A4",
+        "type": "IcosahedronGeometry",
+        "radius": 4,
+        "detail": 4
+      },
+      {
+        "uuid": "35461EFD-B5D8-44EC-94EC-C70F3B877CDD",
+        "type": "CylinderBufferGeometry",
+        "radiusTop": 0.03,
+        "radiusBottom": 0.03,
+        "height": 0.3,
+        "radialSegments": 5,
+        "heightSegments": 1,
+        "openEnded": false
+      }],
+    "materials": [
+      {
+        "uuid": "4198C137-0A1A-489E-96AB-67455779370D",
+        "type": "MeshStandardMaterial",
+        "color": 16229841,
+        "roughness": 1,
+        "metalness": 0,
+        "emissive": 3490148,
+        "side": 1,
+        "depthFunc": 3,
+        "depthTest": true,
+        "depthWrite": true
+      },
+      {
+        "uuid": "38A590C5-070B-4A92-B40E-9045938C2370",
+        "type": "MeshStandardMaterial",
+        "color": 16777215,
+        "roughness": 1,
+        "metalness": 0,
+        "emissive": 0,
+        "depthFunc": 3,
+        "depthTest": true,
+        "depthWrite": true
+      },
+      {
+        "uuid": "6FA9524D-2FED-4D17-890B-8F4A64F94E7E",
+        "type": "MeshStandardMaterial",
+        "color": 16777215,
+        "roughness": 0.5,
+        "metalness": 0.5,
+        "emissive": 0,
+        "depthFunc": 3,
+        "depthTest": true,
+        "depthWrite": true
+      }],
+    "object": {
+      "uuid": "7DF6C94E-302C-4AC0-827D-DF97E3F428ED",
+      "type": "Scene",
+      "name": "Scene",
+      "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+      "children": [
+        {
+          "uuid": "96B9C660-C9D0-44AC-A18B-0E006D99CCE7",
+          "type": "Mesh",
+          "name": "Background",
+          "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+          "geometry": "7F8DB263-5CB3-49E4-AA1E-8E935535F338",
+          "material": "4198C137-0A1A-489E-96AB-67455779370D"
+        },
+        {
+          "uuid": "FE5A3C43-BE3C-400A-9011-DF7C3BEC1CA9",
+          "type": "Mesh",
+          "name": "Cake",
+          "castShadow": true,
+          "receiveShadow": true,
+          "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+          "geometry": "8FEE3F08-E16F-422D-8875-7EEBADAB36A4",
+          "material": "38A590C5-070B-4A92-B40E-9045938C2370"
+        },
+        {
+          "uuid": "7AEFE34D-77B6-4271-9C22-3CA090CA4DF6",
+          "type": "Mesh",
+          "name": "Sprinkle",
+          "castShadow": true,
+          "receiveShadow": true,
+          "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+          "geometry": "35461EFD-B5D8-44EC-94EC-C70F3B877CDD",
+          "material": "6FA9524D-2FED-4D17-890B-8F4A64F94E7E"
+        },
+        {
+          "uuid": "9BE52988-D060-46CE-B17B-6B56CDFF5C93",
+          "type": "DirectionalLight",
+          "name": "DirectionalLight 1",
+          "castShadow": true,
+          "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,5,5,5,1],
+          "color": 15850741,
+          "intensity": 0.3,
+          "shadow": {
+            "camera": {
+              "uuid": "596BC8D0-53C1-47F6-AE88-3DA462C4ACE6",
+              "type": "OrthographicCamera",
+              "zoom": 1,
+              "left": -5,
+              "right": 5,
+              "top": 5,
+              "bottom": -5,
+              "near": 0.5,
+              "far": 500
+            }
+          }
+        },
+        {
+          "uuid": "F2F2E327-59EE-44E0-9B82-FFD130F081A8",
+          "type": "DirectionalLight",
+          "name": "DirectionalLight 2",
+          "castShadow": true,
+          "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,-5,-5,-5,1],
+          "color": 11521252,
+          "intensity": 0.3,
+          "shadow": {
+            "camera": {
+              "uuid": "D7798EEC-9344-4CAC-92AB-5C487C9A795E",
+              "type": "OrthographicCamera",
+              "zoom": 1,
+              "left": -5,
+              "right": 5,
+              "top": 5,
+              "bottom": -5,
+              "near": 0.5,
+              "far": 500
+            }
+          }
+        },
+        {
+          "uuid": "2EA7D124-894C-48F5-A012-DE6D09136666",
+          "type": "HemisphereLight",
+          "name": "HemisphereLight 3",
+          "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,10,0,1],
+          "color": 16104163,
+          "intensity": 1,
+          "groundColor": 12572133
+        }],
+      "background": 0
+    }
+  },
+  "scripts": {
+    "7DF6C94E-302C-4AC0-827D-DF97E3F428ED": [
+      {
+        "name": "",
+        "source": "var sprinkle = scene.getObjectByName( 'Sprinkle' );\n\nvar group = new THREE.Group();\nscene.add( group );\n\nvar materials = [\n\tnew THREE.MeshStandardMaterial( { color: 0xbb00ff, roughness: 0.1, metalness: 0 } ),\n\tnew THREE.MeshStandardMaterial( { color: 0xffff00, roughness: 0.1, metalness: 0 } ),\n\tnew THREE.MeshStandardMaterial( { color: 0xff00bb, roughness: 0.1, metalness: 0 } ),\n\tnew THREE.MeshStandardMaterial( { color: 0xffffff, roughness: 0.1, metalness: 0 } )\n];\n\nfor ( var i = 0; i < 1000; i ++ ) {\n\n\tvar clone = sprinkle.clone();\n\tclone.material = materials[ Math.floor( Math.random() * materials.length ) ];\n\tclone.position.x = Math.random() - 0.5;\n\tclone.position.y = Math.random() - 0.5;\n\tclone.position.z = Math.random() - 0.5;\n\tclone.position.normalize().multiplyScalar( 4.1 );\n\tclone.lookAt( 0, 0, 0 );\n\t// clone.rotation.x = Math.random() * Math.PI * 2;\n\tclone.rotation.y = Math.random() * Math.PI * 2;\n\tclone.rotation.z = Math.random() * Math.PI * 2;\n\tclone.scale.y = Math.random() + 0.5;\n\tgroup.add( clone );\n\t\n}\n\nfunction update( event ) {\n\n\tvar time = Date.now();\n\t\n\tscene.rotation.y = time / 10000;\n\tscene.rotation.z = time / 20000;\n\n}"
+      }]
+  }
+}
