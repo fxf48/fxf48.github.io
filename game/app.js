@@ -2553,8 +2553,8 @@ navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
                     },
                     !1)
         }),
-    isIE10 || "undefined" == typeof window.AudioContext && "undefined" == typeof window.webkitAudioContext && -1 != navigator.userAgent.indexOf("Android") ? audioType = 0 : (audioType = 1, sound = new Howl({
-        urls: ["./audio/sound.ogg"],
+    "undefined" == typeof window.AudioContext && "undefined" == typeof window.webkitAudioContext && -1 != navigator.userAgent.indexOf("Android") ? audioType = 0 : (audioType = 1, sound = new Howl({
+        urls: ["audio/sound.ogg"],
         sprite: {
             hitBlock: [0, 950],
             gem0: [1e3, 700],
@@ -2573,7 +2573,7 @@ navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
             powerUpEnd: [17e3, 600]
         }
     }), music = new Howl({
-        urls: ["./audio/sound.ogg"],
+        urls: ["audio/sound.ogg"],
         volume: .01,
         loop: !0
     })),
