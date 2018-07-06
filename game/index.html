@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>款款快跑</title>
+    <script src="bmob-min.js"></script>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.01, minimal-ui,user-scalable=no"/>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"/>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            background: url("images/bg.jpg");
+        }
+
+        canvas {
+            -ms-touch-action: none;
+            image-rendering: -o-crisp-edges;
+            image-rendering: optimize-contrast;
+            -ms-interpolation-mode: nearest-neighbor;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+            tap-highlight-color: rgba(0, 0, 0, 0);
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        #toolbar {
+            position: absolute;
+            left: 0px;
+            top: 1%;
+            width: 100%;
+            text-align: center;
+            z-index: 99;
+            display: none;
+        }
+
+        #toolbar img {
+            width: 40%;
+        }
+
+        #game9g9gstart {
+            top: 12%;
+        }
+    </style>
+
+    <script src="viewporter.js"></script>
+    <!--<script>document.domain = '4399.com';</script>-->
+    <style type="text/css">
+        .maskLayer {
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            color: #fff;
+            z-index: 3;
+            font-size: 24px;
+            text-align: center;
+            display: none;
+        }
+
+        .rankingMask {
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            color: white;
+            position: absolute;
+            display: none;
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+        Bmob.initialize("001e1f44748bc68b93e1872bdf1750cc", "1164553d68b767c5de72a5042c3c7bc9");
+        var GameScore = Bmob.Object.extend("B_Game_Record");
+        var localScore = 0;
+        window.onresize = function () {
+
+            if ($("#ranking").css("display") === "block") {
+                showRank();
+            }
+            if ($("#inputId").css("display") === "block") {
+                showCommitScore();
+            }
+        }
+
+        function showCommitScore() {
+            var inputId = $("#inputId")
+            var canvasWidth = $("#viewporter").width();
+            var canvasHeight = $("#viewporter").height();
+            var scaleX = canvasWidth / 450;
+            var scaleY = canvasHeight / 700;
+            inputId.css('width', canvasWidth);
+            inputId.css('height', 135 * scaleY + "px");
+            inputId.css('margin-top', -210 * scaleY + "px");
+            inputId.css('margin-left', -canvasWidth / 2 + "px");
+            inputId.css('line-height', 34 * scaleY + "px");
+            inputId.show();
+        };
+
+        function showRank() {
+            var rankingMask = $("#ranking");
+            var kkRank = $("#kkRank");
+            var ranks = $(".Rank");
+            var myRank = $("#myRank");
+
+            var canvasWidth = $("#viewporter").width();
+            var canvasHeight = $("#viewporter").height();
+
+            var scaleX = canvasWidth / 450;
+            var scaleY = canvasHeight / 700;
+            var marginLeft = 190 * scaleX;
+            rankingMask.css('width', canvasWidth - marginLeft);
+            rankingMask.css('height', canvasHeight);
+            rankingMask.css('margin-top', -canvasHeight / 2 + "px");
+            rankingMask.css('margin-left', -35 * scaleX + "px");
+            rankingMask.css('line-height', 59 * scaleY + "px");
+            // rankingMask.css('font-size', 15*scaleY + "px");
+
+
+            kkRank.css('width', canvasWidth - marginLeft);
+            kkRank.css('margin-top', 90 * scaleY + "px");
+            kkRank.css('margin-bottom', canvasHeight / 40);
+            kkRank.css('height', 59 * scaleY + "px");
+
+
+            ranks.css('width', canvasWidth - marginLeft);
+            ranks.css('height', 59 * scaleY + "px");
+
+
+            myRank.css('margin-top', canvasHeight / 17);
+            myRank.css('width', canvasWidth - marginLeft);
+            myRank.css('height', 59 * scaleY + "px");
+
+            rankingMask.show();
+            if (localName === undefined) {
+                myRank.text("无");
+            } else {
+                if (localName === "9510171017") {
+                    myRank.text("SNH48-冯晓菲 " + localScore);
+                }else {
+                    myRank.text(localName + " " + localScore);
+                }
+
+            }
+
+
+            var query = new Bmob.Query(GameScore);
+            query.descending("score");
+            query.limit(7);
+            query.find({
+                success: function (results) {
+                    ranks.each(function (index) {
+                        $(this).text("未知灰推 0")
+                    });
+                    // 循环处理查询到的数据
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var userName =object.get("userName");
+                        if (userName==="9510171017"){
+                            userName="SNH48-冯晓菲";
+                        }
+                        $(ranks.eq(i)).text(userName + " " + "" + object.get("score"));
+                    }
+                },
+                error: function (error) {
+
+                }
+            });
+            var query2 = new Bmob.Query(GameScore);
+            query2.descending("score");
+            query2.equalTo("userName", "9510171017");
+            query2.first({
+                success: function (object) {
+                    if (object) {
+                        kkRank.text("SNH48-冯晓菲  " + object.get("score"));
+                    }
+                },
+                error: function (error) {
+
+                }
+            });
+            // $.get("/ranks", function (result) {
+            //
+            //     var ranklist = result;
+            //     for (var i = 0; i < ranklist.length; i++) {
+            //         if (ranklist[i].name === "9510171017") {
+            //
+            //         }
+            //     }
+            //     var num = 0;
+            //     ranks.each(function (index) {
+            //         if (num < index) {
+            //             num = index;
+            //         }
+            //         for (let i = num; i < ranklist.length; i++) {
+            //             if (ranklist[num].name !== "9510171017") {
+            //                 $(this).text(ranklist[num].name + "  " + ranklist[num].score)
+            //                 return;
+            //             }
+            //         }
+            //         $(this).text("NaN " + "0")
+            //     });
+            //
+            //
+            // });
+        }
+
+        function hideRank() {
+            $("#ranking").hide();
+        }
+
+        function hideInputId() {
+            $("#inputId").hide();
+        }
+
+        var localName;
+
+        function commitInputName() {
+            localName = $("#inputName").val();
+            if (localName === undefined || localName === "") {
+                return
+            }
+            var gameScore = new GameScore();
+            gameScore.set("score", localScore+"");
+            gameScore.set("userName", localName+"");
+            gameScore.save(null, {
+                success: function (object) {
+                },
+                error: function (model, error) {
+                    console.log(error)
+                }
+            });
+            // $.ajax({
+            //     type: "POST",
+            //     url: "/ranks",
+            //     data: {
+            //         name: localName,
+            //         score: localScore
+            //     },
+            //     success: function (result) {
+            //         console.log(result)
+            //     },
+            //     error: function (msg) {
+            //         console.log(msg)
+            //     }
+            // });
+            hideInputId();
+        }
+
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?fbe8e9efeec9c2d38f3c403ed0d75155";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+
+<body>
+<div id="toolbar">
+</div>
+
+<div id="viewporter">
+    <canvas id="canvas" moz-opaque></canvas>
+
+</div>
+
+<div class="maskLayer" id="inputId">
+    <p>请输入您的ID：</p>
+    <input id="inputName">
+</div>
+
+<div class="rankingMask" id="ranking">
+    <div id="kkRank"></div>
+    <div class="Rank"></div>
+    <div class="Rank"></div>
+    <div class="Rank"></div>
+    <div class="Rank"></div>
+    <div class="Rank"></div>
+    <div class="Rank"></div>
+    <div class="Rank"></div>
+    <div id="myRank"></div>
+</div>
+</body>
+<script type="text/javascript">
+    function launchFullscreen(element) {
+        element.style.backgroundImage = "url('images/bg.jpg')"
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        }
+    }
+</script>
+<script src="TweenMax.min.js"></script>
+<script src="howler.js"></script>
+<script src="VisibilityManager.js"></script>
+<script src="app.js"></script>
+
+<script>
+
+    function goHome() {
+
+    }
+
+    function clickMore() {
+        // try {
+        //     parent.moregame();
+        // } catch (e) {
+        // }
+        // showRank()
+    }
+
+    function dp_share() {
+
+    }
+
+    function dp_Ranking() {
+
+    }
+
+    function showAd() {
+    }
+
+    function hideAd() {
+    }
+
+    function onInputName(score) {
+        console.log("打印分数" + score)
+        localScore = score;
+        initCommitScore();
+    }
+
+    function dp_submitScore(score) {
+
+    }
+
+    function updateShare(bestScore) {
+        var shareTitle = "";
+        switch (true) {
+            case bestScore > 20000:
+                shareTitle = "我跑了" + bestScore + "米，跑到人生巅峰，已载入史册！";
+                break;
+            case bestScore > 10000:
+                shareTitle = "我跑了" + bestScore + "米，跑出了自己的风格！";
+                break;
+            case bestScore > 5000:
+                shareTitle = "我跑了" + bestScore + "米，请问终点在哪里？";
+                break;
+            case bestScore > 0:
+                shareTitle = "我跑了" + bestScore + "米，手一抖就撞墙了！不要问我头疼不疼！";
+                break;
+            default:
+                shareTitle = "没事儿我就出来跑一跑，求个偶遇，缘分这种事谁说得清呢？";
+        }
+        return shareTitle;
+    }
+</script>
+
+
+</html>
