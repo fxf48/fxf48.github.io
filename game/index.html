@@ -9,6 +9,11 @@
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.01, minimal-ui,user-scalable=no"/>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"/>
     <style>
+        html{
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
         body {
             margin: 0px;
             padding: 0px;
@@ -62,8 +67,18 @@
             display: none;
         }
 
-        .Rank {
+        #kkRank {
+            text-align: center;
+        }
 
+        .Rank {
+            left: 50%;
+            display: inline;
+        }
+
+        .RankScore {
+            text-align: right;
+            float:right;
         }
 
         .rankingMask {
@@ -92,8 +107,8 @@
 
         function showCommitScore() {
             var inputId = $("#inputId")
-            var canvasWidth = $("#viewporter").width();
-            var canvasHeight = $("#viewporter").height();
+            var canvasWidth = $("#canvas").width();
+            var canvasHeight = $("#canvas").height();
             var scaleX = canvasWidth / 450;
             var scaleY = canvasHeight / 700;
             inputId.css('width', canvasWidth);
@@ -108,57 +123,56 @@
             var rankingMask = $("#ranking");
             var kkRank = $("#kkRank");
             var ranks = $(".Rank");
+            var ranksScore = $(".RankScore");
             var myRank = $("#myRank");
 
-            var canvasWidth = $("#viewporter").width();
-            var canvasHeight = $("#viewporter").height();
+            var canvasWidth = $("#canvas").width();
+            var canvasHeight = $("#canvas").height();
 
             var scaleX = canvasWidth / 450;
             var scaleY = canvasHeight / 700;
-            var marginLeft = 190 * scaleX;
-            rankingMask.css('width', canvasWidth - marginLeft);
+
+            rankingMask.css('width', canvasWidth);
             rankingMask.css('height', canvasHeight);
             rankingMask.css('margin-top', -canvasHeight / 2 + "px");
-            rankingMask.css('margin-left', -35 * scaleX + "px");
-            rankingMask.css('line-height', 59 * scaleY + "px");
+            rankingMask.css('margin-left', -canvasWidth / 2 + "px");
+            rankingMask.css('line-height', 60 * scaleY + "px");
             // rankingMask.css('font-size', 15*scaleY + "px");
 
-
-            kkRank.css('width', canvasWidth - marginLeft);
+            var marginLeft = 60 * scaleX;
+            kkRank.css('width', canvasWidth-marginLeft);
+            kkRank.css('margin-left',marginLeft + "px");
             kkRank.css('margin-top', 90 * scaleY + "px");
-            kkRank.css('margin-bottom', canvasHeight / 40);
-            kkRank.css('height', 59 * scaleY + "px");
+            kkRank.css('margin-bottom', 18 * scaleY + "px");
+            kkRank.css('height', 60 * scaleY + "px");
 
+            ranks.css('margin-left', 130 * scaleX + "px");
+            ranks.css('width', canvasWidth - 130 * scaleX);
+            ranks.css('height', 60 * scaleY + "px");
+            ranksScore.css('margin-right',110*scaleX)
 
-            ranks.css('width', canvasWidth - marginLeft);
-            ranks.css('height', 59 * scaleY + "px");
-
-
-            myRank.css('margin-top', canvasHeight / 17);
-            myRank.css('width', canvasWidth - marginLeft);
-            myRank.css('height', 59 * scaleY + "px");
+            myRank.css('margin-top', 36 * scaleY + "px");
+            myRank.css('width', canvasWidth);
+            myRank.css('height', 60 * scaleY + "px");
 
             rankingMask.show();
             if (localName === undefined) {
-                myRank.text("无");
+                $(ranks.eq(8)).text("无");
             } else {
                 if (localName === "9510171017") {
-                    myRank.text("SNH48-冯晓菲 " + localScore);
+                    $(ranks.eq(8)).text("SNH48-冯晓菲");
                 } else {
-                    myRank.text(localName + " " + localScore);
+                    $(ranks.eq(8)).text(localName);
                 }
-
+                $(ranksScore.eq(8)).text(localScore);
             }
-
 
             var query = new Bmob.Query(GameScore);
             query.descending("score");
             query.limit(7);
             query.find({
                 success: function (results) {
-                    ranks.each(function (index) {
-                        $(this).text(index + " 未知灰推 0")
-                    });
+
                     // 循环处理查询到的数据
                     for (var i = 0; i < results.length; i++) {
                         var object = results[i];
@@ -166,7 +180,8 @@
                         if (userName === "9510171017") {
                             userName = "SNH48-冯晓菲";
                         }
-                        $(ranks.eq(i)).text(i + " " + userName + " " + "" + object.get("score"));
+                        $(ranks.eq(i + 1)).text(i + 1 + " " + userName);
+                        $(ranksScore.eq(i + 1)).text(object.get("score"));
                     }
                 },
                 error: function (error) {
@@ -179,7 +194,8 @@
             query2.first({
                 success: function (object) {
                     if (object) {
-                        kkRank.text("SNH48-冯晓菲  " + object.get("score"));
+                        $(ranks.eq(0)).text("SNH48-冯晓菲");
+                        $(ranksScore.eq(0)).text(object.get("score"))
                     }
                 },
                 error: function (error) {
@@ -283,15 +299,15 @@
 </div>
 
 <div class="rankingMask" id="ranking">
-    <div id="kkRank"></div>
-    <div class="Rank"></div>
-    <div class="Rank"></div>
-    <div class="Rank"></div>
-    <div class="Rank"></div>
-    <div class="Rank"></div>
-    <div class="Rank"></div>
-    <div class="Rank"></div>
-    <div id="myRank"></div>
+    <div id="kkRank"><span class="Rank" ></span><span class="RankScore"></span></div>
+    <div ><span class="Rank"></span><span class="RankScore"></span></div>
+    <div ><span class="Rank"></span><span class="RankScore"></span></div>
+    <div ><span class="Rank"></span><span class="RankScore"></span></div>
+    <div ><span class="Rank"></span><span class="RankScore"></span></div>
+    <div ><span class="Rank"></span><span class="RankScore"></span></div>
+    <div ><span class="Rank"></span><span class="RankScore"></span></div>
+    <div ><span class="Rank"></span><span class="RankScore"></span></div>
+    <div id="myRank"><span class="Rank" ></span><span class="RankScore"></span></div>
 </div>
 </body>
 <script type="text/javascript">

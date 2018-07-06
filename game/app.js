@@ -30,8 +30,8 @@ function initStartScreen() {
         background = new Elements.Background(assetLib.getData("background0"), canvas.width, canvas.height),
         background.renderState = "menuScroll",
         userInput.addHitArea("mute", butEventHandler, null, "rect", {
-            aRect: [392, 0, canvas.width, 53]
-        },
+                aRect: [392, 0, canvas.width, 53]
+            },
             !0),
         b = {
             oImgData: assetLib.getData("uiButs"),
@@ -78,23 +78,23 @@ function initCreditsScreen() {
 
 function initGame() {
     gameState = "game",
-        1 == audioType && (musicTween.kill(), musicTween = TweenLite.to(music, 1, {
-            volume: .4,
-            ease: "Linear.easeNone"
-        })),
+    1 == audioType && (musicTween.kill(), musicTween = TweenLite.to(music, 1, {
+        volume: .4,
+        ease: "Linear.easeNone"
+    })),
         background = new Elements.Background(assetLib.getData("background0"), canvas.width, canvas.height),
         background.renderState = "game",
         hud = new Elements.Hud,
         squirrel = new Elements.Squirrel,
         branch = new Elements.Branch,
         userInput.addHitArea("pause", butEventHandler, null, "rect", {
-            aRect: [325, 0, 387, 58]
-        },
+                aRect: [325, 0, 387, 58]
+            },
             !0),
         userInput.addHitArea("swipe", butEventHandler, {
-            isDraggable: !0,
-            multiTouch: !0
-        },
+                isDraggable: !0,
+                multiTouch: !0
+            },
             "rect", {
                 aRect: [0, 60, canvas.width, canvas.height]
             },
@@ -135,7 +135,7 @@ function butEventHandler(a, b) {
                 userInput.removeHitArea("moreGames"),
                 userInput.removeHitArea("RankFromHome"),
                 userInput.removeHitArea("credits"),
-                isMobile && launchFullscreen(document.documentElement),
+            isMobile && launchFullscreen(document.documentElement),
                 initGame();
             break;
         case "credits":
@@ -298,7 +298,7 @@ function butEventHandler(a, b) {
 }
 
 function initRankFromEnd() {
-   
+
     var a, b, c;
 
     gameState = "Rank";
@@ -328,13 +328,14 @@ function initRankFromEnd() {
     }
     userInput.addHitArea("backFromRank", butEventHandler, null, "image", a);
     // userInput.addHitArea("ranking", butEventHandler, null, "image", b);
-    c = new Array(b,a);
+    c = new Array(b, a);
     panel = new Elements.Panel(gameState, c);
     panel.startTween1();
     previousTime = (new Date).getTime();
     updateRank();
     showRank();
 }
+
 function initRankFromHome() {
 
     var a, b, c;
@@ -366,15 +367,16 @@ function initRankFromHome() {
     }
     userInput.addHitArea("backHomeFromRank", butEventHandler, null, "image", a);
     // userInput.addHitArea("ranking", butEventHandler, null, "image", b);
-    c = new Array(b,a);
+    c = new Array(b, a);
     panel = new Elements.Panel(gameState, c);
     panel.startTween1();
     previousTime = (new Date).getTime();
     updateRank();
     showRank();
 }
+
 function initCommitScore() {
-    var a, b, c,d;
+    var a, b, c, d;
 
     gameState = "commitScore";
     1 == audioType && (musicTween.kill(), musicTween = TweenLite.to(music, 2, {
@@ -409,25 +411,26 @@ function initCommitScore() {
     };
     userInput.addHitArea("backFromCommit", butEventHandler, null, "image", d);
     userInput.addHitArea("okCommit", butEventHandler, null, "image", a);
-    c = new Array(b,a,d);
+    c = new Array(b, a, d);
     panel = new Elements.Panel(gameState, c);
     panel.startTween1();
     previousTime = (new Date).getTime();
     updateCommitScore();
     showCommitScore();
 }
+
 function initGameEnd() {
-    var a, b, c,d;
+    var a, b, c, d;
     console.log(oGameData.distance, oGameData.curGems),
         dp_submitScore(oGameData.distance),
         document.getElementById("toolbar").style.display = "block",
         gameState = "gameOver",
-        1 == audioType && (musicTween.kill(), musicTween = TweenLite.to(music, 2, {
-            volume: .2,
-            ease: "Linear.easeNone"
-        })),
+    1 == audioType && (musicTween.kill(), musicTween = TweenLite.to(music, 2, {
+        volume: .2,
+        ease: "Linear.easeNone"
+    })),
         saveDataHandler.aLevelStore[0] = oGameData.totalGems,
-        oGameData.distance > saveDataHandler.aLevelStore[1] && (saveDataHandler.aLevelStore[1] = oGameData.distance),
+    oGameData.distance > saveDataHandler.aLevelStore[1] && (saveDataHandler.aLevelStore[1] = oGameData.distance),
         saveDataHandler.saveData(),
         userInput.removeHitArea("pause"),
         userInput.removeHitArea("swipe"),
@@ -466,10 +469,10 @@ function initGameEnd() {
 function initUpgrade() {
     var a, b, c, d, e, f, g;
     gameState = "upgrade",
-        1 == audioType && (musicTween.kill(), musicTween = TweenLite.to(music, .5, {
-            volume: .2,
-            ease: "Linear.easeNone"
-        })),
+    1 == audioType && (musicTween.kill(), musicTween = TweenLite.to(music, .5, {
+        volume: .2,
+        ease: "Linear.easeNone"
+    })),
         a = {
             oImgData: assetLib.getData("uiButs"),
             aPos: [97, 621],
@@ -556,9 +559,11 @@ function powerUpEvent(a) {
             gemEvent(5 + 3 * oGameData.boostNum - oGameData.curGemChain)
     }
 }
+
 function callShowInputName() {
     onInputName(oGameData.distance)
 }
+
 function endGameEvent(a) {
     switch (userInput.removeHitArea("pause"), endGameSequence = !0, TweenMax.to(branch, 1, {
         scrollSpeed: 0,
@@ -569,13 +574,13 @@ function endGameEvent(a) {
     }), a) {
         case "fall":
             squirrel.fallOff(),
-                musicTween && musicTween.kill(),
+            musicTween && musicTween.kill(),
                 musicTween = TweenLite.to(music, .1, {
                     volume: 0,
                     ease: "Linear.easeNone"
                 }),
                 playSound("fall");
-            setTimeout("callShowInputName()", 4000)
+            setTimeout("callShowInputName()", 2000)
 
             break;
         case "block":
@@ -588,7 +593,7 @@ function endGameEvent(a) {
                 branch.scrollSpeed = 0,
                 addParticle("hitBlock", squirrel.x, squirrel.y),
                 playSound("hitBlock")
-            setTimeout("callShowInputName()", 4000)
+            setTimeout("callShowInputName()", 2000)
     }
 }
 
@@ -615,10 +620,10 @@ function updateGameEvent() {
             background.render(),
             branch.update(),
             branch.render(),
-            null != swipeDetect.lastDir && (swipeDetect.resetInc += delta, swipeDetect.resetInc > .5 && swipeDetect.reset());
+        null != swipeDetect.lastDir && (swipeDetect.resetInc += delta, swipeDetect.resetInc > .5 && swipeDetect.reset());
         for (var a = 0; a < aEffects.length; a++) aEffects[a].update(),
             aEffects[a].render(),
-            aEffects[a].removeMe && (aEffects.splice(a, 1), a -= 1);
+        aEffects[a].removeMe && (aEffects.splice(a, 1), a -= 1);
         hud.render(ctx),
             renderMuteBut(),
             requestAnimFrame(updateGameEvent)
@@ -632,6 +637,7 @@ function updateCreditsScreenEvent() {
 function updateCommitScore() {
     rotatePause || "commitScore" != gameState || (delta = getDelta(), background.update(), background.render(), panel.update(delta), panel.render(ctx), renderMuteBut(), requestAnimFrame(updateCommitScore))
 }
+
 function updateRank() {
     rotatePause || "Rank" != gameState || (delta = getDelta(), background.update(), background.render(), panel.update(delta), panel.render(ctx), renderMuteBut(), requestAnimFrame(updateRank))
 }
@@ -662,7 +668,7 @@ function getDelta() {
     var a = (new Date).getTime(),
         b = (a - previousTime) / 1e3;
     return previousTime = a,
-        b > .5 && (b = 0),
+    b > .5 && (b = 0),
         b
 }
 
@@ -703,8 +709,8 @@ function initLangSelect() {
     for (ctx.drawImage(a.img, canvas.width / 2 - a.img.width / 2, canvas.height / 2 - a.img.height / 2), b = 140, c = 0; c < aLangs.length; c++) d = canvas.width / 2 - b * aLangs.length / 2 + c * b,
         e = canvas.height / 2 - b / 2,
         userInput.addHitArea("langSelect", butEventHandler, {
-            lang: aLangs[c]
-        },
+                lang: aLangs[c]
+            },
             "rect", {
                 aRect: [d, e, d + b, e + 140]
             })
@@ -721,468 +727,468 @@ function loadAssets() {
         id: "background0",
         file: "images/background0.jpg"
     },
-    {
-        id: "rotateDeviceMessage",
-        file: "images/rotateDeviceMessage.jpg"
-    },
-    {
-        id: "splash",
-        file: "images/splashScreen.png"
-    },
-    {
-        id: "hud",
-        file: "images/" + curLang + "/hud.png"
-    },
-    {
-        id: "ranking",
-        file: "images/" + curLang + "/ranking.png",
-        oAtlasData: {
-            id0: {
-                x: 0,
-                y: 0,
-                width: 450,
-                height: 700
+        {
+            id: "rotateDeviceMessage",
+            file: "images/rotateDeviceMessage.jpg"
+        },
+        {
+            id: "splash",
+            file: "images/splashScreen.png"
+        },
+        {
+            id: "hud",
+            file: "images/" + curLang + "/hud.png"
+        },
+        {
+            id: "ranking",
+            file: "images/" + curLang + "/ranking.png",
+            oAtlasData: {
+                id0: {
+                    x: 0,
+                    y: 0,
+                    width: 450,
+                    height: 700
+                }
             }
-        }
-    },
-    {
-        id: "commitScoreBtn",
-        file: "images/" + curLang + "/button_goucha.png",
-        oAtlasData: {
-            id0: {
-                x: 106,
-                y: 255,
-                width: 82,
-                height: 77
-            },
-            id1: {
-                x: 233,
-                y: 255,
-                width: 84,
-                height: 77
+        },
+        {
+            id: "commitScoreBtn",
+            file: "images/" + curLang + "/button_goucha.png",
+            oAtlasData: {
+                id0: {
+                    x: 106,
+                    y: 255,
+                    width: 82,
+                    height: 77
+                },
+                id1: {
+                    x: 233,
+                    y: 255,
+                    width: 84,
+                    height: 77
+                }
             }
-        }
-    },
-    {
-        id: "commitScore",
-        file: "images/" + curLang + "/name.png",
-        oAtlasData: {
-            id0: {
-                x: 0,
-                y: 0,
-                width: 450,
-                height: 700
+        },
+        {
+            id: "commitScore",
+            file: "images/" + curLang + "/name.png",
+            oAtlasData: {
+                id0: {
+                    x: 0,
+                    y: 0,
+                    width: 450,
+                    height: 700
+                }
             }
-        }
-    },
-    {
-        id: "button_ranking",
-        file: "images/" + curLang + "/button_ranking.png",
-        oAtlasData: {
-            id0: {
-                x: 0,
-                y: 0,
-                width: 208,
-                height: 85
+        },
+        {
+            id: "button_ranking",
+            file: "images/" + curLang + "/button_ranking.png",
+            oAtlasData: {
+                id0: {
+                    x: 0,
+                    y: 0,
+                    width: 208,
+                    height: 85
+                }
             }
-        }
-    },
-    {
-        id: "uiButs",
-        file: "images/" + curLang + "/uiButs.png",
-        oAtlasData: {
-            id0: {
-                x: 190,
-                y: 0,
-                width: 164,
-                height: 156
-            },
-            id1: {
-                x: 0,
-                y: 70,
-                width: 188,
-                height: 68
-            },
-            id10: {
-                x: 305,
-                y: 294,
-                width: 59,
-                height: 62
-            },
-            id11: {
-                x: 0,
-                y: 350,
-                width: 59,
-                height: 62
-            },
-            id12: {
-                x: 183,
-                y: 350,
-                width: 59,
-                height: 62
-            },
-            id13: {
-                x: 61,
-                y: 350,
-                width: 59,
-                height: 62
-            },
-            id14: {
-                x: 244,
-                y: 294,
-                width: 59,
-                height: 62
-            },
-            id15: {
-                x: 251,
-                y: 230,
-                width: 59,
-                height: 62
-            },
-            id16: {
-                x: 190,
-                y: 230,
-                width: 59,
-                height: 62
-            },
-            id17: {
-                x: 0,
-                y: 0,
-                width: 188,
-                height: 68
-            },
-            id2: {
-                x: 0,
-                y: 280,
-                width: 188,
-                height: 68
-            },
-            id3: {
-                x: 0,
-                y: 140,
-                width: 188,
-                height: 68
-            },
-            id4: {
-                x: 0,
-                y: 280,
-                width: 188,
-                height: 68
-            },
-            id5: {
-                x: 0,
-                y: 210,
-                width: 188,
-                height: 68
-            },
-            id6: {
-                x: 190,
-                y: 158,
-                width: 76,
-                height: 70
-            },
-            id7: {
-                x: 268,
-                y: 158,
-                width: 59,
-                height: 62
-            },
-            id8: {
-                x: 122,
-                y: 350,
-                width: 59,
-                height: 62
-            },
-            id9: {
-                x: 312,
-                y: 222,
-                width: 59,
-                height: 62
+        },
+        {
+            id: "uiButs",
+            file: "images/" + curLang + "/uiButs.png",
+            oAtlasData: {
+                id0: {
+                    x: 190,
+                    y: 0,
+                    width: 164,
+                    height: 156
+                },
+                id1: {
+                    x: 0,
+                    y: 70,
+                    width: 188,
+                    height: 68
+                },
+                id10: {
+                    x: 305,
+                    y: 294,
+                    width: 59,
+                    height: 62
+                },
+                id11: {
+                    x: 0,
+                    y: 350,
+                    width: 59,
+                    height: 62
+                },
+                id12: {
+                    x: 183,
+                    y: 350,
+                    width: 59,
+                    height: 62
+                },
+                id13: {
+                    x: 61,
+                    y: 350,
+                    width: 59,
+                    height: 62
+                },
+                id14: {
+                    x: 244,
+                    y: 294,
+                    width: 59,
+                    height: 62
+                },
+                id15: {
+                    x: 251,
+                    y: 230,
+                    width: 59,
+                    height: 62
+                },
+                id16: {
+                    x: 190,
+                    y: 230,
+                    width: 59,
+                    height: 62
+                },
+                id17: {
+                    x: 0,
+                    y: 0,
+                    width: 188,
+                    height: 68
+                },
+                id2: {
+                    x: 0,
+                    y: 280,
+                    width: 188,
+                    height: 68
+                },
+                id3: {
+                    x: 0,
+                    y: 140,
+                    width: 188,
+                    height: 68
+                },
+                id4: {
+                    x: 0,
+                    y: 280,
+                    width: 188,
+                    height: 68
+                },
+                id5: {
+                    x: 0,
+                    y: 210,
+                    width: 188,
+                    height: 68
+                },
+                id6: {
+                    x: 190,
+                    y: 158,
+                    width: 76,
+                    height: 70
+                },
+                id7: {
+                    x: 268,
+                    y: 158,
+                    width: 59,
+                    height: 62
+                },
+                id8: {
+                    x: 122,
+                    y: 350,
+                    width: 59,
+                    height: 62
+                },
+                id9: {
+                    x: 312,
+                    y: 222,
+                    width: 59,
+                    height: 62
+                }
             }
-        }
-    },
-    {
-        id: "panels",
-        file: "images/" + curLang + "/panels_450x700.png"
-    },
-    {
-        id: "numbersWhite",
-        file: "images/numbersWhite_24x37.png"
-    },
-    {
-        id: "numbersOrange",
-        file: "images/numbersOrange_17x24.png"
-    },
-    {
-        id: "muteBut",
-        file: "images/mute_58x56.png"
-    },
-    {
-        id: "branches",
-        file: "images/branches_222x42.png"
-    },
-    {
-        id: "branchElements",
-        file: "images/" + curLang + "/branchElements.png",
-        oAtlasData: {
-            id0: {
-                x: 0,
-                y: 244,
-                width: 748,
-                height: 121
-            },
-            id1: {
-                x: 0,
-                y: 367,
-                width: 745,
-                height: 121
-            },
-            id10: {
-                x: 899,
-                y: 345,
-                width: 76,
-                height: 101
-            },
-            id11: {
-                x: 899,
-                y: 242,
-                width: 76,
-                height: 101
-            },
-            id12: {
-                x: 828,
-                y: 677,
-                width: 76,
-                height: 101
-            },
-            id13: {
-                x: 352,
-                y: 727,
-                width: 250,
-                height: 43
-            },
-            id14: {
-                x: 352,
-                y: 819,
-                width: 241,
-                height: 41
-            },
-            id15: {
-                x: 352,
-                y: 862,
-                width: 230,
-                height: 44
-            },
-            id16: {
-                x: 352,
-                y: 772,
-                width: 244,
-                height: 45
-            },
-            id17: {
-                x: 673,
-                y: 490,
-                width: 201,
-                height: 64
-            },
-            id18: {
-                x: 750,
-                y: 244,
-                width: 147,
-                height: 222
-            },
-            id19: {
-                x: 352,
-                y: 908,
-                width: 171,
-                height: 25
-            },
-            id2: {
-                x: 0,
-                y: 121,
-                width: 758,
-                height: 121
-            },
-            id20: {
-                x: 598,
-                y: 791,
-                width: 171,
-                height: 25
-            },
-            id21: {
-                x: 760,
-                y: 204,
-                width: 36,
-                height: 38
-            },
-            id22: {
-                x: 788,
-                y: 677,
-                width: 31,
-                height: 24
-            },
-            id23: {
-                x: 673,
-                y: 556,
-                width: 129,
-                height: 26
-            },
-            id24: {
-                x: 804,
-                y: 556,
-                width: 87,
-                height: 119
-            },
-            id25: {
-                x: 877,
-                y: 121,
-                width: 87,
-                height: 119
-            },
-            id26: {
-                x: 825,
-                y: 791,
-                width: 87,
-                height: 119
-            },
-            id27: {
-                x: 877,
-                y: 0,
-                width: 87,
-                height: 119
-            },
-            id28: {
-                x: 0,
-                y: 937,
-                width: 274,
-                height: 82
-            },
-            id29: {
-                x: 276,
-                y: 937,
-                width: 274,
-                height: 82
-            },
-            id3: {
-                x: 0,
-                y: 0,
-                width: 758,
-                height: 119
-            },
-            id30: {
-                x: 760,
-                y: 0,
-                width: 115,
-                height: 202
-            },
-            id31: {
-                x: 0,
-                y: 490,
-                width: 436,
-                height: 113
-            },
-            id32: {
-                x: 0,
-                y: 605,
-                width: 425,
-                height: 120
-            },
-            id33: {
-                x: 825,
-                y: 912,
-                width: 81,
-                height: 103
-            },
-            id34: {
-                x: 893,
-                y: 468,
-                width: 81,
-                height: 129
-            },
-            id35: {
-                x: 673,
-                y: 584,
-                width: 113,
-                height: 108
-            },
-            id4: {
-                x: 595,
-                y: 819,
-                width: 228,
-                height: 210
-            },
-            id5: {
-                x: 438,
-                y: 490,
-                width: 233,
-                height: 211
-            },
-            id6: {
-                x: 0,
-                y: 727,
-                width: 350,
-                height: 208
-            },
-            id7: {
-                x: 604,
-                y: 703,
-                width: 222,
-                height: 86
-            },
-            id8: {
-                x: 908,
-                y: 912,
-                width: 76,
-                height: 101
-            },
-            id9: {
-                x: 906,
-                y: 599,
-                width: 76,
-                height: 101
+        },
+        {
+            id: "panels",
+            file: "images/" + curLang + "/panels_450x700.png"
+        },
+        {
+            id: "numbersWhite",
+            file: "images/numbersWhite_24x37.png"
+        },
+        {
+            id: "numbersOrange",
+            file: "images/numbersOrange_17x24.png"
+        },
+        {
+            id: "muteBut",
+            file: "images/mute_58x56.png"
+        },
+        {
+            id: "branches",
+            file: "images/branches_222x42.png"
+        },
+        {
+            id: "branchElements",
+            file: "images/" + curLang + "/branchElements.png",
+            oAtlasData: {
+                id0: {
+                    x: 0,
+                    y: 244,
+                    width: 748,
+                    height: 121
+                },
+                id1: {
+                    x: 0,
+                    y: 367,
+                    width: 745,
+                    height: 121
+                },
+                id10: {
+                    x: 899,
+                    y: 345,
+                    width: 76,
+                    height: 101
+                },
+                id11: {
+                    x: 899,
+                    y: 242,
+                    width: 76,
+                    height: 101
+                },
+                id12: {
+                    x: 828,
+                    y: 677,
+                    width: 76,
+                    height: 101
+                },
+                id13: {
+                    x: 352,
+                    y: 727,
+                    width: 250,
+                    height: 43
+                },
+                id14: {
+                    x: 352,
+                    y: 819,
+                    width: 241,
+                    height: 41
+                },
+                id15: {
+                    x: 352,
+                    y: 862,
+                    width: 230,
+                    height: 44
+                },
+                id16: {
+                    x: 352,
+                    y: 772,
+                    width: 244,
+                    height: 45
+                },
+                id17: {
+                    x: 673,
+                    y: 490,
+                    width: 201,
+                    height: 64
+                },
+                id18: {
+                    x: 750,
+                    y: 244,
+                    width: 147,
+                    height: 222
+                },
+                id19: {
+                    x: 352,
+                    y: 908,
+                    width: 171,
+                    height: 25
+                },
+                id2: {
+                    x: 0,
+                    y: 121,
+                    width: 758,
+                    height: 121
+                },
+                id20: {
+                    x: 598,
+                    y: 791,
+                    width: 171,
+                    height: 25
+                },
+                id21: {
+                    x: 760,
+                    y: 204,
+                    width: 36,
+                    height: 38
+                },
+                id22: {
+                    x: 788,
+                    y: 677,
+                    width: 31,
+                    height: 24
+                },
+                id23: {
+                    x: 673,
+                    y: 556,
+                    width: 129,
+                    height: 26
+                },
+                id24: {
+                    x: 804,
+                    y: 556,
+                    width: 87,
+                    height: 119
+                },
+                id25: {
+                    x: 877,
+                    y: 121,
+                    width: 87,
+                    height: 119
+                },
+                id26: {
+                    x: 825,
+                    y: 791,
+                    width: 87,
+                    height: 119
+                },
+                id27: {
+                    x: 877,
+                    y: 0,
+                    width: 87,
+                    height: 119
+                },
+                id28: {
+                    x: 0,
+                    y: 937,
+                    width: 274,
+                    height: 82
+                },
+                id29: {
+                    x: 276,
+                    y: 937,
+                    width: 274,
+                    height: 82
+                },
+                id3: {
+                    x: 0,
+                    y: 0,
+                    width: 758,
+                    height: 119
+                },
+                id30: {
+                    x: 760,
+                    y: 0,
+                    width: 115,
+                    height: 202
+                },
+                id31: {
+                    x: 0,
+                    y: 490,
+                    width: 436,
+                    height: 113
+                },
+                id32: {
+                    x: 0,
+                    y: 605,
+                    width: 425,
+                    height: 120
+                },
+                id33: {
+                    x: 825,
+                    y: 912,
+                    width: 81,
+                    height: 103
+                },
+                id34: {
+                    x: 893,
+                    y: 468,
+                    width: 81,
+                    height: 129
+                },
+                id35: {
+                    x: 673,
+                    y: 584,
+                    width: 113,
+                    height: 108
+                },
+                id4: {
+                    x: 595,
+                    y: 819,
+                    width: 228,
+                    height: 210
+                },
+                id5: {
+                    x: 438,
+                    y: 490,
+                    width: 233,
+                    height: 211
+                },
+                id6: {
+                    x: 0,
+                    y: 727,
+                    width: 350,
+                    height: 208
+                },
+                id7: {
+                    x: 604,
+                    y: 703,
+                    width: 222,
+                    height: 86
+                },
+                id8: {
+                    x: 908,
+                    y: 912,
+                    width: 76,
+                    height: 101
+                },
+                id9: {
+                    x: 906,
+                    y: 599,
+                    width: 76,
+                    height: 101
+                }
             }
-        }
-    },
-    {
-        id: "squirrel",
-        file: "images/hero_154x198.png",
-        oAnims: {
-            running: [0, 1, 2, 3, 4, 5, 6, 7],
-            jumping: [0, 1, 2, 3, 8, 9, 10, 10, 11, 11, 12, 12, 12],
-            falling: [13],
-            ducking: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 16, 15],
-            blocked: [8, 9, 10, 11, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13]
-        }
-    },
-    {
-        id: "hitBlock",
-        file: "images/hitBlock_156x139.png",
-        oAnims: {
-            explode: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        }
-    },
-    {
-        id: "collectGem",
-        file: "images/collectGem_107x99.png",
-        oAnims: {
-            explode: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        }
-    },
-    {
-        id: "dust",
-        file: "images/dust_49x47.png",
-        oAnims: {
-            explode: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        }
-    },
-    {
-        id: "topFlare",
-        file: "images/topFlare.png"
-    },
-    {
-        id: "boostShade",
-        file: "images/boostShade.png"
-    }], ctx, canvas.width, canvas.height),
+        },
+        {
+            id: "squirrel",
+            file: "images/hero_154x198.png",
+            oAnims: {
+                running: [0, 1, 2, 3, 4, 5, 6, 7],
+                jumping: [0, 1, 2, 3, 8, 9, 10, 10, 11, 11, 12, 12, 12],
+                falling: [13],
+                ducking: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 16, 15],
+                blocked: [8, 9, 10, 11, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13]
+            }
+        },
+        {
+            id: "hitBlock",
+            file: "images/hitBlock_156x139.png",
+            oAnims: {
+                explode: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            }
+        },
+        {
+            id: "collectGem",
+            file: "images/collectGem_107x99.png",
+            oAnims: {
+                explode: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            }
+        },
+        {
+            id: "dust",
+            file: "images/dust_49x47.png",
+            oAnims: {
+                explode: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            }
+        },
+        {
+            id: "topFlare",
+            file: "images/topFlare.png"
+        },
+        {
+            id: "boostShade",
+            file: "images/boostShade.png"
+        }], ctx, canvas.width, canvas.height),
         oImageIds.playBut = "id0",
         oImageIds.creditsBut = "id1",
         oImageIds.quitBut = "id2",
@@ -1273,10 +1279,10 @@ function toggleManualPause() {
         manualPause = !0,
             pauseCoreOn();
         var a = {
-            oImgData: assetLib.getData("uiButs"),
-            aPos: [canvas.width / 2, 500],
-            id: oImageIds.quitBut
-        },
+                oImgData: assetLib.getData("uiButs"),
+                aPos: [canvas.width / 2, 500],
+                id: oImageIds.quitBut
+            },
             b = {
                 oImgData: assetLib.getData("uiButs"),
                 aPos: [canvas.width / 2, 350],
@@ -1294,8 +1300,8 @@ function toggleManualPause() {
             panel = new Elements.Panel("pause", d),
             panel.render(ctx),
             userInput.addHitArea("pause", butEventHandler, null, "rect", {
-                aRect: [325, 0, 387, 58]
-            },
+                    aRect: [325, 0, 387, 58]
+                },
                 !0)
     }
 }
@@ -1339,16 +1345,16 @@ function pauseCoreOff() {
             break;
         case "game":
             manualPause ? (manualPause = !1, updateGameEvent(), toggleManualPause()) : (userInput.addHitArea("pause", butEventHandler, null, "rect", {
-                aRect: [325, 0, 387, 58]
-            },
+                    aRect: [325, 0, 387, 58]
+                },
                 !0), userInput.addHitArea("swipe", butEventHandler, {
                     isDraggable: !0,
                     multiTouch: !0
                 },
-                    "rect", {
-                        aRect: [0, 60, canvas.width, canvas.height]
-                    },
-                    !0), userInput.addKey("steerKeyRight", butEventHandler, null, 39), userInput.addKey("steerKeyLeft", butEventHandler, null, 37), userInput.addKey("keyUp", butEventHandler, null, 38), userInput.addKey("keyDown", butEventHandler, null, 40), updateGameEvent());
+                "rect", {
+                    aRect: [0, 60, canvas.width, canvas.height]
+                },
+                !0), userInput.addKey("steerKeyRight", butEventHandler, null, 39), userInput.addKey("steerKeyLeft", butEventHandler, null, 37), userInput.addKey("keyUp", butEventHandler, null, 38), userInput.addKey("keyDown", butEventHandler, null, 40), updateGameEvent());
             break;
         case "gameOver":
             initGameEnd();
@@ -1443,7 +1449,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                             c.oAssetData[a.id].img = d, c.oAssetData[a.id].oData = {},
                             e = c.getSpriteSize(a.file)),
                             0 != e[0] ? (c.oAssetData[a.id].oData.spriteWidth = e[0], c.oAssetData[a.id].oData.spriteHeight = e[1]) : (c.oAssetData[a.id].oData.spriteWidth = c.oAssetData[a.id].img.width, c.oAssetData[a.id].oData.spriteHeight = c.oAssetData[a.id].img.height),
-                            a.oAnims && (c.oAssetData[a.id].oData.oAnims = a.oAnims),
+                        a.oAnims && (c.oAssetData[a.id].oData.oAnims = a.oAnims),
                             c.oAssetData[a.id].oData.oAtlasData = a.oAtlasData ? a.oAtlasData : {
                                 none: {
                                     x: 0,
@@ -1453,7 +1459,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                                 }
                             },
                             ++c.assetsLoaded,
-                            c.showBar && ctx.fillRect(c.topLeftX + 2, c.topLeftY + 2, (c.canvasWidth / 2 - 4) / c.totalAssets * c.assetsLoaded, 36),
+                        c.showBar && ctx.fillRect(c.topLeftX + 2, c.topLeftY + 2, (c.canvasWidth / 2 - 4) / c.totalAssets * c.assetsLoaded, 36),
                             c.checkLoadComplete()
                     },
                         d.src = a.file) : (_super.prototype.renderSimple.call(this, ctx), loadPreAssets(), this.tutAnimVert(this))
@@ -1693,8 +1699,8 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                 a.prototype.move = function (a, b, c, d, e) {
                     var f, g;
                     if (!this.pauseIsOn && e) for (b = (b - this.canvasX) * this.canvasScaleX, c = (c - this.canvasY) * this.canvasScaleY, f = 0; f < this.aHitAreas.length; f++) if (this.aHitAreas[f].rect) if (b > this.aHitAreas[f].area[0] && c > this.aHitAreas[f].area[1] && b < this.aHitAreas[f].area[2] && c < this.aHitAreas[f].area[3]) this.aHitAreas[f].oData.hasLeft = !1,
-                        this.aHitAreas[f].oData.isDown || (this.aHitAreas[f].oData.isDown = !0, this.aHitAreas[f].oData.x = b, this.aHitAreas[f].oData.y = c, this.aHitAreas[f].aTouchIdentifiers.push(d), this.aHitAreas[f].oData.multiTouch && this.aHitAreas[f].callback(this.aHitAreas[f].id, this.aHitAreas[f].oData)),
-                        this.aHitAreas[f].oData.isDraggable && (this.aHitAreas[f].oData.isBeingDragged = !0, this.aHitAreas[f].oData.x = b, this.aHitAreas[f].oData.y = c, this.aHitAreas[f].callback(this.aHitAreas[f].id, this.aHitAreas[f].oData), this.aHitAreas[f].oData.isBeingDragged = !1);
+                    this.aHitAreas[f].oData.isDown || (this.aHitAreas[f].oData.isDown = !0, this.aHitAreas[f].oData.x = b, this.aHitAreas[f].oData.y = c, this.aHitAreas[f].aTouchIdentifiers.push(d), this.aHitAreas[f].oData.multiTouch && this.aHitAreas[f].callback(this.aHitAreas[f].id, this.aHitAreas[f].oData)),
+                    this.aHitAreas[f].oData.isDraggable && (this.aHitAreas[f].oData.isBeingDragged = !0, this.aHitAreas[f].oData.x = b, this.aHitAreas[f].oData.y = c, this.aHitAreas[f].callback(this.aHitAreas[f].id, this.aHitAreas[f].oData), this.aHitAreas[f].oData.isBeingDragged = !1);
                     else if (this.aHitAreas[f].oData.isDown && !this.aHitAreas[f].oData.hasLeft) {
                         for (g = 0; g < this.aHitAreas[f].aTouchIdentifiers.length; g++) this.aHitAreas[f].aTouchIdentifiers[g] == d && (this.aHitAreas[f].aTouchIdentifiers.splice(g, 1), g -= 1);
                         0 == this.aHitAreas[f].aTouchIdentifiers.length && (this.aHitAreas[f].oData.hasLeft = !0, this.aHitAreas[f].oData.isBeingDragged || (this.aHitAreas[f].oData.isDown = !1), this.aHitAreas[f].oData.multiTouch && this.aHitAreas[f].callback(this.aHitAreas[f].id, this.aHitAreas[f].oData))
@@ -1713,11 +1719,11 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                             e.keyDown(a)
                         },
                         !1), window.addEventListener("keyup",
-                            function (a) {
-                                e.keyUp(a)
-                            },
-                            !1), this.isDetectingKeys = !0),
-                        null == c && (c = new Object),
+                        function (a) {
+                            e.keyUp(a)
+                        },
+                        !1), this.isDetectingKeys = !0),
+                    null == c && (c = new Object),
                         this.aKeys.push({
                             id: a,
                             callback: b,
@@ -1745,7 +1751,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                         case "rect":
                             this.aHitAreas.push({
                                 id:
-                                    a,
+                                a,
                                 aTouchIdentifiers: g,
                                 callback: b,
                                 oData: c,
@@ -1771,7 +1777,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                     this.log = "",
                     this.render = function (a) {
                         this.frameAverage += this.delta / this.updateFreq,
-                            ++this.updateInc >= this.updateFreq && (this.updateInc = 0, this.display = this.frameAverage, this.frameAverage = 0),
+                        ++this.updateInc >= this.updateFreq && (this.updateInc = 0, this.display = this.frameAverage, this.frameAverage = 0),
                             a.textAlign = "left",
                             ctx.font = "10px Helvetica",
                             a.fillStyle = "#333333",
@@ -1832,8 +1838,8 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                         case "game":
                             this.projectX = this.x % this.oImgData.img.width / 2,
                                 this.projectY = this.y % this.oImgData.img.height / 2,
-                                this.projectX < 0 && (this.projectX += this.oImgData.img.width / 2),
-                                this.projectY < 0 && (this.projectY += this.oImgData.img.height / 2),
+                            this.projectX < 0 && (this.projectX += this.oImgData.img.width / 2),
+                            this.projectY < 0 && (this.projectY += this.oImgData.img.height / 2),
                                 ctx.drawImage(this.oImgData.img, this.projectX, this.projectY, this.canvasWidth, this.canvasHeight, 0, 0, this.canvasWidth, this.canvasHeight);
                             break;
                         case "none":
@@ -1956,8 +1962,8 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                     var b, c, d, e, f, g, h;
                     for (b = 0; b < this.aButs.length; b++) c = this.posY,
                         d = 0,
-                        0 == this.incY || this.aButs[b].noMove || (d = 5 * Math.sin(2 * this.incY + b)),
-                        this.aButs[b].scale || (this.aButs[b].scale = 1),
+                    0 == this.incY || this.aButs[b].noMove || (d = 5 * Math.sin(2 * this.incY + b)),
+                    this.aButs[b].scale || (this.aButs[b].scale = 1),
                         e = this.aButs[b].oImgData.oData.oAtlasData[this.aButs[b].id].x,
                         f = this.aButs[b].oImgData.oData.oAtlasData[this.aButs[b].id].y,
                         g = this.aButs[b].oImgData.oData.oAtlasData[this.aButs[b].id].width,
@@ -1987,7 +1993,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                     this.oBranchElementsImgData = assetLib.getData("branchElements"),
                     this.oBoostShadeImgData = assetLib.getData("boostShade"),
                     this.oTopFlareImgData = assetLib.getData("topFlare"),
-                    firstRun && this.tutAnimHoriz(this)
+                firstRun && this.tutAnimHoriz(this)
             }
 
             return a.prototype.tutAnimHoriz = function (a) {
@@ -2036,11 +2042,11 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                         e = Math.floor(c / (this.oNumbersOrangeImgData.img.width / this.oNumbersOrangeImgData.oData.spriteWidth)) * this.oNumbersOrangeImgData.oData.spriteHeight,
                         a.drawImage(this.oNumbersOrangeImgData.img, d, e, this.oNumbersOrangeImgData.oData.spriteWidth, this.oNumbersOrangeImgData.oData.spriteHeight, 70 + b * this.smallNumberSpace, 52, this.oNumbersOrangeImgData.oData.spriteWidth, this.oNumbersOrangeImgData.oData.spriteHeight);
                     f = .075 + oGameData.curGemChain / (5 + 3 * oGameData.boostNum),
-                        this.chainBarFlipCount > 0 && (this.chainBarFlipCount -= 2 * delta),
-                        f >= 1 && (this.barPerc = 1, branch.scrollSpeed = Math.min(1500, branch.scrollSpeed + 50 + 3 * aPowerUpBarData[1]), oGameData.boostNum++ , oGameData.curGemChain = 0, f = 0, this.boostShadeY = canvas.height, TweenMax.to(this, 1, {
-                            boostShadeY: -canvas.height,
-                            ease: "Quint.easeIn"
-                        }), playSound("boost"), this.chainBarFlipCount = 2),
+                    this.chainBarFlipCount > 0 && (this.chainBarFlipCount -= 2 * delta),
+                    f >= 1 && (this.barPerc = 1, branch.scrollSpeed = Math.min(1500, branch.scrollSpeed + 50 + 3 * aPowerUpBarData[1]), oGameData.boostNum++ , oGameData.curGemChain = 0, f = 0, this.boostShadeY = canvas.height, TweenMax.to(this, 1, {
+                        boostShadeY: -canvas.height,
+                        ease: "Quint.easeIn"
+                    }), playSound("boost"), this.chainBarFlipCount = 2),
                         this.barPerc += 2 * (f - this.barPerc) * delta,
                         this.barPerc = Math.min(this.barPerc, 1),
                         g = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["chainBar" + Math.ceil(Math.min(this.chainBarFlipCount, 1))]].x,
@@ -2053,7 +2059,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                         k = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.chainBarGem].width,
                         j = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.chainBarGem].height,
                         ctx.drawImage(this.oBranchElementsImgData.img, g, h, k, j, 10 + i * this.barPerc - j / 2 * (1 + this.chainBarFlipCount), 30 - j / 2 * (1 + this.chainBarFlipCount), k * (1 + this.chainBarFlipCount), j * (1 + this.chainBarFlipCount)),
-                        firstRun && (this.tutCount += delta, 0 == this.tutState && this.tutCount > 4 && 1 == hasHorizAction && (this.tutState = 1, this.tutCount = 0, this.tutTween && (this.tutTween.kill(), this.tutAnimVert(this))), 1 == this.tutState && this.tutCount > 4 && 1 == hasVertAction && (firstRun = !1, this.tutTween && this.tutTween.kill()), isMobile ? (g = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutMobile" + this.tutState]].x, h = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutMobile" + this.tutState]].y, i = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutMobile" + this.tutState]].width, j = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutMobile" + this.tutState]].height, ctx.drawImage(this.oBranchElementsImgData.img, g, h, i, j, canvas.width / 2 - i / 2, 70, i, j), g = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.tutHand].x, h = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.tutHand].y, i = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.tutHand].width, j = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.tutHand].height, ctx.drawImage(this.oBranchElementsImgData.img, g, h, i, j, this.tutHandX - i / 2, this.tutHandY - j / 2, i, j)) : (g = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutDesktop" + this.tutState]].x, h = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutDesktop" + this.tutState]].y, i = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutDesktop" + this.tutState]].width, j = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutDesktop" + this.tutState]].height, ctx.drawImage(this.oBranchElementsImgData.img, g, h, i, j, canvas.width / 2 - i / 2, 80, i, j)))
+                    firstRun && (this.tutCount += delta, 0 == this.tutState && this.tutCount > 4 && 1 == hasHorizAction && (this.tutState = 1, this.tutCount = 0, this.tutTween && (this.tutTween.kill(), this.tutAnimVert(this))), 1 == this.tutState && this.tutCount > 4 && 1 == hasVertAction && (firstRun = !1, this.tutTween && this.tutTween.kill()), isMobile ? (g = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutMobile" + this.tutState]].x, h = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutMobile" + this.tutState]].y, i = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutMobile" + this.tutState]].width, j = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutMobile" + this.tutState]].height, ctx.drawImage(this.oBranchElementsImgData.img, g, h, i, j, canvas.width / 2 - i / 2, 70, i, j), g = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.tutHand].x, h = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.tutHand].y, i = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.tutHand].width, j = this.oBranchElementsImgData.oData.oAtlasData[oImageIds.tutHand].height, ctx.drawImage(this.oBranchElementsImgData.img, g, h, i, j, this.tutHandX - i / 2, this.tutHandY - j / 2, i, j)) : (g = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutDesktop" + this.tutState]].x, h = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutDesktop" + this.tutState]].y, i = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutDesktop" + this.tutState]].width, j = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["tutDesktop" + this.tutState]].height, ctx.drawImage(this.oBranchElementsImgData.img, g, h, i, j, canvas.width / 2 - i / 2, 80, i, j)))
                 },
                 a
         }();
@@ -2088,11 +2094,11 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
             return a.prototype.addSegment = function (a, b, c) {
                 var d, e, f, g, h, i, j;
                 "undefined" == typeof a && (a = !0),
-                    "undefined" == typeof b && (b = 0),
-                    "undefined" == typeof c && (c = 1),
+                "undefined" == typeof b && (b = 0),
+                "undefined" == typeof c && (c = 1),
                     this.sineInc += .1,
                     d = this.aBranches[this.aBranches.length - 1].skewFrame,
-                    this.aBranches[this.aBranches.length - 1].startSkewFrame < 60 && (d -= Math.round((this.aBranches[this.aBranches.length - 1].startSkewFrame - this.curveTarg) / 2)),
+                this.aBranches[this.aBranches.length - 1].startSkewFrame < 60 && (d -= Math.round((this.aBranches[this.aBranches.length - 1].startSkewFrame - this.curveTarg) / 2)),
                     e = this.aBranches[this.aBranches.length - 1].startHeightFactor,
                     e -= (this.aBranches[this.aBranches.length - 1].startHeightFactor - this.heightFactorTarg) / 2,
                     f = (this.aBranches[this.aBranches.length - 1].skewFrame - this.skewMidFrame) * this.skewOffset,
@@ -2101,11 +2107,11 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                     this.aBranches[0].yPos = canvas.height - this.oBranchImgData.oData.spriteHeight * this.aBranches[0].heightFactor * this.entireScale,
                     h = this.gapState,
                     i = d,
-                    1 == this.gapState && (this.gapInc-- , this.aBranches[this.aBranches.length - 1].startSkewFrame < 60 ? (i = 60, h = 0) : i = 60, this.gapInc <= 0 && (i = 61, this.gapState = 0, h = 0, this.canChangeBehaviour = !0, this.behaviourChangeTarg = 2 * Math.random() + .5)),
+                1 == this.gapState && (this.gapInc-- , this.aBranches[this.aBranches.length - 1].startSkewFrame < 60 ? (i = 60, h = 0) : i = 60, this.gapInc <= 0 && (i = 61, this.gapState = 0, h = 0, this.canChangeBehaviour = !0, this.behaviourChangeTarg = 2 * Math.random() + .5)),
                     this.lastGemCount++ ,
-                    (this.lastGemCount > 4 || "gems" == squirrel.powerUpState && this.lastGemCount > 2) && 0 == this.nextBlockType && 0 == this.gapInc && a && 60 != i && 61 != i && (1 * Math.random() > .85 - aPowerUpBarData[3] / 40 || "gems" == squirrel.powerUpState) && (!firstRun && --this.powerUpCount < 0 ? (this.powerUpCount = 30 - 2 * aPowerUpBarData[2], this.lastGemCount = -10, this.nextBlockType = 11 + Math.floor(4 * Math.random())) : firstRun && 0 != hud.tutState || (this.lastGemCount = 0, this.nextBlockType = 6 + Math.floor(5 * Math.random()))),
+                (this.lastGemCount > 4 || "gems" == squirrel.powerUpState && this.lastGemCount > 2) && 0 == this.nextBlockType && 0 == this.gapInc && a && 60 != i && 61 != i && (1 * Math.random() > .85 - aPowerUpBarData[3] / 40 || "gems" == squirrel.powerUpState) && (!firstRun && --this.powerUpCount < 0 ? (this.powerUpCount = 30 - 2 * aPowerUpBarData[2], this.lastGemCount = -10, this.nextBlockType = 11 + Math.floor(4 * Math.random())) : firstRun && 0 != hud.tutState || (this.lastGemCount = 0, this.nextBlockType = 6 + Math.floor(5 * Math.random()))),
                     j = 2 * Math.random() - 1,
-                    firstRun && 0 == hud.tutState && 0 == Math.round(j) && (j = -1),
+                firstRun && 0 == hud.tutState && 0 == Math.round(j) && (j = -1),
                     this.aBranches.push({
                         powerUpState: squirrel.powerUpState,
                         count: this.segCount++,
@@ -2125,7 +2131,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
             },
                 a.prototype.resetBranchBase = function (a, b) {
                     "undefined" == typeof a && (a = 0),
-                        "undefined" == typeof b && (b = 1),
+                    "undefined" == typeof b && (b = 1),
                         this.aBranches[0].scale = 1,
                         this.aBranches[0].yPos = canvas.height - this.oBranchImgData.oData.spriteHeight * this.aBranches[0].heightFactor * this.entireScale
                 },
@@ -2268,9 +2274,9 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                             case 10:
                         }
                         2 > b && this.aBranches[b].blockType >= 6 && ("magnet" == this.aBranches[b].powerUpState || squirrel.checkHit(Math.round(this.aBranches[b].coinOffset))) && (this.aBranches[b].blockType < 11 ? (gemEvent(1), addParticle("collectGem", this.aBranches[b].xPos - 75 * Math.round(this.aBranches[b].coinOffset) * this.aBranches[b].scale * this.entireScale + this.turnOffset * 25 * b, 550)) : (powerUpEvent(this.aBranches[b].blockType - 11), addParticle("collectGem", this.aBranches[b].xPos - 75 * Math.round(this.aBranches[b].coinOffset) * this.aBranches[b].scale * this.entireScale + this.turnOffset * 25 * b, 550)), this.aBranches[b].blockType = 0),
-                            this.aBranches[b].blockType > 0 && (c = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["block" + this.aBranches[b].blockType]].x, d = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["block" + this.aBranches[b].blockType]].y, e = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["block" + this.aBranches[b].blockType]].width, f = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["block" + this.aBranches[b].blockType]].height, k = 0, this.aBranches[b].blockType >= 6 && ("magnet" != this.aBranches[b].powerUpState ? k = 75 * Math.round(this.aBranches[b].coinOffset) : (k += 75 * Math.round(this.aBranches[b].coinOffset) * (b / this.segNum), k = -(squirrel.x - branch.aBranches[b].xPos) * (1 - b / this.segNum))), ctx.drawImage(this.oBranchElementsImgData.img, c, d, e, f, this.aBranches[b].xPos - (e / 2 + k) * this.aBranches[b].scale * this.entireScale + this.turnOffset * 25 * b, this.aBranches[b].yPos - (f * this.aBranches[b].scale - this.oBranchImgData.oData.spriteHeight / 2 * this.aBranches[b].scale * this.aBranches[b].heightFactor) * this.entireScale, e * this.aBranches[b].scale * this.entireScale, f * this.aBranches[b].scale * this.entireScale)),
-                            (0 == this.aBranches[b].blockType || this.aBranches[b].blockType >= 5) && this.aBranches[b].skewFrame > -1 && 0 == this.aBranches[b].gapState && this.aBranches[b].startSkewFrame <= 29 && (c = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["plant" + this.aBranches[b].count % 4]].x, d = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["plant" + this.aBranches[b].count % 4]].y, e = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["plant" + this.aBranches[b].count % 4]].width, f = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["plant" + this.aBranches[b].count % 4]].height, ctx.drawImage(this.oBranchElementsImgData.img, c, d, e, f, this.aBranches[b].xPos - e / 2 * this.aBranches[b].scale * this.entireScale + this.turnOffset * 25 * b, this.aBranches[b].yPos - (f * this.aBranches[b].scale - this.oBranchImgData.oData.spriteHeight / 2 * this.aBranches[b].scale * this.aBranches[b].heightFactor) * this.entireScale, e * this.aBranches[b].scale * this.entireScale, f * this.aBranches[b].scale * this.entireScale)),
-                            1 == b && "blocked" != squirrel.actionState && (squirrel.update(), squirrel.render())
+                        this.aBranches[b].blockType > 0 && (c = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["block" + this.aBranches[b].blockType]].x, d = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["block" + this.aBranches[b].blockType]].y, e = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["block" + this.aBranches[b].blockType]].width, f = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["block" + this.aBranches[b].blockType]].height, k = 0, this.aBranches[b].blockType >= 6 && ("magnet" != this.aBranches[b].powerUpState ? k = 75 * Math.round(this.aBranches[b].coinOffset) : (k += 75 * Math.round(this.aBranches[b].coinOffset) * (b / this.segNum), k = -(squirrel.x - branch.aBranches[b].xPos) * (1 - b / this.segNum))), ctx.drawImage(this.oBranchElementsImgData.img, c, d, e, f, this.aBranches[b].xPos - (e / 2 + k) * this.aBranches[b].scale * this.entireScale + this.turnOffset * 25 * b, this.aBranches[b].yPos - (f * this.aBranches[b].scale - this.oBranchImgData.oData.spriteHeight / 2 * this.aBranches[b].scale * this.aBranches[b].heightFactor) * this.entireScale, e * this.aBranches[b].scale * this.entireScale, f * this.aBranches[b].scale * this.entireScale)),
+                        (0 == this.aBranches[b].blockType || this.aBranches[b].blockType >= 5) && this.aBranches[b].skewFrame > -1 && 0 == this.aBranches[b].gapState && this.aBranches[b].startSkewFrame <= 29 && (c = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["plant" + this.aBranches[b].count % 4]].x, d = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["plant" + this.aBranches[b].count % 4]].y, e = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["plant" + this.aBranches[b].count % 4]].width, f = this.oBranchElementsImgData.oData.oAtlasData[oImageIds["plant" + this.aBranches[b].count % 4]].height, ctx.drawImage(this.oBranchElementsImgData.img, c, d, e, f, this.aBranches[b].xPos - e / 2 * this.aBranches[b].scale * this.entireScale + this.turnOffset * 25 * b, this.aBranches[b].yPos - (f * this.aBranches[b].scale - this.oBranchImgData.oData.spriteHeight / 2 * this.aBranches[b].scale * this.aBranches[b].heightFactor) * this.entireScale, e * this.aBranches[b].scale * this.entireScale, f * this.aBranches[b].scale * this.entireScale)),
+                        1 == b && "blocked" != squirrel.actionState && (squirrel.update(), squirrel.render())
                     }
                     (this.aBranches.length <= 1 || "blocked" == squirrel.actionState) && (squirrel.update(), squirrel.render())
                 },
@@ -2278,14 +2284,14 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
         }(), a.Branch = c) : this.triggerTurn("left")
     }(Elements || (Elements = {})),
     __extends = this.__extends ||
-    function (a, b) {
-        function c() {
-            this.constructor = a
-        }
+        function (a, b) {
+            function c() {
+                this.constructor = a
+            }
 
-        c.prototype = b.prototype,
-            a.prototype = new c
-    },
+            c.prototype = b.prototype,
+                a.prototype = new c
+        },
     function (a) {
         var c, b = 1608821100;
         b === b ? (c = function (a) {
@@ -2353,12 +2359,12 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                 },
                 b.prototype.update = function () {
                     a.prototype.updateAnimation.call(this, delta),
-                        null != this.powerUpState && (this.powerUpTimer -= delta, this.powerUpTimer < 0 && (playSound("powerUpEnd"), this.powerUpState = null)),
+                    null != this.powerUpState && (this.powerUpTimer -= delta, this.powerUpTimer < 0 && (playSound("powerUpEnd"), this.powerUpState = null)),
                         this.fps = branch.scrollSpeed / 32,
                         this.y += this.incY,
                         "blocked" != this.actionState ? (branch.aBranches.length > 3 && (this.x += 5 * (branch.aBranches[2].xPos - 120 * (this.leftSteer + this.rightSteer) - this.x) * delta), this.rotation = -(this.leftSteer + this.rightSteer) / 8) : this.rotation = 0,
                         this.y >= this.groundY && "falling" != this.actionState && "blocked" != this.actionState ? (this.incY = 0, this.y = this.groundY, ("jumping" == this.animId || "falling" == this.animId) && (this.setAnimType("loop", "running"), this.actionState = "running", addParticle("dust", this.x, 625))) : this.incY += (20 + branch.scrollSpeed / 40) * delta,
-                        this.y == this.groundY && this.overGap && "falling" != this.actionState && endGameEvent("fall")
+                    this.y == this.groundY && this.overGap && "falling" != this.actionState && endGameEvent("fall")
                 },
                 b.prototype.render = function () {
                     if ("blocked" != this.actionState && "falling" != this.actionState && branch.aBranches[2] && 1 != branch.aBranches[0].gapState && 1 != branch.aBranches[1].gapState && 1 != branch.aBranches[2].gapState) {
@@ -2399,7 +2405,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                 a.prototype.track = function (a, b) {
                     this.curX = a,
                         this.curY = b,
-                        null == this.startX && (this.startX = a, this.startY = b),
+                    null == this.startX && (this.startX = a, this.startY = b),
                         this.isTracking = !0
                 },
                 a.prototype.stopTrack = function (a, b, c) {
@@ -2459,7 +2465,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
                     var a, b;
                     if ("undefined" != typeof Storage) {
                         for (a = "", b = 0; b < this.aLevelStore.length; b++) a += this.aLevelStore[b],
-                            b < this.aLevelStore.length - 1 && (a += ",");
+                        b < this.aLevelStore.length - 1 && (a += ",");
                         localStorage.setItem(this.saveDataId, a)
                     }
                 },
@@ -2521,34 +2527,34 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
     curLang = "",
     isBugBrowser = !1,
     isIE10 = !1,
-    navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
+navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
     deviceAgent = navigator.userAgent.toLowerCase(),
-    (deviceAgent.match(/(iphone|ipod|ipad)/) || deviceAgent.match(/(android)/) || deviceAgent.match(/(iemobile)/) || deviceAgent.match(/iphone/i) || deviceAgent.match(/ipad/i) || deviceAgent.match(/ipod/i) || deviceAgent.match(/blackberry/i) || deviceAgent.match(/bada/i)) && (isMobile = !0, deviceAgent.match(/(android)/) && !/Chrome/.test(navigator.userAgent) && (isBugBrowser = !0)),
+(deviceAgent.match(/(iphone|ipod|ipad)/) || deviceAgent.match(/(android)/) || deviceAgent.match(/(iemobile)/) || deviceAgent.match(/iphone/i) || deviceAgent.match(/ipad/i) || deviceAgent.match(/ipod/i) || deviceAgent.match(/blackberry/i) || deviceAgent.match(/bada/i)) && (isMobile = !0, deviceAgent.match(/(android)/) && !/Chrome/.test(navigator.userAgent) && (isBugBrowser = !0)),
     userInput = new Utils.UserInput(canvas, isBugBrowser),
     resizeCanvas(),
     window.onresize = function () {
         setTimeout(function () {
-            resizeCanvas()
-        },
+                resizeCanvas()
+            },
             1)
     },
     window.addEventListener("load",
         function () {
             setTimeout(function () {
-                resizeCanvas()
-            },
+                    resizeCanvas()
+                },
                 0),
                 window.addEventListener("orientationchange",
                     function () {
                         setTimeout(function () {
-                            resizeCanvas()
-                        },
+                                resizeCanvas()
+                            },
                             500)
                     },
                     !1)
         }),
     isIE10 || "undefined" == typeof window.AudioContext && "undefined" == typeof window.webkitAudioContext && -1 != navigator.userAgent.indexOf("Android") ? audioType = 0 : (audioType = 1, sound = new Howl({
-        urls: ["audio/sound.ogg", "audio/sound.m4a"],
+        urls: ["audio/sound.ogg"],
         sprite: {
             hitBlock: [0, 950],
             gem0: [1e3, 700],
@@ -2567,7 +2573,7 @@ var Utils, Elements, __extends, requestAnimFrame, previousTime, canvas, ctx, can
             powerUpEnd: [17e3, 600]
         }
     }), music = new Howl({
-        urls: ["audio/music.ogg", "audio/music.m4a"],
+        urls: ["audio/music.ogg"],
         volume: .01,
         loop: !0
     })),
