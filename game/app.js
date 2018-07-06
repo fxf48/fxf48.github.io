@@ -2573,7 +2573,7 @@ navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
             powerUpEnd: [17e3, 600]
         }
     }), music = new Howl({
-        urls: ["audio/sound.ogg"],
+        urls: ["audio/music.ogg"],
         volume: .01,
         loop: !0
     })),
