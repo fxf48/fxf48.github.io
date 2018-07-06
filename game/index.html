@@ -45,9 +45,7 @@
             width: 40%;
         }
 
-        #game9g9gstart {
-            top: 12%;
-        }
+
     </style>
 
     <script src="viewporter.js"></script>
@@ -64,13 +62,18 @@
             display: none;
         }
 
+        .Rank {
+
+        }
+
         .rankingMask {
             z-index: 1;
             left: 50%;
             top: 50%;
-            color: white;
+            color: #512915;
             position: absolute;
             display: none;
+            font-family: "微软雅黑", serif;
         }
     </style>
     <script language="javascript" type="text/javascript">
@@ -141,7 +144,7 @@
             } else {
                 if (localName === "9510171017") {
                     myRank.text("SNH48-冯晓菲 " + localScore);
-                }else {
+                } else {
                     myRank.text(localName + " " + localScore);
                 }
 
@@ -154,16 +157,16 @@
             query.find({
                 success: function (results) {
                     ranks.each(function (index) {
-                        $(this).text("未知灰推 0")
+                        $(this).text(index + " 未知灰推 0")
                     });
                     // 循环处理查询到的数据
                     for (var i = 0; i < results.length; i++) {
                         var object = results[i];
-                        var userName =object.get("userName");
-                        if (userName==="9510171017"){
-                            userName="SNH48-冯晓菲";
+                        var userName = object.get("userName");
+                        if (userName === "9510171017") {
+                            userName = "SNH48-冯晓菲";
                         }
-                        $(ranks.eq(i)).text(userName + " " + "" + object.get("score"));
+                        $(ranks.eq(i)).text(i + " " + userName + " " + "" + object.get("score"));
                     }
                 },
                 error: function (error) {
@@ -225,8 +228,8 @@
                 return
             }
             var gameScore = new GameScore();
-            gameScore.set("score", localScore+"");
-            gameScore.set("userName", localName+"");
+            gameScore.set("score", localScore + "");
+            gameScore.set("userName", localName + "");
             gameScore.save(null, {
                 success: function (object) {
                 },
@@ -254,7 +257,7 @@
     </script>
     <script>
         var _hmt = _hmt || [];
-        (function() {
+        (function () {
             var hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?f4975864b5b16b97125f3df6f914b82c";
             var s = document.getElementsByTagName("script")[0];

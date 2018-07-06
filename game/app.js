@@ -234,11 +234,17 @@ function butEventHandler(a, b) {
             initStartScreen();
             break;
         case "okCommit":
+            playSound("click");
             var localName = $("#inputName").val();
             if (localName === "SNH48-冯晓菲") {
                 break
             }
+            userInput.removeHitArea("backFromCommit");
+            userInput.removeHitArea("okCommit");
             commitInputName();
+            hideInputId();
+            initRankFromEnd();
+            break;
         case "backFromCommit":
             playSound("click");
             userInput.removeHitArea("backFromCommit");
