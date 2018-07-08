@@ -142,10 +142,10 @@
 
             var scaleX = canvasWidth / 450;
             var scaleY = canvasHeight / 700;
-            var marginTop = 95 * scaleY;
+            var marginTop = 255 * scaleY;
             rankingMask.css('width', canvasWidth);
             rankingMask.css('height', canvasHeight);
-            rankingMask.css('margin-top', (marginTop - canvasHeight / 2) + "px");
+            rankingMask.css('margin-top', -marginTop + "px");
             rankingMask.css('margin-left', -canvasWidth / 2 + "px");
             rankingMask.css('line-height', 60 * scaleY + "px");
 
