@@ -232,7 +232,7 @@
                 return
             }
             var gameScore = new GameScore();
-            gameScore.set("score", localScore + "");
+            gameScore.set("score", localScore);
             gameScore.set("userName", localName + "");
             gameScore.save(null, {
                 success: function (object) {
