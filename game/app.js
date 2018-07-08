@@ -316,7 +316,7 @@ function initRankFromEnd() {
     background.renderState = "menuScroll";
     a = {
         oImgData: assetLib.getData("uiButs"),
-        aPos: [40, 38],
+        aPos: [42, 39],
         id: oImageIds.backBut,
         noMove: !0
     };
@@ -348,14 +348,11 @@ function initRankFromHome() {
     saveDataHandler.aLevelStore[0] = oGameData.totalGems;
     oGameData.distance > saveDataHandler.aLevelStore[1] && (saveDataHandler.aLevelStore[1] = oGameData.distance);
     saveDataHandler.saveData();
-    userInput.removeHitArea("upgrade");
-    userInput.removeHitArea("playFromEnd");
     userInput.removeHitArea("startGame");
-    userInput.removeHitArea("moreGame");
     background.renderState = "menuScroll";
     a = {
         oImgData: assetLib.getData("uiButs"),
-        aPos: [40, 38],
+        aPos: [42, 39],
         id: oImageIds.backBut,
         noMove: !0
     };
@@ -366,7 +363,7 @@ function initRankFromHome() {
         noMove: !0
     }
     userInput.addHitArea("backHomeFromRank", butEventHandler, null, "image", a);
-    // userInput.addHitArea("ranking", butEventHandler, null, "image", b);
+    userInput.addHitArea("ranking", butEventHandler, null, "image", b);
     c = new Array(b, a);
     panel = new Elements.Panel(gameState, c);
     panel.startTween1();
