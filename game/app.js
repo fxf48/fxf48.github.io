@@ -2606,6 +2606,6 @@ navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
     aPowerUpButsData = new Array(20, 20, 50, 50, 80, 80, 120, 120, 175, 175),
     saveDataHandler = new Utils.SaveDataHandler("hopdontstop1"),
     firstRun = !0,
-    hasHorizAction = !1,
-    hasVertAction = !1,
+    hasHorizAction = 1,
+    hasVertAction = 1,
     loadPreAssets();
