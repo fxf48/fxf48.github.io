@@ -236,7 +236,7 @@ function butEventHandler(a, b) {
         case "okCommit":
             playSound("click");
             var localName = $("#inputName").val();
-            if (localName === "SNH48-冯晓菲") {
+            if (localName === "SNH48-冯晓菲"||localName === "冯款款") {
                 break
             }
             userInput.removeHitArea("backFromCommit");
