@@ -193,7 +193,7 @@
                         if (userName === "9510171017") {
                             userName = "冯款款";
                         }
-                        $(ranks.eq(i)).text(i + 1 + " " + userName);
+                        $(ranks.eq(i)).text(i + 1 + " " + userName.substring(0,7));
                         $(ranksScore.eq(i)).text(object.get("score"));
                     }
                 },
