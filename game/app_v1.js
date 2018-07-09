@@ -2550,44 +2550,49 @@ navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
                     },
                     !1)
         }),
-    "undefined" == typeof window.AudioContext && "undefined" == typeof window.webkitAudioContext && -1 != navigator.userAgent.indexOf("Android") ? audioType = 0 : (audioType = 1, sound = new Howl({
-        urls: ["audio/sound.ogg"],
-        sprite: {
-            hitBlock: [0, 950],
-            gem0: [0, 950],
-            gem1: [0, 950],
-            gem2: [0, 950],
-            gem3: [0, 950],
-            click: [0, 950],
-            collectPowerUp: [0, 9500],
-            fall: [0, 950],
-            boost: [0, 950],
-            startGame: [0, 9500],
-            jump: [0, 950],
-            makeTurn: [0, 950],
-            sideStep: [0, 950],
-            duck: [0, 950],
-            powerUpEnd: [0, 950]
-            // gem0: [1e3, 700],
-            // gem1: [2e3, 700],
-            // gem2: [3e3, 700],
-            // gem3: [4e3, 700],
-            // click: [5e3, 400],
-            // collectPowerUp: [5500, 1200],
-            // fall: [7e3, 2e3],
-            // boost: [9500, 1200],
-            // startGame: [11500, 1200],
-            // jump: [13e3, 800],
-            // makeTurn: [14e3, 700],
-            // sideStep: [15e3, 500],
-            // duck: [16e3, 600],
-            // powerUpEnd: [17e3, 600]
-        }
-    }), music = new Howl({
-        urls: ["audio/music.ogg"],
-        volume: .01,
-        loop: !0
-    })),
+    "undefined" == typeof window.AudioContext && "undefined" == typeof window.webkitAudioContext && -1 != navigator.userAgent.indexOf("Android") ? audioType = 0 :
+        (audioType = 1,
+            sound = new Howl({
+                src: "audio/sound.ogg",
+                autoplay: true,
+                sprite: {
+                    hitBlock: [0, 950],
+                    gem0: [0, 950],
+                    gem1: [0, 950],
+                    gem2: [0, 950],
+                    gem3: [0, 950],
+                    click: [0, 950],
+                    collectPowerUp: [0, 9500],
+                    fall: [0, 950],
+                    boost: [0, 950],
+                    startGame: [0, 9500],
+                    jump: [0, 950],
+                    makeTurn: [0, 950],
+                    sideStep: [0, 950],
+                    duck: [0, 950],
+                    powerUpEnd: [0, 950]
+                    // gem0: [1e3, 700],
+                    // gem1: [2e3, 700],
+                    // gem2: [3e3, 700],
+                    // gem3: [4e3, 700],
+                    // click: [5e3, 400],
+                    // collectPowerUp: [5500, 1200],
+                    // fall: [7e3, 2e3],
+                    // boost: [9500, 1200],
+                    // startGame: [11500, 1200],
+                    // jump: [13e3, 800],
+                    // makeTurn: [14e3, 700],
+                    // sideStep: [15e3, 500],
+                    // duck: [16e3, 600],
+                    // powerUpEnd: [17e3, 600]
+                }
+            })
+            ,
+            music = new Howl({
+            src: "audio/music.ogg",
+            volume: 0.01,
+            loop: true
+        })),
     totalScore = 0,
     levelScore = 0,
     levelNum = 0,
