@@ -2614,5 +2614,5 @@ navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
     firstRun = !0,
     hasHorizAction = 1,
     hasVertAction = 1,
-    Howler.mobileAutoEnable(true),
+    Howler.mobileAutoEnable = false,
     loadPreAssets();
