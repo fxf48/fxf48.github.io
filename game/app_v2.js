@@ -1319,7 +1319,7 @@ function rotatePauseOff() {
 }
 
 function pauseCoreOn() {
-    switch (1 == audioType ? Howler.mute() : 2 == audioType && music.pause(), gameState) {
+    switch (1 == audioType ? Howler.mute(true) : 2 == audioType && music.pause(), gameState) {
         case "game":
             userInput.removeHitArea("swipe"),
                 userInput.removeKey("steerKeyRight"),
@@ -1330,7 +1330,7 @@ function pauseCoreOn() {
 }
 
 function pauseCoreOff() {
-    switch (1 == audioType ? muted || Howler.unmute() : 2 == audioType && (muted || music.play()), previousTime = (new Date).getTime(), userInput.pauseIsOn = !1, gameState) {
+    switch (1 == audioType ? muted || Howler.mute(false) : 2 == audioType && (muted || music.play()), previousTime = (new Date).getTime(), userInput.pauseIsOn = !1, gameState) {
         case "splash":
             updateSplashScreenEvent();
             break;
