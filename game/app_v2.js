@@ -2555,6 +2555,7 @@ navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
             sound = new Howl({
                 src: "audio/sound.ogg",
                 autoplay: true,
+                html5: false,
                 sprite: {
                     hitBlock: [0, 950],
                     gem0: [0, 950],
@@ -2613,4 +2614,5 @@ navigator.userAgent.match(/MSIE\s([\d]+)/) && (isIE10 = !0),
     firstRun = !0,
     hasHorizAction = 1,
     hasVertAction = 1,
+    Howler.mobileAutoEnable(true),
     loadPreAssets();
