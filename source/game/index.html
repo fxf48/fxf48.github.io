@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>款款快跑</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.01, minimal-ui,user-scalable=no"/>
+    <!-- build:css -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <!-- endbuild -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?f4975864b5b16b97125f3df6f914b82c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="toolbar">
+</div>
+<div id="viewporter">
+    <canvas id="canvas" moz-opaque></canvas>
+</div>
+<div class="maskLayer" id="inputId">
+    <p>请输入您的ID：</p>
+    <input id="inputName">
+</div>
+<div class="rankingMask" id="ranking">
+    <div><span id="kkRankName">冯款款</span><span id="kkRankScore"></span></div>
+    <div style="height: 18px"></div>
+    <div><span class="Rank"></span><span class="RankScore"></span></div>
+    <div><span class="Rank"></span><span class="RankScore"></span></div>
+    <div><span class="Rank"></span><span class="RankScore"></span></div>
+    <div><span class="Rank"></span><span class="RankScore"></span></div>
+    <div><span class="Rank"></span><span class="RankScore"></span></div>
+    <div><span class="Rank"></span><span class="RankScore"></span></div>
+    <div><span class="Rank"></span><span class="RankScore"></span></div>
+    <div id="myRank"><span class="Rank"></span><span class="RankScore"></span></div>
+</div>
+</body>
+<!-- build:js -->
+<script src="js/bmob-min.js"></script>
+<script src="bower_components/jQuery/dist/jquery.min.js"></script>
+<script src="js/viewporter.js"></script>
+<script src="js/main.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="bower_components/howler.js/dist/howler.min.js"></script>
+<script src="js/VisibilityManager.js"></script>
+<script src="js/app_v2.js"></script>
+<!-- endbuild -->
+</html>

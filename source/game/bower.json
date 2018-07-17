@@ -1,0 +1,21 @@
+{
+  "name": "game",
+  "homepage": "https://github.com/fxf48/fxf48.github.io",
+  "authors": [
+    "fxf48"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "^3.3.1",
+    "howler.js": "howler#^2.0.14"
+  }
+}
