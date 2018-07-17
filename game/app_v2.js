@@ -1,9 +1,9 @@
 function visibleResume() {
-    muted || manualPause || Howler.unmute()
+    muted || manualPause || Howler.mute(false)
 }
 
 function visiblePause() {
-    Howler.mute()
+    Howler.mute(true)
 }
 
 function initSplash() {
@@ -1257,7 +1257,7 @@ function playSound(a) {
 
 function toggleMute() {
     muted = !muted,
-        1 == audioType ? muted ? Howler.mute() : Howler.unmute() : 2 == audioType && (muted ? music.pause() : music.play()),
+        1 == audioType ? muted ? Howler.mute(true) : Howler.mute(false) : 2 == audioType && (muted ? music.pause() : music.play()),
         renderMuteBut()
 }
 
