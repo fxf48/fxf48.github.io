@@ -5,6 +5,10 @@ var concat = require('gulp-concat');
 var htmlmin = require('gulp-htmlmin');//html压缩
 var cssmin = require('gulp-clean-css');//css压缩
 var htmlreplace = require('gulp-html-replace');
+
+var buildConfig={
+    version :"v3"
+};
 gulp.task('default', function () {
     // 将你的默认的任务代码放在这
     return gulp.start('cssmin', 'htmlmin', 'jsmin');
@@ -23,7 +27,7 @@ gulp.task('htmlmin', function () {
     return gulp.src("index.html")
         .pipe(htmlreplace({
             'css': 'css/index.min.css',
-            'js': 'all.min.js'
+            'js': 'all_'+buildConfig.version+'.min.js'
         }))
         .pipe(htmlmin(options))
         .pipe(gulp.dest('../../game'));
@@ -48,7 +52,7 @@ gulp.task('jsmin', function () {
                 "js/*.js"
             ]
         )
-        .pipe(concat('all.min.js'))
+        .pipe(concat('all_'+buildConfig.version+'.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('../../game'));
 });
