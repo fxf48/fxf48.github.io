@@ -35,9 +35,7 @@ function locate(resolve, reject) {
 	});
 }
 
-$("#form").submit(function(e) {
-	
-});
+
 
 var province = '';
 var pm = new Promise(locate)
@@ -45,4 +43,11 @@ pm.then(function(addComp) {
 	console.log(addComp);
 	province = addComp.province;
 	console.log(province);
+});
+
+$("#form").submit(function(e) {
+	
+	alert(province);
+	console.log(province);
+	$('#submit').attr('disabled', true);
 });
