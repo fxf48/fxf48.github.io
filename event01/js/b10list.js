@@ -1,49 +1,49 @@
-const coverUrl = "../img/FXF48logo.png";
+const coverUrl = "img/FXF48logo.png";
 const top10list = [
     {
         name: '时光正好',
         artist: "xky_ike 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/053%E3%80%8A%E6%97%B6%E5%85%89%E6%AD%A3%E5%A5%BD%E3%80%8B.m4a'
+        url: 'music/053.m4a'
     }, {
         name: '夜车',
         artist: "阿贝 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/29%E3%80%8A%E5%A4%9C%E8%BD%A6%E3%80%8B.mp3'
+        url: 'music/29.mp3'
     }, {
         name: '蠢蠢',
         artist: "Demi 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/12%E3%80%8A%E8%A0%A2%E8%A0%A2%E3%80%8B.mp3'
+        url: 'music/12.mp3'
     }, {
         name: '直到那一天',
         artist: "筱筱的sleep 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/10%E3%80%8A%E7%9B%B4%E5%88%B0%E9%82%A3%E4%B8%80%E5%A4%A9%E3%80%8B.m4a'
+        url: 'music/10.m4a'
     }, {
         name: '爱与希望',
         artist: "光转琉璃 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/038%E3%80%8A%E7%88%B1%E4%B8%8E%E5%B8%8C%E6%9C%9B%E3%80%8B.m4a'
+        url: 'music/038.m4a'
     }, {
         name: '繁华落尽',
         artist: "是你的小白丶 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/03%E3%80%8A%E7%B9%81%E5%8D%8E%E8%90%BD%E5%B0%BD%E3%80%8B.m4a'
+        url: 'music/03.m4a'
     }, {
         name: '胡事托',
         artist: "阿七米德 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/17%E3%80%8A%E8%83%A1%E4%BA%8B%E6%89%98%E3%80%8B.mp3'
+        url: 'music/17.mp3'
     }, {
         name: '降落伞',
         artist: "筱筱的sleep 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/19%E3%80%8A%E9%99%8D%E8%90%BD%E4%BC%9E%E3%80%8B.m4a'
+        url: 'music/19.m4a'
     }, {
         name: 'Ice Queen',
         artist: "阿钰 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/043%E3%80%8AICE%20QUEEN%E3%80%8B.mp3'
+        url: 'music/043.mp3'
     }, {
         name: '美杜莎的温柔',
         artist: "筱筱的sleep 完整版",
-        url: 'http://7xp06y.com1.z0.glb.clouddn.com/b10/full/26%E3%80%8A%E7%BE%8E%E6%9D%9C%E8%8E%8E%E7%9A%84%E6%B8%A9%E6%9F%94%E3%80%8B.m4a'
+        url: 'music/26.m4a'
     }, {
         name: '梦与星光的海上（非参赛作品）',
         artist: "冯·小奶音·晓·攻气十足·菲",
-        url: ' http://7xp06y.com1.z0.glb.clouddn.com/b10/%E4%B8%80%E6%97%A0%E6%89%80%E6%9C%89%E6%9C%89%E6%A2%A6%E8%80%8C%E5%B7%B2%20solo%20cut.mp3'
+        url: ' music/solocut.mp3'
     }
 
 
