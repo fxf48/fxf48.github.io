@@ -24,7 +24,7 @@ body {
     font-size: 18px;
     height: 100%;
     background: url(../img/top_bg.jpg) center top no-repeat;
-    background-color: #050100;
+    background-color: #020401;
     /*background: center top;*/
     /*background-color: #050100;*/
 }
@@ -32,6 +32,9 @@ body {
 .top1 {
     padding-top: 15px;
     color: #fff;
+    /*-webkit-text-stroke-width:1px;*/
+    /*-webkit-text-stroke-color:#e95098;*/
+    /*-webkit-text-fill-color: white;*/
     margin: 0 auto;
     background: center no-repeat;
     width: 1000px;
@@ -40,7 +43,7 @@ body {
 .big_bt {
     margin: 10px auto 0;
     background: url(../img/big_bt.png) center top no-repeat;
-    width: 779px;
+    width: 520px;
     height: 452px;
     position: relative;
 }
@@ -65,7 +68,7 @@ body {
 }
 
 .tp_light {
-    background: #ec7d5c;
+    background: #0e6eb8;
     display: inline-block;
     height: 36px;
     line-height: 36px;
@@ -87,7 +90,7 @@ body {
     text-shadow: 0 0 5px #663;
     font-size: 46px;
     font-weight: bold;
-    background: #ec7d5c;
+    background: #0e6eb8;
     display: block;
     width: 357px;
     height: 84px;
@@ -117,7 +120,7 @@ body {
 
     width: 105px;
 
-    height: 350px;
+    height: 650px;
 
     text-align: center;
 
