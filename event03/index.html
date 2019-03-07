@@ -5,10 +5,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>FXF48 第三届金曲大赏 BEST15 演唱会</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!--<link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">-->
-    <!--<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" type="javascript"></script>-->
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
     <script src="js/formobile.js"></script>
     <!--SNH48冯晓菲应援会101724227-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?f4975864b5b16b97125f3df6f914b82c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 <body>
 
@@ -100,21 +109,66 @@
         投票时间：3月7日14点到3月15日22点<br>
     </div>
     <div style="text-align: center">
-        <img src="img/rule.png"/>
+        <img src="img/rule.png" />
     </div>
 
 </div>
-
-<div id="aplayer" style="width: 690px;  margin: 30px auto 0;display: block;"></div>
+<div class="tp_m">抒情组</div>
+<div id="aplayer_s" style="width: 690px;  margin: 30px auto 0;display: block;"></div>
+<div class="tp_m">悦动组</div>
+<div id="aplayer_f" style="width: 690px;  margin: 30px auto 0;display: block;"></div>
+<div class="tp_m">河声组</div>
+<div id="aplayer_r" style="width: 690px;  margin: 30px auto 0;display: block;"></div>
 <a href="https://zhongchou.modian.com/item/51567.html" class="tp_btn">点我投票</a>
+<script src="js/Bmob-1.6.7.min.js"></script>
 <script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?f4975864b5b16b97125f3df6f914b82c";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
+    const coverUrl = "img/FXF48logo.png";
+    Bmob.initialize("001e1f44748bc68b93e1872bdf1750cc", "1164553d68b767c5de72a5042c3c7bc9");
+    const query = Bmob.Query('B_B15_Record');
+    query.order("seqNo");
+    query.find().then(playerlist => {
+        const listS = [];
+        const listF = [];
+        const listR = [];
+        playerlist.forEach(item=>{
+            item.cover = coverUrl;
+            if (item.isPreView){
+                item.artist = "试听版"
+            }
+            switch (item.group) {
+                case 1:
+                    listS.push(item);
+                    break;
+                case 2:
+                    listF.push(item);
+                    break;
+                case 3:
+                    listR.push(item);
+                    break;
+            }
+        });
+        const aps = new APlayer({
+            container: document.getElementById('aplayer_s'),
+            listFolded: false,
+            listMaxHeight: '120px',
+            preload:false,
+            audio: listS
+        });
+        const apf = new APlayer({
+            container: document.getElementById('aplayer_f'),
+            listFolded: false,
+            listMaxHeight: '120px',
+            preload:false,
+            audio: listF
+        });
+        const apr = new APlayer({
+            container: document.getElementById('aplayer_r'),
+            listFolded: false,
+            listMaxHeight: '120px',
+            preload:false,
+            audio: listR
+        });
+    });
 </script>
 </body>
 </html>
