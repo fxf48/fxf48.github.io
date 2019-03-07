@@ -79,6 +79,8 @@ body {
     font-weight: bold;
     line-height: 40px;
     font-size: 15px;
+    -webkit-text-fill-color: white;/*文字的填充色*/
+    -webkit-text-stroke: 0.3px #0e6eb8;/*描边的像素，也就是粗细，这里指定是2像素的黑色边框*/
 }
 
 .tp_btn {
