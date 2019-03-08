@@ -10,7 +10,7 @@
     <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
     <script>
         var _hmt = _hmt || [];
-        (function() {
+        (function () {
             var hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?f4975864b5b16b97125f3df6f914b82c";
             var s = document.getElementsByTagName("script")[0];
@@ -107,7 +107,7 @@
         投票时间：3月7日14点到3月15日22点<br>
     </div>
     <div style="text-align: center">
-        <img src="img/rule_m.png" />
+        <img src="img/rule_m.png"/>
     </div>
 </div>
 <div class="tp_m">抒情组</div>
@@ -127,10 +127,12 @@
         const listS = [];
         const listF = [];
         const listR = [];
-        playerlist.forEach(item=>{
+        playerlist.forEach(item => {
             item.cover = coverUrl;
-            if (item.isPreView){
-                item.artist = "试听版"
+            if (item.isPreView) {
+                item.artist = "试听版";
+            } else {
+                item.artist = "完整版🔓"
             }
             switch (item.group) {
                 case 1:
@@ -147,21 +149,21 @@
         const aps = new APlayer({
             container: document.getElementById('aplayer_s'),
             listFolded: false,
-            preload:false,
+            preload: 'none',
             listMaxHeight: '120px',
             audio: listS
         });
         const apf = new APlayer({
             container: document.getElementById('aplayer_f'),
             listFolded: false,
-            preload:false,
+            preload: 'none',
             listMaxHeight: '120px',
             audio: listF
         });
         const apr = new APlayer({
             container: document.getElementById('aplayer_r'),
             listFolded: false,
-            preload:false,
+            preload: 'none',
             listMaxHeight: '120px',
             audio: listR
         });

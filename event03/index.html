@@ -134,6 +134,8 @@
             item.cover = coverUrl;
             if (item.isPreView){
                 item.artist = "试听版"
+            }else {
+                item.artist = "完整版🔓"
             }
             switch (item.group) {
                 case 1:
@@ -151,21 +153,21 @@
             container: document.getElementById('aplayer_s'),
             listFolded: false,
             listMaxHeight: '120px',
-            preload:false,
+            preload: 'none',
             audio: listS
         });
         const apf = new APlayer({
             container: document.getElementById('aplayer_f'),
             listFolded: false,
             listMaxHeight: '120px',
-            preload:false,
+            preload: 'none',
             audio: listF
         });
         const apr = new APlayer({
             container: document.getElementById('aplayer_r'),
             listFolded: false,
             listMaxHeight: '120px',
-            preload:false,
+            preload: 'none',
             audio: listR
         });
     });
