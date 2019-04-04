@@ -45,7 +45,7 @@ KeyboardInputManager.prototype.listen2 = function () {
         74: 2, // Vim down
         72: 3, // Vim left
         65: 4, // A
-        66: 5, // B
+        66: 5 // B
     };
     // Respond to direction keys
     document.addEventListener("keydown", function (event) {
@@ -56,17 +56,16 @@ KeyboardInputManager.prototype.listen2 = function () {
             if (mapped !== undefined) {
                 event.preventDefault();
                 self.emit("move", mapped);
-                if (event.which === 65 || event.which === 66) {
-                    self.emit("move", mapped);
-                }
             }
         }
     });
     //B A
-    this.bindButtonPress(".best-container", function () {
+    this.bindButtonPress(".best-container", function (e) {
+        e.preventDefault();
         self.emit("move", 5);
     });
-    this.bindButtonPress(".score-container", function () {
+    this.bindButtonPress(".score-container", function (e) {
+        e.preventDefault();
         self.emit("move", 4);
     });
     // Respond to swipe events
@@ -135,7 +134,7 @@ KeyboardInputManager.prototype.listen = function () {
         87: 0, // W
         68: 1, // D
         83: 2, // S
-        65: 3,  // A
+        65: 3 // A
     };
 
     // Respond to direction keys
@@ -161,13 +160,7 @@ KeyboardInputManager.prototype.listen = function () {
     this.bindButtonPress(".retry-button", this.restart);
     this.bindButtonPress(".restart-button", this.restart);
     this.bindButtonPress(".keep-playing-button", this.keepPlaying);
-    //B A
-    this.bindButtonPress(".best-container", function () {
-        self.emit("move", 5);
-    });
-    this.bindButtonPress(".score-container", function () {
-        self.emit("move", 4);
-    });
+
     // Respond to swipe events
     var touchStartClientX, touchStartClientY;
     var gameContainer = document.getElementsByClassName("game-container")[0];

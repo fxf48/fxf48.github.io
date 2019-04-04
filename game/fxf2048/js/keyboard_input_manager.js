@@ -46,7 +46,7 @@ KeyboardInputManager.prototype.listen2 = function () {
         74: 2, // Vim down
         72: 3, // Vim left
         65: 4, // A
-        66: 5, // B
+        66: 5 // B
     };
     // Respond to direction keys
     document.addEventListener("keydown", function (event) {
@@ -57,17 +57,16 @@ KeyboardInputManager.prototype.listen2 = function () {
             if (mapped !== undefined) {
                 event.preventDefault();
                 self.emit("move", mapped);
-                if (event.which === 65 || event.which === 66) {
-                    self.emit("move", mapped);
-                }
             }
         }
     });
     //B A
-    this.bindButtonPress(".best-container", function () {
+    this.bindButtonPress(".best-container", function (event) {
+        event.preventDefault();
         self.emit("move", 5);
     });
-    this.bindButtonPress(".score-container", function () {
+    this.bindButtonPress(".score-container", function (event) {
+        event.preventDefault();
         self.emit("move", 4);
     });
     // Respond to swipe events
