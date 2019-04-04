@@ -22,7 +22,7 @@
           content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
     <script>
         var _hmt = _hmt || [];
-        (function() {
+        (function () {
             var hm = document.createElement("script");
             hm.src = "https://hm.baidu.com/hm.js?f4975864b5b16b97125f3df6f914b82c";
             var s = document.getElementsByTagName("script")[0];
@@ -44,51 +44,51 @@
 
     <div class="above-game">
         <p class="game-intro">合并这些数字以得到 <strong>2048 款!</strong></p>
-        <a class="restart-button">去学习</a>
+        <a class="restart-button">新开始</a>
     </div>
-    <div style="text-align: center">
+    <div id="notification" style="text-align: center">
         <img style="width: 100%;margin-top: 20px;" src="img/stop.png"/>
     </div>
-    <!--<div class="game-container">-->
-        <!--<div class="game-message">-->
-            <!--<p></p>-->
-            <!--<img class="image"/>-->
-            <!--<div class="lower">-->
-                <!--<a class="keep-playing-button">继续</a>-->
-                <!--<a class="retry-button">重新吹风</a>-->
-            <!--</div>-->
-        <!--</div>-->
+    <div id="game-container" style="display: none">
+        <div class="game-message">
+            <p></p>
+            <img class="image"/>
+            <div class="lower">
+                <a class="keep-playing-button">继续</a>
+                <a class="retry-button">重新吹风</a>
+            </div>
+        </div>
 
-        <!--<div class="grid-container">-->
-            <!--<div class="grid-row">-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-            <!--</div>-->
-            <!--<div class="grid-row">-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-            <!--</div>-->
-            <!--<div class="grid-row">-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-            <!--</div>-->
-            <!--<div class="grid-row">-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-                <!--<div class="grid-cell"></div>-->
-            <!--</div>-->
-        <!--</div>-->
+        <div class="grid-container">
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+        </div>
 
-        <!--<div class="tile-container">-->
-        <!--</div>-->
-    <!--</div>-->
+        <div class="tile-container">
+        </div>
+    </div>
     <p class="game-explanation">
         欢迎关注 <a href="https://weibo.com/u/5461287018">@SNH48-冯晓菲</a>
         <br>
@@ -98,15 +98,15 @@
     </p>
 </div>
 
-<!--<script src="js/bind_polyfill.js"></script>-->
-<!--<script src="js/classlist_polyfill.js"></script>-->
-<!--<script src="js/animframe_polyfill.js"></script>-->
-<!--<script src="js/keyboard_input_manager.js"></script>-->
-<!--<script src="js/html_actuator.js"></script>-->
-<!--<script src="js/grid.js"></script>-->
-<!--<script src="js/tile.js"></script>-->
-<!--<script src="js/local_storage_manager.js"></script>-->
-<!--<script src="js/game_manager.js"></script>-->
-<!--<script src="js/application.js"></script>-->
+<script src="js/bind_polyfill.js"></script>
+<script src="js/classlist_polyfill.js"></script>
+<script src="js/animframe_polyfill.js"></script>
+<script src="js/keyboard_input_manager.js"></script>
+<script src="js/html_actuator.js"></script>
+<script src="js/grid.js"></script>
+<script src="js/tile.js"></script>
+<script src="js/local_storage_manager.js"></script>
+<script src="js/game_manager.js"></script>
+<script src="js/application.js"></script>
 </body>
 </html>
