@@ -57,6 +57,9 @@ KeyboardInputManager.prototype.listen2 = function () {
             if (mapped !== undefined) {
                 event.preventDefault();
                 self.emit("move", mapped);
+                if (event.which === 65 || event.which === 66) {
+                    self.emit("move", mapped);
+                }
             }
         }
     });
