@@ -4,7 +4,6 @@ window.requestAnimationFrame(function () {
     var index = 0;
     var inputManager = new KeyboardInputManager("join it");
     inputManager.on("move", function (direction) {
-        console.log(direction);
         if (index >= keys.length) {
             return
         }
