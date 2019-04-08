@@ -1,13 +1,14 @@
 // Wait till the browser is ready to render the game (avoids glitches)
 window.requestAnimationFrame(function () {
     const keys = [0, 2, 0, 2, 3, 1, 3, 1, 5, 4, 5, 4];
+    const keys2 = [0, 0, 2, 2, 3, 1, 3, 1, 5, 4, 5, 4];
     var index = 0;
     var inputManager = new KeyboardInputManager("join it");
     inputManager.on("move", function (direction) {
         if (index >= keys.length) {
             return
         }
-        if (direction === keys[index]) {
+        if (direction === keys[index]||direction === keys2[index]) {
             index++;
             if (index === keys.length) {
                 var container = document.getElementById("game-container");
