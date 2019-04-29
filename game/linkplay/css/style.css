@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.control {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.control input {
+    width: 40px;
+    text-align: center;
+}
+
+.control span {
+    font-size: 12px;
+    color: #999;
+}
+
+h3 {
+    text-align: center;
+}
+
+.game {
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    background: #eeeeee;
+    padding: 10px;
+    position: relative;
+}
+
+.game li {
+    width: 80px;
+    height: 80px;
+    background: #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 24px;
+    list-style: none;
+    float: left;
+    position: relative;
+}
+
+.game li div {
+    /*display: none;*/
+}
+
+.game li.active div {
+    display: block;
+    text-align: center;
+    /*background: #cc0000;*/
+    border: solid 2px #c00;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 76px;
+    height: 76px;
+}
+
+.game li.list0 {
+    background: none;
+}
+
+.game li.list1 i {
+    /*background-position: 0 0;*/
+}
+
+.game li.list2 {
+    /*background-position: -80px 0;*/
+}
+
+.game li.list3 {
+    /*background-position: -160px 0;*/
+}
+
+.game li.list4 {
+    /*background-position: -240px 0;*/
+}
+
+.game li.list5 {
+    /*background-position: 0 -80px;*/
+}
+
+.game li.list6 {
+    /*background-position: -80px -80px;*/
+}
+
+.game li.list7 {
+    /*background-position: -160px -80px;*/
+}
+
+.game li.list8 {
+    /*background-position: -240px -80px;*/
+}
+
+.game li.list9 {
+    /*background-position: 0 -160px;*/
+}
+
+.game li.list10 {
+    /*background-position: -80px -160px;*/
+}
+
+.game li.list11 {
+    /*background-position: -160px -160px;*/
+}
+
+.game li.list12 {
+    /*background-position: -240px -160px;*/
+}
+
+.game li.list13 {
+    /*background-position: 0 -240px;*/
+}
+
+.game li.list14 {
+    /*background-position: -80px -240px;*/
+}
+
+.game li.list15 {
+    /*background-position: -160px -240px;*/
+}
+
+.game li.list16 {
+    /*background-position: -240px -240px;*/
+}
+
+.game li.line {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: #c00;
+}
