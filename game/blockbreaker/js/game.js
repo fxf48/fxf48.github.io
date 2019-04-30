@@ -93,7 +93,6 @@ class Game {
         }
         while (list.length > 0 && list[0].x < -list[0].maxWidth) {
             var item = list.shift();
-            console.log("移除弹幕 " + item.text)
         }
     }
 
