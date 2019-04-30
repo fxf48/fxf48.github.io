@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="cmn">
+<head>
+    <meta charset="UTF-8">
+    <title>打call块</title>
+    <meta name="viewport"
+          content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="canvas" width="360" height="600"></canvas>
+<div>移动←→ 暂停P 下一关N 开始space</div>
+<script>
+    if (window.screen.width < 560) {
+        document.getElementById("canvas").width = 360;
+    } else {
+        document.getElementById("canvas").width = 1000;
+    }
+</script>
+<script src="js/common.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

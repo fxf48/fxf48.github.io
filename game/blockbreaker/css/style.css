@@ -1,0 +1,16 @@
+body {
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    border: 0 solid black;
+    background: #f3f3f3;
+}
+
+div {
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+}
