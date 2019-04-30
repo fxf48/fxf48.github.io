@@ -1,3 +1,5 @@
+var blockWidth = 80;
+var blockHeight = 80;
 var LinkGame = function (x, y, z, l, dom) {
     this.x = x;//列数
     this.y = y;//行数
@@ -11,7 +13,7 @@ LinkGame.prototype = {
     constructor: LinkGame,
     gameinit: function () {//游戏初始化，生成游戏画布》游戏数据》渲染游戏DOM
         var that = this;
-        that.dom.css({width: that.x * 80, height: that.y * 80});
+        that.dom.css({width: that.x * blockWidth, height: that.y * blockHeight});
         that.gamearrmap();
         that.renderdom();
     },
@@ -251,9 +253,9 @@ LinkGame.prototype = {
     drawline_h: function (i, aj, bj, n) {
         var s = aj > bj ? bj : aj;
         $(".game .line").eq(n).css({
-            top: 49 + 80 * [i - 1],
-            left: 49 + 80 * [s - 1],
-            width: Math.abs(aj - bj) * 80,
+            top: 49 + blockHeight * [i - 1],
+            left: 49 + blockWidth * [s - 1],
+            width: Math.abs(aj - bj) * blockWidth,
             height: 2
         });
         setTimeout(function () {
@@ -263,10 +265,10 @@ LinkGame.prototype = {
     drawline_v: function (j, ai, bi, n) {
         var s = ai > bi ? bi : ai;
         $(".game .line").eq(n).css({
-            top: 49 + 80 * [s - 1],
-            left: 49 + 80 * [j - 1],
+            top: 49 + blockHeight * [s - 1],
+            left: 49 + blockWidth * [j - 1],
             width: 2,
-            height: Math.abs(ai - bi) * 80
+            height: Math.abs(ai - bi) * blockHeight
         });
         setTimeout(function () {
             $(".game .line").eq(n).css({top: 0, left: 0, width: 0, height: 0})
