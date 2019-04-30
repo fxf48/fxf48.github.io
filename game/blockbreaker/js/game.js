@@ -116,7 +116,7 @@ class Game {
         this.context.font = '24px Microsoft YaHei'
         this.context.fillStyle = '#595959'
         this.context.fillText('游戏结束', this.canvas.width / 2 - 48, 226)
-        this.main.danmuList=[];
+        this.main.danmuList = [];
     }
 
     // 游戏晋级
@@ -131,7 +131,7 @@ class Game {
         this.context.font = '24px Microsoft YaHei'
         this.context.fillStyle = '#595959'
         this.context.fillText('恭喜晋级下一关卡', this.canvas.width / 2 - 98, 226)
-        this.main.danmuList=[];
+        this.main.danmuList = [];
     }
 
     // 游戏通关
@@ -146,7 +146,7 @@ class Game {
         this.context.font = '24px Microsoft YaHei'
         this.context.fillStyle = '#595959'
         this.context.fillText('恭喜通关全部关卡', this.canvas.width / 2 - 98, 226)
-        this.main.danmuList=[];
+        this.main.danmuList = [];
     }
 
     // 注册事件
@@ -319,21 +319,32 @@ class Game {
         // 设置轮询定时器
         g.setTimer(paddle, ball, blockList, score);
 
+        function onTouch2MoveRight() {
+            if (g.state === g.state_RUNNING && paddle.isRightMove) {
+                paddle.moveRight()
+            }
+        }
+
+        function onTouch2MoveLeft() {
+            if (g.state === g.state_RUNNING && paddle.isLeftMove) {
+                paddle.moveLeft()
+            }
+        }
+
         this.canvas.addEventListener("touchstart", function (event) {
+            clearInterval(g.touchTimer);
             if (g.state === g.state_RUNNING) {
                 var touchX = event.changedTouches[0].clientX;
-                if (touchX > paddle.x) {
+                if (touchX > paddle.x + paddle.w / 2) {
                     if (g.state === g.state_RUNNING && paddle.isRightMove) {
-                        clearInterval(g.touchTimer);
                         g.touchTimer = setInterval(function () {
-                            paddle.moveRight()
+                            onTouch2MoveRight()
                         }, 1000 / g.fps)
                     }
                 } else {
                     if (g.state === g.state_RUNNING && paddle.isLeftMove) {
-                        clearInterval(g.touchTimer);
                         g.touchTimer = setInterval(function () {
-                            paddle.moveLeft()
+                            onTouch2MoveLeft()
                         }, 1000 / g.fps)
                     }
                 }
