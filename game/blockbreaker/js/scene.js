@@ -63,7 +63,7 @@ class Ball {
             w: 18,                                // 图片宽度
             h: 18,                                // 图片高度
             speedX: 1,                            // x轴速度
-            speedY: 5,                            // y轴速度
+            speedY: 3,                            // y轴速度
             image: imageFromPath(allImg.ball),    // 图片对象
             rotate: 0,
             fired: false,                         // 是否运动，默认静止不动
