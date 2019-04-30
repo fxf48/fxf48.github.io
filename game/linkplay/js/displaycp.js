@@ -1,6 +1,8 @@
 var LinkGame = function (x, y, z, l, dom) {
     this.x = x;//列数
     this.y = y;//行数
+    this.l = l / 100;//游戏满盈率，最大为1(表示没有空白)，需要注意x*y*l%z=0
+    this.z = 3;//每个相同元素出现的次数
     this.dom = dom;
     $(this.dom).empty();
     this.gameinit();
@@ -26,16 +28,11 @@ LinkGame.prototype = {
             }
         }
 
+
         var arrbase = [];// 生成基础数据一维数组
-        var fullsize = that.x * that.y;// 24 - 32 之间
-        var z = 2;
-        // var cnt = parseInt(fullsize / z);
-        // while (cnt > 10) {
-        //     z *= 2;
-        //     cnt = parseInt(fullsize / z);
-        // }
-        var max = 10;
-        for (var m = 0; m < z; m++) {
+        // var max = that.x * that.y * that.l / that.z;
+        var max = 8;
+        for (var m = 0; m < that.z; m++) {
             for (var n = 0; n < max; n++)
                 arrbase[n + m * max] = n + 1;
         }
@@ -66,7 +63,7 @@ LinkGame.prototype = {
         for (var i = 0; i < that.y; i++) {
             for (var j = 0; j < that.x; j++) {
                 var index = that.arrmap[i + 1][j + 1];
-                that.dom.append("<li class=list" + index + "></li>")
+                that.dom.append("<li class=list" + index + "><div><p>" + name[index] + "</p></div></li>")
             }
         }
         that.dom.append("<li class='line'></li><li class='line'></li><li class='line'></li>")
@@ -113,7 +110,17 @@ LinkGame.prototype = {
         var bi = parseInt(b.index() / that.x) + 1;
         var bj = b.index() % that.x + 1;
         console.log("当前对比(" + ai + "," + aj + ")和(" + bi + "," + bj + ")");
-        if (that.arrmap[ai][aj] !== that.arrmap[bi][bj]) {
+        // var canConnect = that.arrmap[ai][aj] === that.arrmap[bi][bj];
+        var canConnect = false;
+        for (let i = 0; i < comparatorList.length; i++) {
+            var list = comparatorList[i];
+            var s = list.indexOf(name[that.arrmap[ai][aj]]) > -1 && list.indexOf(name[that.arrmap[bi][bj]]) > -1;
+            if (s) {
+                canConnect = true;
+                break
+            }
+        }
+        if (!canConnect) {
             console.log("两次选择内容不同，不可消除");
             return false;
         } else {

@@ -6,12 +6,12 @@
     <meta name="viewport"
           content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/styleimg.css"/>
 </head>
 <body>
 <h3>连连看游戏</h3>
+
 <div class="control">
-    选择形状
+    <div>试玩版不保证可以通关 也不保证规则完整</div>
     <select id="config_select" name="选择形状">
         <option value="4x6">4x6</option>
         <option value="4x7">4x7</option>
@@ -28,7 +28,19 @@
 </div>
 <ul class="game">
 </ul>
+<script>
+    const name = ["", "灰", "水", "桃", "九", "笨", "冉", "静", "沐"];
+    const comparatorList = [];
+    comparatorList.push(["水", "灰"]);
+    comparatorList.push(["静", "灰"]);
+    comparatorList.push(["九", "灰"]);
+    comparatorList.push(["沐", "灰"]);
+    comparatorList.push(["水", "桃"]);
+    comparatorList.push(["水", "沐"]);
+    comparatorList.push(["九", "笨"]);
+    comparatorList.push(["冉", "静"]);
+</script>
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
-<script src="js/display.js?s=1"></script>
+<script src="js/displaycp.js"></script>
 </body>
 </html>
