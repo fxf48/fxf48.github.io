@@ -26,16 +26,20 @@
         <option value="4x8">4x8</option>
         <option value="4x5">4x5</option>
         <option value="5x4">5x4</option>
-        <option value="5x5">5x5</option>
         <option value="5x6">5x6</option>
         <option value="6x4">6x4</option>
         <option value="6x5">6x5</option>
         <option value="7x4">7x4</option>
         <option value="8x4">8x4</option>
     </select>
+    <progress id="myProgress" value="100" max="100"></progress>
 </div>
-<ul class="game">
-</ul>
+<div class="game">
+</div>
+<div class="game-over">
+    <div id="tips"></div>
+    <button onclick="restart()">重新开始</button>
+</div>
 <script>
     const name = ["", "灰", "水", "桃", "九", "笨", "冉", "静", "沐"];
     const comparatorList = [];
