@@ -1,54 +1,174 @@
 <!DOCTYPE html>
-<!-- saved from url=(0033)https://mrdoob.neocities.org/029/ -->
-<html lang="en">
+<html lang="cmn">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>中国大型女子偶像组合FXF48——FXF48非官方网站</title>
     <meta name="description"
           content="FXF48、华语区大型女子偶像团体，是基于互联网思维和参与感精神、O2O构架和&quot;可面对面偶像&quot;运营理念的近距离养成式造星平台，其发展目标是在全球十四亿中国人中甄选优才，充分运用互联网和社交网络时代最具想象力，创新性和前瞻性的造星理念和技术手段, 积极培育兼具音乐舞蹈和影视表演才艺的全方位偶像艺人, 全力打造健康向上、充满青春活力、具备国际影响力的全球华语区第一女子偶像团体，并使之成为互联网和社交传媒时代中国偶像文化和粉丝经济产业的新标杆。 ">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
     <style>
+        html {
+            margin: 0;
+            height: 100%;
+        }
+
         body {
-            font-family: sans-serif;
-            font-size: 19px;
-            background-color: #FFDCFF;
-            margin: 0px;
-            line-height: 36px;
-            overflow: hidden;
+            margin: 0;
+            height: 100%;
+        }
+
+        .project {
+            float: left;
+            width: 33%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .name {
+            padding-top: 50%;
+            color: white;
+            font-size: 72px;
+            font-family: "微软雅黑", serif;
+        }
+
+        .bg {
+            width: 33%;
+            height: 100%;
+            background-size: cover;
+            filter: blur(10px);
+            z-index: -1;
+            position: absolute;
+        }
+
+        .game {
+            background: url("main/img/kkrush.jpg") center no-repeat;
+            background-size: cover;
+        }
+
+        .event {
+            background: url("./event01/img/top_bg.jpg") center no-repeat;
+            background-size: cover;
+        }
+
+        .join {
+            background: url("main/img/join.jpg") center no-repeat;
+            background-size: cover;
+        }
+
+        .detail a {
+            margin: 32px;
+            border: solid 2px #fff;
+            padding: 15px 32px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+        @media screen and (max-width: 520px) {
+            .project {
+                width: 100%;
+                height: 33%;
+            }
+            .bg {
+                width: 100%;
+                height: 33%;
+            }
+            .name {
+                padding-top: 20%;
+                font-size: 48px;
+            }
+            .detail {
+                display: none;
+            }
         }
     </style>
-
 </head>
 <body>
-<img src="./src/fxf48.png" style="width: 120px ;height: auto;z-index: 1;position: absolute ;  ">
-<div style="width:100% ;z-index: 1;position: absolute ; bottom:0px; color: #de0b46 ;padding-bottom: 30px ;text-align: center">
-    fxf48灰推正在施工中<br>
-    <a href="event01/index.html">第二届B10金曲大赏结果发布</a><br>
-    <a href="event02/index.html">以爱为芒，汇耀成光—祝FXF生日快乐</a><br>
-    <a href="event03/index.html">第三届B15金曲大赏盛大开启</a><br>
-    <a href="https://jq.qq.com/?_wv=1027&k=5MdAHt4">点击链接加入群聊【SNH48-冯晓菲应援会】</a>
+<div class="project" id="game">
+    <div class="bg game"></div>
+    <div class="name">游戏</div>
+    <div class="detail">
+        <a href="game/index.html">款款快跑</a>
+        <a href="game/fxf2048">fxf2048</a>
+        <a href="game/fkk2048">fkk2048</a>
+    </div>
 </div>
-
-<script src="./src/three.min.js"></script>
-<script src="./src/app.js"></script>
+<div class="project" id="event">
+    <div class="bg event"></div>
+    <div class="name">活动</div>
+    <div class="detail">
+        <a href="event01/index.html">第二届B10金曲大赏结果发布</a>
+        <a href="event02/index.html">以爱为芒，汇耀成光—FXF生祝活动</a>
+        <a href="event03/index.html">第三届B15金曲大赏盛大开启</a>
+    </div>
+</div>
+<div class="project" id="join">
+    <div class="bg join"></div>
+    <div class="name">加入我们</div>
+    <div class="detail">
+        <a href="https://jq.qq.com/?_wv=1027&k=5MdAHt4">加入应援会企鹅群</a>
+        <a href="https://m.weibo.cn/u/5503410523">关注应援会微博</a>
+        <a href="http://space.bilibili.com/85495399">关注应援会B站cut</a>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
 <script>
-    var loader = new THREE.FileLoader();
-    loader.load('./src/app.json', function (text) {
-
-        var player = new APP.Player();
-        player.load(JSON.parse(text));
-        player.setSize(window.innerWidth, window.innerHeight);
-        player.play();
-        player.dom.style.zIndex = 0;
-
-        document.body.appendChild(player.dom);
-
-        window.addEventListener('resize', function () {
-            player.setSize(window.innerWidth, window.innerHeight);
-        });
+    const animateTime = 300;
+    let state = -1;
+    $(window).resize(function () {
+        if ($(window).width() < 560) {
+            state = -1;
+            $(".detail").hide();
+            $(".bg").css({"height": "33%"});
+            $(".project").css({"height": "33%"});
+            miniMode()
+        } else {
+            state = -1;
+            pcMode()
+        }
     });
-</script>
 
+    function pcMode() {
+        $(".project").show().unbind("click");
+        $(".bg").css({"height": "100%"});
+        $(".detail").css({"height": "100%"}).show();
+    }
+
+    function miniMode() {
+        $(".project").click(function () {
+            let project = $(this);
+            if (state === project.index()) {
+                compress(project)
+            } else {
+                expand(project)
+            }
+        });
+
+        function expand(dom) {
+            dom.css({"height": "100%"});
+            dom.find(".bg").animate({"height": "100%"}, animateTime);
+            setTimeout(function () {
+                dom.find(".detail").show();
+                state = dom.index();
+            }, animateTime);
+            dom.siblings(".project").hide();
+        }
+
+        function compress(dom) {
+            dom.find(".detail").hide();
+            dom.animate({"height": "33%"}, animateTime);
+            dom.find(".bg").animate({"height": "33%"}, animateTime);
+            setTimeout(function () {
+                dom.siblings(".project").show();
+                state = -1;
+            }, animateTime);
+        }
+    }
+
+    if ($(window).width() < 560) {
+        miniMode()
+    }
+</script>
 </body>
 </html>
