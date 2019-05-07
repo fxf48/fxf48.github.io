@@ -17,8 +17,8 @@ body {
 }
 
 .control span {
-    font-size: 12px;
-    color: #999;
+    /*font-size: 12px;*/
+    /*color: #999;*/
 }
 
 h3 {
@@ -52,6 +52,17 @@ h3 {
     position: relative;
 }
 
+.game .cell2 {
+    width: 40px;
+    height: 40px;
+    color: #eeeeee;
+    background: #cccccc;
+    text-align: center;
+    font-size: 24px;
+    float: left;
+    position: relative;
+}
+
 .game .list0 {
     background: none;
 }
@@ -59,6 +70,12 @@ h3 {
 .game .active {
     width: 76px;
     height: 76px;
+    border: solid 2px #c00;
+}
+
+.game .active2 {
+    width: 36px;
+    height: 36px;
     border: solid 2px #c00;
 }
 

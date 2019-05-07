@@ -6,19 +6,29 @@ const tipsList = [
     "神圣的F2连…",
     "加速卡，咻"
 ];
+const levelConfig = [
+    {x: 4, y: 6},
+    {x: 4, y: 6},
+    {x: 4, y: 6},
+    {x: 6, y: 10},
+    {x: 6, y: 10},
+    {x: 6, y: 10},
+    {x: 8, y: 12},
+    {x: 8, y: 12},
+    {x: 8, y: 12},
+];
 
-function LinkGame(x, y, gameContainer) {
-    this.x = x;//列数
-    this.y = y;//行数
-    this.blockWidth = 80;
-    this.blockHeight = 80;
-    this.gameContainer = gameContainer;//jQuery对象
+function LinkGame(lv, gameContainer, titleContainer) {
+    this.lv = lv;
+    this.gameContainer = gameContainer;//jQuery生成的对象
     this.gameContainer.empty();
+    this.titleContainer = titleContainer;
     let game = this;
     this.timeWatcher = new TimeWatcher(document.getElementById("myProgress"), 100, function () {
         game.gameContainer.hide();
         let index = parseInt(Math.random() * tipsList.length);
         $("#tips").text(tipsList[index]);
+        $("#btn").text("重新开始");
         $(".game-over").show();
     });
 
@@ -50,6 +60,15 @@ LinkGame.prototype.isEnd = function () {
     return true;
 }
 LinkGame.prototype.init = function () {//游戏初始化，生成游戏画布》游戏数据》渲染游戏DOM
+    this.x = levelConfig[this.lv].x;//列数
+    this.y = levelConfig[this.lv].y;//行数
+    if (this.lv < 3) {
+        this.blockWidth = 80;
+        this.blockHeight = 80;
+    } else {
+        this.blockWidth = 40;
+        this.blockHeight = 40;
+    }
     this.gameContainer.css({width: this.x * this.blockWidth, height: this.y * this.blockHeight});
     this.arrmap = this.makeData();
     this.render();
@@ -74,9 +93,24 @@ LinkGame.prototype.makeData = function () {
         var temp = Math.floor(Math.random() * arrtemp.length);
         arrorder.push(arrtemp.splice(temp, 1)[0])
     }
-    var arrbase = [];// 生成基础数据一维数组
-    var z = 2;
-    var max = 10;
+    let arrbase = [];// 生成基础数据一维数组
+    let z = 2;
+    if (this.lv < 3) {
+        z = 2;
+    } else if (this.lv < 6) {
+        z = 4;
+    } else {
+        z = 8;
+    }
+    let max = 10;
+    if (this.lv % 3 === 0) {
+        max = 6;
+    } else if (this.lv % 3 === 1) {
+        max = 8;
+    } else {
+        max = 10;
+    }
+
     for (var m = 0; m < z; m++) {
         for (var n = 0; n < max; n++)
             arrbase[n + m * max] = n + 1;
@@ -93,31 +127,65 @@ LinkGame.prototype.render = function () {
         for (let j = 0; j < this.x; j++) {
             let index = this.arrmap[i + 1][j + 1];
             let child = $("<div></div>");
-            child.addClass("cell");
+            if (this.lv >= 3) {
+                child.addClass("cell2");
+            } else {
+                child.addClass("cell");
+            }
             child.addClass("list" + index);
             this.gameContainer.append(child)
         }
     }
-    this.gameContainer.append("<div class='cell line'></div><div class='cell line'></div><div class='cell line'></div>")
+    if (this.lv >= 3) {
+        this.gameContainer.append("<div class='cell2 line'></div><div class='cell2 line'></div><div class='cell2 line'></div>")
+    } else {
+        this.gameContainer.append("<div class='cell line'></div><div class='cell line'></div><div class='cell line'></div>")
+    }
+
 };
 LinkGame.prototype.gamecontrol = function () {
     var game = this;
     game.curr = null;
-    game.gameContainer.find(".cell").bind("click", function () {
+    let className = ".cell";
+    if (game.lv >= 3) {
+        className = ".cell2";
+    }
+    game.gameContainer.find(className).bind("click", function () {
         if (game.curr == null) {//没有选中项的情况
-            $(this).addClass("active");
+            if (game.lv >= 3) {
+                $(this).addClass("active2");
+            } else {
+                $(this).addClass("active");
+            }
             game.curr = $(this);
         } else if (game.curr.index() === $(this).index()) {//再次点击 取消
-            $(this).removeClass("active");
+            if (game.lv >= 3) {
+                $(this).removeClass("active2");
+            } else {
+                $(this).removeClass("active");
+            }
             game.curr = null;
         } else {//验证是否可以连接
             if (game.getconnect(game.curr, $(this))) {//若能连接
-                game.curr.removeAttr("class").addClass("cell list0").unbind("click");
-                $(this).removeAttr("class").addClass("cell list0").unbind("click");
+                if (game.lv >= 3) {
+                    game.curr.removeAttr("class").addClass("cell2 list0").unbind("click");
+                    $(this).removeAttr("class").addClass("cell2 list0").unbind("click");
+                } else {
+                    game.curr.removeAttr("class").addClass("cell list0").unbind("click");
+                    $(this).removeAttr("class").addClass("cell list0").unbind("click");
+                }
                 game.curr = null;
                 if (game.isEnd()) {
                     game.gameContainer.hide();
-                    $("#tips").text("干得漂亮");
+                    if (game.lv === levelConfig.length - 1) {
+                        $("#tips").text("太优秀了");
+                        $("#btn").text("再来一局");
+                    } else {
+                        $("#tips").text("恭喜通关");
+                        $("#btn").text("下一关");
+                        game.lv++;
+                        // localStorage.setItem('linkplaylevel', game.lv);
+                    }
                     $(".game-over").show();
                 } else {
                     if (game.timeWatcher != null) {
@@ -126,12 +194,19 @@ LinkGame.prototype.gamecontrol = function () {
                 }
 
             } else {//不能连接
-                $(this).addClass("active").siblings().removeClass("active");
+                if (game.lv >= 3) {
+                    $(this).addClass("active2").siblings().removeClass("active2");
+                } else {
+                    $(this).addClass("active").siblings().removeClass("active");
+                }
+
                 game.curr = $(this);
             }
         }
     });
     game.gameContainer.find(".list0").unbind("click");//为空项的取消绑定
+
+    game.titleContainer.text("第" + (game.lv + 1) + "关");
 };
 
 LinkGame.prototype.getconnect = function (a, b) {
@@ -277,8 +352,8 @@ LinkGame.prototype.isopen_v = function (arr, j, ai, bi) { //验证同列两点�
 LinkGame.prototype.drawline_h = function (i, aj, bj, n) { //画连接线
     var s = aj > bj ? bj : aj;
     $(".game .line").eq(n).css({
-        top: 49 + this.blockHeight * [i - 1],
-        left: 49 + this.blockWidth * [s - 1],
+        top: this.blockHeight / 2 + 9 + this.blockHeight * [i - 1],
+        left: this.blockWidth / 2 + 9 + this.blockWidth * [s - 1],
         width: Math.abs(aj - bj) * this.blockWidth,
         height: 2
     });
@@ -289,8 +364,8 @@ LinkGame.prototype.drawline_h = function (i, aj, bj, n) { //画连接线
 LinkGame.prototype.drawline_v = function (j, ai, bi, n) {//画连接线
     var s = ai > bi ? bi : ai;
     $(".game .line").eq(n).css({
-        top: 49 + this.blockHeight * [s - 1],
-        left: 49 + this.blockWidth * [j - 1],
+        top: this.blockHeight / 2 + 9 + this.blockHeight * [s - 1],
+        left: this.blockWidth / 2 + 9 + this.blockWidth * [j - 1],
         width: 2,
         height: Math.abs(ai - bi) * this.blockHeight
     });
@@ -329,22 +404,18 @@ TimeWatcher.prototype.stop = function () {
     }
 };
 
+// let lv = localStorage.getItem("linkplaylevel");
+// if (lv == undefined) {
+//     lv = 0
+// }
+let game = new LinkGame(0, $(".game"), $("#lv_span"));
 
-let game = new LinkGame(4, 6, $(".game"));
-
-var selector = $("#config_select");
-selector.change(function () {
-    var text = selector.val().split("x");
-    var v = text[0];
-    var h = text[1];
-    game = new LinkGame(v, h, $(".game"))
-});
-
-function restart() {
+$("#btn").click(function () {
     $(".game").show();
     $(".game-over").hide();
     game.restart();
-}
+});
+
 
 
 
