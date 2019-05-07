@@ -112,8 +112,15 @@ LinkGame.prototype.makeData = function () {
     }
 
     for (var m = 0; m < z; m++) {
-        for (var n = 0; n < max; n++)
-            arrbase[n + m * max] = n + 1;
+        if (m === z - 1) {
+            for (var n = 0; n < max; n++){
+                arrbase[n + m * max] = 11;
+            }
+        }else {
+            for (var n = 0; n < max; n++){
+                arrbase[n + m * max] = n + 1;
+            }
+        }
     }
     //根据此顺序将基础数组添加到地图数组
     for (var o = 0; o < arrbase.length; o++) {
