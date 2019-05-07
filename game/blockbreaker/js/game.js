@@ -18,7 +18,6 @@ class Game {
             canvas: document.getElementById("canvas"),                    // canvas元素
             context: document.getElementById("canvas").getContext("2d"),  // canvas画布
             timer: null,                                                  // 轮询定时器
-            touchTimer: null,                                             // 点击平移的轮询定时器
             fps: main.fps,                                                // 动画帧数，默认60
             callTextIndex: 0
         };
@@ -330,32 +329,32 @@ class Game {
                 paddle.moveLeft()
             }
         }
-
+        var touchStartClientX;
         this.canvas.addEventListener("touchstart", function (event) {
-            clearInterval(g.touchTimer);
+            event.preventDefault();
+            touchStartClientX = event.touches[0].clientX;
+        });
+        this.canvas.addEventListener("touchmove", function (event) {
+            event.preventDefault();
             if (g.state === g.state_RUNNING) {
                 var touchX = event.changedTouches[0].clientX;
-                if (touchX > paddle.x + paddle.w / 2) {
-                    if (g.state === g.state_RUNNING && paddle.isRightMove) {
-                        g.touchTimer = setInterval(function () {
-                            onTouch2MoveRight()
-                        }, 1000 / g.fps)
-                    }
-                } else {
-                    if (g.state === g.state_RUNNING && paddle.isLeftMove) {
-                        g.touchTimer = setInterval(function () {
-                            onTouch2MoveLeft()
-                        }, 1000 / g.fps)
-                    }
+                if (touchX > touchStartClientX) {
+                    onTouch2MoveRight()
+                }else {
+                    onTouch2MoveLeft()
                 }
-            } else if (g.state === g.state_GAMEOVER) { // 游戏结束时
+            }
+        });
+        this.canvas.addEventListener("touchend", function (event) {
+            event.preventDefault();
+            if (g.state === g.state_GAMEOVER) { // 游戏结束时
                 // 开始游戏
                 g.state = g.state_START;
                 // 初始化
                 g.main.start()
             } else if (g.state === g.state_UPDATE && g.main.LV !== g.main.MAXLV) { // 进入下一关
                 // 开始游戏
-                g.state = g.state_START
+                g.state = g.state_START;
                 // 初始化下一关卡
                 g.main.start(++g.main.LV)
             } else {
@@ -363,10 +362,6 @@ class Game {
                 ball.fired = true;
                 g.state = g.state_RUNNING
             }
-        });
-
-        this.canvas.addEventListener("touchend", function (event) {
-            clearInterval(g.touchTimer);
         });
     }
 }
