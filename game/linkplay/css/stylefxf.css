@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+.game .list1 {
+    background: url("../images/fxf/1.jpg");
+    background-size: cover;
+}
+
+.game .list2 {
+    background: url("../images/fxf/2.jpg");
+    background-size: cover;
+}
+
+.game .list3 {
+    background: url("../images/fxf/3.jpg");
+    background-size: cover;
+}
+
+.game .list4 {
+    background: url("../images/fxf/4.jpg");
+    background-size: cover;
+}
+
+.game .list5 {
+    background: url("../images/fxf/5.jpg");
+    background-size: cover;
+}
+
+.game .list6 {
+    background: url("../images/fxf/6.jpg");
+    background-size: cover;
+}
+
+.game .list7 {
+    background: url("../images/fxf/7.jpg");
+    background-size: cover;
+}
+
+.game .list8 {
+    background: url("../images/fxf/8.jpg");
+    background-size: cover;
+}
+
+.game .list9 {
+    background: url("../images/fxf/9.jpg");
+    background-size: cover;
+}
+
+.game .list10 {
+    background: url("../images/fxf/10.jpg");
+    background-size: cover;
+}
+.game .list11 {
+    background: url("../images/fxf/11.jpg");
+    background-size: cover;
+}
+
