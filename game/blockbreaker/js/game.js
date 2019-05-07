@@ -27,49 +27,62 @@ class Game {
     // 绘制页面所有素材
     draw(paddle, ball, blockList, score) {
         let g = this
-        // 清除画布
-        g.context.clearRect(0, 0, g.canvas.width, g.canvas.height)
+        if (!this.cacheCanvas) {
+            this.cacheCanvas = document.createElement("canvas");
+            this.cacheCanvas.width = this.canvas.width;
+            this.cacheCanvas.height = this.canvas.height;
+        }
+        let ctx = this.cacheCanvas.getContext("2d")
+        ctx.clearRect(0, 0, g.cacheCanvas.width, g.cacheCanvas.height);
         // 绘制背景图
-        g.drawBg()
+        g.drawBg(ctx)
         // 绘制挡板
-        g.drawImage(paddle);
+        g.drawImage(ctx,paddle);
         // 绘制小球
-        g.drawBall(ball);
+        g.drawBall(ctx,ball);
         // 绘制砖块
-        g.drawBlocks(blockList);
+        g.drawBlocks(ctx,blockList);
         // 绘制分数
-        g.drawText(score)
+        g.drawText(ctx,score)
         //绘制弹幕
-        g.drawDanmu(g.main.danmuList)
+        g.drawDanmu(ctx,g.main.danmuList)
+
+
+        // 清除画布
+        g.context.clearRect(0, 0, g.canvas.width, g.canvas.height);
+        g.context.drawImage(this.cacheCanvas, 0, 0, g.canvas.width, g.canvas.height);
     }
 
-    drawBall(ball) {
-        this.context.save();
+    drawBall(ctx,ball) {
+        ctx.save();
         var centerX = ball.x + ball.w / 2;
         var centerY = ball.y + ball.h / 2;
-        this.context.translate(centerX, centerY);
-        this.context.rotate(ball.rotate * Math.PI / 180);
-        this.context.translate(-centerX, -centerY);
-        this.context.drawImage(ball.image, ball.x, ball.y, ball.w, ball.h);
-        this.context.restore();
+        ctx.translate(centerX, centerY);
+        ctx.rotate(ball.rotate * Math.PI / 180);
+        ctx.translate(-centerX, -centerY);
+        ctx.drawImage(ball.image, ball.x, ball.y, ball.w, ball.h);
+        ctx.restore();
     }
 
     // 绘制图片
-    drawImage(obj) {
-        this.context.drawImage(obj.image, obj.x, obj.y, obj.w, obj.h)
+    drawImage(ctx,obj) {
+        ctx.drawImage(obj.image, obj.x, obj.y, obj.w, obj.h)
     }
 
     // 绘制背景图
-    drawBg() {
+    drawBg(context) {
+        if (context == undefined) {
+            context = this.context;
+        }
         let bg = imageFromPath(allImg.background);
         let height = canvas.width * 289 / 508;
-        this.context.drawImage(bg, 0, 24, canvas.width, height)
+        context.drawImage(bg, 0, 24, canvas.width, height)
     }
 
     // 绘制所有砖块
-    drawBlocks(list) {
+    drawBlocks(ctx,list) {
         for (let item of list) {
-            this.drawImage(item)
+            this.drawImage(ctx,item)
         }
     }
 
@@ -83,11 +96,11 @@ class Game {
         this.context.fillText(obj.textLv + obj.lv, this.canvas.width - 80, obj.y)
     }
 
-    drawDanmu(list) {
+    drawDanmu(ctx,list) {
         for (let item of list) {
-            this.context.font = '12px Microsoft YaHei'
-            this.context.fillStyle = '#595959'
-            this.context.fillText(item.text, item.x, item.y, item.maxWidth);
+            ctx.font = '12px Microsoft YaHei'
+            ctx.fillStyle = '#595959'
+            ctx.fillText(item.text, item.x, item.y, item.maxWidth);
             item.x -= 1;
         }
         while (list.length > 0 && list[0].x < -list[0].maxWidth) {
@@ -96,7 +109,7 @@ class Game {
     }
 
     fireDanmu() {
-        this.main.danmuList.push(new Danmu(callTextList[this.callTextIndex], this.canvas.width, Math.random() * 300 + 300));
+        this.main.danmuList.push(new Danmu(callTextList[this.callTextIndex], this.canvas.width, Math.random() * 300 + 200));
         this.callTextIndex++;
         if (this.callTextIndex >= callTextList.length) {
             this.callTextIndex = 0;
@@ -329,6 +342,7 @@ class Game {
                 paddle.moveLeft()
             }
         }
+
         var touchStartClientX;
         this.canvas.addEventListener("touchstart", function (event) {
             event.preventDefault();
@@ -340,7 +354,7 @@ class Game {
                 var touchX = event.changedTouches[0].clientX;
                 if (touchX > touchStartClientX) {
                     onTouch2MoveRight()
-                }else {
+                } else {
                     onTouch2MoveLeft()
                 }
             }

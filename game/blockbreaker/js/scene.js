@@ -80,7 +80,7 @@ class Ball {
             if (this.y < 0) {
                 this.speedY *= -1
             }
-            if (this.y > 600 - this.h) {
+            if (this.y > 500 - this.h) {
                 // 游戏结束
                 game.state = game.state_GAMEOVER
                 // game.isGameOver = true

@@ -15,9 +15,9 @@ let _main = {
     paddle: null,                        // 挡板对象
     score: null,                         // 计分板对象
     ball_x: width / 2 - 9,                // 小球默认x轴坐标
-    ball_y: 532,                         // 小球默认y轴坐标
+    ball_y: 432,                         // 小球默认y轴坐标
     paddle_x: width / 2 - 51,            // 挡板默认x轴坐标
-    paddle_y: 550,                       // 挡板默认y轴坐标
+    paddle_y: 450,                       // 挡板默认y轴坐标
     score_x: 10,                         // 计分板默认x轴坐标
     score_y: 30,                         // 计分板默认y轴坐标
     fps: 60,                             // 游戏运行帧数
