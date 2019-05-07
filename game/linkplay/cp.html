@@ -15,6 +15,15 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
+    <style>
+        #cp-explain {
+            width: 100%;
+            position: absolute;
+            top: 320px;
+            font-size: 32px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <h3>CP连连看</h3>
@@ -36,21 +45,80 @@
 </div>
 <div class="game">
 </div>
+<div id="cp-explain"></div>
 <div class="game-over">
     <div id="tips"></div>
     <button onclick="restart()">重新开始</button>
 </div>
 <script>
     const name = ["", "灰", "水", "桃", "九", "笨", "冉", "静", "沐"];
-    const comparatorList = [];
-    comparatorList.push(["水", "灰"]);
-    comparatorList.push(["静", "灰"]);
-    comparatorList.push(["九", "灰"]);
-    comparatorList.push(["沐", "灰"]);
-    comparatorList.push(["水", "桃"]);
-    comparatorList.push(["水", "沐"]);
-    comparatorList.push(["九", "笨"]);
-    comparatorList.push(["冉", "静"]);
+    const comparatorList = [{
+        pair: ["水", "灰"],
+        text: "把fxf让给我",
+        canConnect: true
+    }, {
+        pair: ["灰", "水"],
+        text: "宇宙最攻fxf",
+        canConnect: true
+    }, {
+        pair: ["静", "灰"],
+        text: "我没有朋友",
+        canConnect: true
+    }, {
+        pair: ["灰", "静"],
+        text: "我们之前没有友情",
+        canConnect: true
+    }, {
+        pair: ["九", "灰"],
+        text: "兄dei",
+        canConnect: true
+    }, {
+        pair: ["灰", "九"],
+        text: "宇宙最攻fxf?",
+        canConnect: false
+    }, {
+        pair: ["沐", "灰"],
+        text: "???",
+        canConnect: false
+    }, {
+        pair: ["灰", "沐"],
+        text: "宇宙最攻fxf? ",
+        canConnect: false
+    }, {
+        pair: ["水", "桃"],
+        text: "水蜜桃室友组",
+        canConnect: true
+    }, {
+        pair: ["桃", "水"],
+        text: "水蜜桃室友组",
+        canConnect: true
+    }, {
+        pair: ["九", "笨"],
+        text: "九笨ttl",
+        canConnect: true
+    }, {
+        pair: ["笨", "九"],
+        text: "反过来也可以吗？",
+        canConnect: false
+    }, {
+        pair: ["冉", "静"],
+        canConnect: true
+    }, {
+        pair: ["水", "冉"],
+        canConnect: true
+    }, {
+        pair: ["水", "静"],
+        text: "谁都能哭",
+        canConnect: false
+    }, {
+        pair: ["桃", "灰"],
+        canConnect: true
+    }, {
+        pair: ["灰", "笨"],
+        text: "宇宙最攻fxf",
+        canConnect: true
+    }
+    ];
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
 <script src="js/displaycp.js"></script>

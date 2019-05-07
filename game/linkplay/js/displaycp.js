@@ -75,7 +75,7 @@ LinkGame.prototype.makeData = function () {
         arrorder.push(arrtemp.splice(temp, 1)[0])
     }
     var arrbase = [];// 生成基础数据一维数组
-    var z = 4;
+    var z = 3;
     var max = name.length - 1;
     for (var m = 0; m < z; m++) {
         for (var n = 0; n < max; n++)
@@ -142,7 +142,25 @@ LinkGame.prototype.gamecontrol = function () {
     });
     game.gameContainer.find(".list0").unbind("click");//为空项的取消绑定
 };
-
+LinkGame.prototype.canConnect = function (a, b) {
+    let valueA = name[a];
+    let valueB = name[b];
+    let canConnect = false;
+    for (let i = 0; i < comparatorList.length; i++) {
+        let comparator = comparatorList[i];
+        if (comparator.pair[0] === valueA && comparator.pair[1] === valueB) {
+            canConnect = comparator.canConnect;
+            if (comparator.text) {
+                $("#cp-explain").text("\\" + comparator.text + "/");
+                setTimeout(function () {
+                    $("#cp-explain").text("");
+                }, 500);
+            }
+            break
+        }
+    }
+    return canConnect;
+};
 LinkGame.prototype.getconnect = function (a, b) {
     var that = this;
     var isopen = false;
@@ -151,15 +169,9 @@ LinkGame.prototype.getconnect = function (a, b) {
     var bi = parseInt(b.index() / that.x) + 1;
     var bj = b.index() % that.x + 1;
     console.log("当前对比(" + ai + "," + aj + ")和(" + bi + "," + bj + ")");
-    var canConnect = false;
-    for (let i = 0; i < comparatorList.length; i++) {
-        var list = comparatorList[i];
-        var s = list.indexOf(name[that.arrmap[ai][aj]]) > -1 && list.indexOf(name[that.arrmap[bi][bj]]) > -1;
-        if (s) {
-            canConnect = true;
-            break
-        }
-    }
+
+    var canConnect = this.canConnect(that.arrmap[ai][aj], that.arrmap[bi][bj]);
+
     if (!canConnect) {
         console.log("两次选择内容不同，不可消除");
         return false;
