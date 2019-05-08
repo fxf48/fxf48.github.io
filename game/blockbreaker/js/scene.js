@@ -34,7 +34,12 @@ class Paddle {
         let p = this;
         if (Math.abs((b.x + b.w / 2) - (p.x + p.w / 2)) < (b.w + p.w) / 2 &&
             Math.abs((b.y + b.h / 2) - (p.y + p.h / 2)) < (b.h + p.h) / 2) {
-            p.w -= (p.lv - 1) * 1;
+            if (p.lv > 1) {
+                p.w -= (p.lv - 1) * 2;
+                if (Math.random() * 10 <= 1) {
+                    p.w = 102;
+                }
+            }
             return true
         }
         return false
@@ -179,7 +184,7 @@ class Score {
 
 // 弹幕
 class Danmu {
-    constructor(text, x,y) {
+    constructor(text, x, y) {
         let s = {
             text: text,
             x: x,
