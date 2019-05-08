@@ -34,7 +34,7 @@ class Paddle {
         let p = this;
         if (Math.abs((b.x + b.w / 2) - (p.x + p.w / 2)) < (b.w + p.w) / 2 &&
             Math.abs((b.y + b.h / 2) - (p.y + p.h / 2)) < (b.h + p.h) / 2) {
-            p.w -= (p.lv - 1) * 2;
+            p.w -= (p.lv - 1) * 1;
             return true
         }
         return false

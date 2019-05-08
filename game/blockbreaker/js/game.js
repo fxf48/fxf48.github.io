@@ -37,15 +37,15 @@ class Game {
         // 绘制背景图
         g.drawBg(ctx)
         // 绘制挡板
-        g.drawImage(ctx,paddle);
+        g.drawImage(ctx, paddle);
         // 绘制小球
-        g.drawBall(ctx,ball);
+        g.drawBall(ctx, ball);
         // 绘制砖块
-        g.drawBlocks(ctx,blockList);
+        g.drawBlocks(ctx, blockList);
         // 绘制分数
-        g.drawText(ctx,score)
+        g.drawText(ctx, score)
         //绘制弹幕
-        g.drawDanmu(ctx,g.main.danmuList)
+        g.drawDanmu(ctx, g.main.danmuList)
 
 
         // 清除画布
@@ -53,7 +53,7 @@ class Game {
         g.context.drawImage(this.cacheCanvas, 0, 0, g.canvas.width, g.canvas.height);
     }
 
-    drawBall(ctx,ball) {
+    drawBall(ctx, ball) {
         ctx.save();
         var centerX = ball.x + ball.w / 2;
         var centerY = ball.y + ball.h / 2;
@@ -65,7 +65,7 @@ class Game {
     }
 
     // 绘制图片
-    drawImage(ctx,obj) {
+    drawImage(ctx, obj) {
         ctx.drawImage(obj.image, obj.x, obj.y, obj.w, obj.h)
     }
 
@@ -80,9 +80,9 @@ class Game {
     }
 
     // 绘制所有砖块
-    drawBlocks(ctx,list) {
+    drawBlocks(ctx, list) {
         for (let item of list) {
-            this.drawImage(ctx,item)
+            this.drawImage(ctx, item)
         }
     }
 
@@ -96,7 +96,7 @@ class Game {
         this.context.fillText(obj.textLv + obj.lv, this.canvas.width - 80, obj.y)
     }
 
-    drawDanmu(ctx,list) {
+    drawDanmu(ctx, list) {
         for (let item of list) {
             ctx.font = '12px Microsoft YaHei'
             ctx.fillStyle = '#595959'
@@ -353,8 +353,14 @@ class Game {
             if (g.state === g.state_RUNNING) {
                 var touchX = event.changedTouches[0].clientX;
                 if (touchX > touchStartClientX) {
+                    if (touchX < paddle.x + paddle.w) {
+                        return
+                    }
                     onTouch2MoveRight()
                 } else {
+                    if (touchX > paddle.x + paddle.w) {
+                        return
+                    }
                     onTouch2MoveLeft()
                 }
             }
