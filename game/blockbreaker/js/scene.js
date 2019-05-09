@@ -1,6 +1,3 @@
-/* by：弦云孤赫——David Yang
-** github - https://github.com/yangyunhe369
-*/
 
 // 定义挡板对象
 class Paddle {
@@ -72,6 +69,7 @@ class Ball {
             image: imageFromPath(allImg.ball),    // 图片对象
             rotate: 0,
             fired: false,                         // 是否运动，默认静止不动
+            maxY : _main.paddle_y,
         };
         Object.assign(this, b)
     }
@@ -85,7 +83,7 @@ class Ball {
             if (this.y < 0) {
                 this.speedY *= -1
             }
-            if (this.y > 500 - this.h) {
+            if (this.y > this.maxY) {
                 // 游戏结束
                 game.state = game.state_GAMEOVER
                 // game.isGameOver = true
@@ -198,10 +196,10 @@ class Danmu {
 
 // 定义场景
 class Scene {
-    constructor(lv) {
+    constructor(game) {
         let s = {
-            lv: lv,                                         // 游戏难度级别
-            canvas: document.getElementById("canvas"),      // canvas对象
+            lv: game.LV,                                         // 游戏难度级别
+            canvas: game.gameContainer,      // canvas对象
             blockList: [],                                  // 砖块坐标集合
         };
         Object.assign(this, s)

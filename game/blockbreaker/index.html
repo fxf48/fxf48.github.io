@@ -5,18 +5,7 @@
     <title>打call块</title>
     <meta name="viewport"
           content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        *{
-            -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
-            -webkit-user-select:none; /*webkit浏览器*/
-            -khtml-user-select:none; /*早期浏览器*/
-            -moz-user-select:none;/*火狐*/
-            -ms-user-select:none; /*IE10*/
-            user-select:none;
-        }
-    </style>
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -28,18 +17,11 @@
     </script>
 </head>
 <body>
-<canvas id="canvas" width="360" height="500"></canvas>
-<div>移动←→ 暂停P 下一关N 开始space</div>
-<script>
-    if (window.screen.width < 560) {
-        document.getElementById("canvas").width = 360;
-    } else {
-        document.getElementById("canvas").width = 1000;
-    }
-</script>
+<canvas id="gameContainer"></canvas>
+<div id="control-tips"></div>
 <script src="js/common.js"></script>
 <script src="js/scene.js"></script>
 <script src="js/game.js"></script>
-<script src="js/main.js"></script>
+<script src="js/main.js?s=1"></script>
 </body>
 </html>

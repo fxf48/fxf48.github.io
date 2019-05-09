@@ -1,6 +1,3 @@
-/* by：弦云孤赫——David Yang
-** github - https://github.com/yangyunhe369
-*/
 
 // 游戏主要运行逻辑
 class Game {
@@ -15,8 +12,8 @@ class Game {
             state_STOP: 3,                                                // 暂停游戏
             state_GAMEOVER: 4,                                            // 游戏结束
             state_UPDATE: 5,                                              // 游戏通关
-            canvas: document.getElementById("canvas"),                    // canvas元素
-            context: document.getElementById("canvas").getContext("2d"),  // canvas画布
+            canvas: main.gameContainer,                    // canvas元素
+            context: main.gameContainer.getContext("2d"),  // canvas画布
             timer: null,                                                  // 轮询定时器
             fps: main.fps,                                                // 动画帧数，默认60
             callTextIndex: 0
@@ -109,7 +106,7 @@ class Game {
     }
 
     fireDanmu() {
-        this.main.danmuList.push(new Danmu(callTextList[this.callTextIndex], this.canvas.width, Math.random() * 300 + 200));
+        this.main.danmuList.push(new Danmu(callTextList[this.callTextIndex], this.canvas.width, Math.random() * 300 + (this.canvas.height - 300)));
         this.callTextIndex++;
         if (this.callTextIndex >= callTextList.length) {
             this.callTextIndex = 0;
