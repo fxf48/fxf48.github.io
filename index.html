@@ -65,19 +65,23 @@
             display: block;
             font-size: 16px;
         }
+
         @media screen and (max-width: 520px) {
             .project {
                 width: 100%;
                 height: 33%;
             }
+
             .bg {
                 width: 100%;
                 height: 33%;
             }
+
             .name {
                 padding-top: 20%;
                 font-size: 48px;
             }
+
             .detail {
                 display: none;
             }
@@ -151,22 +155,20 @@
 
         function expand(dom) {
             dom.css({"height": "100%"});
-            dom.find(".bg").animate({"height": "100%"}, animateTime);
-            setTimeout(function () {
+            dom.find(".bg").animate({"height": "100%"}, animateTime, function () {
                 dom.find(".detail").show();
                 state = dom.index();
-            }, animateTime);
-            dom.siblings(".project").hide();
+            });
+            dom.siblings(".project").slideUp();
         }
 
         function compress(dom) {
             dom.find(".detail").hide();
             dom.animate({"height": "33%"}, animateTime);
-            dom.find(".bg").animate({"height": "33%"}, animateTime);
-            setTimeout(function () {
-                dom.siblings(".project").show();
+            dom.find(".bg").animate({"height": "33%"}, animateTime, function () {
                 state = -1;
-            }, animateTime);
+            });
+            dom.siblings(".project").slideDown();
         }
     }
 
