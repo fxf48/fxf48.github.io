@@ -30,6 +30,14 @@ class Zuma {
         this.game.rotateTo(x, y);
     }
 
+    rotateLeft() {
+        this.game.rotateLeft();
+    }
+
+    rotateRight() {
+        this.game.rotateRight();
+    }
+
     start() {
         this.state = States.START;
         this.resize();
@@ -152,6 +160,20 @@ class Game {
 
     rotateTo(x, y) {
         this.player.rotateTo(x, y);
+        if (this.prepareBall !== null) {
+            this.prepareBall = new MoveBall(this.player, this.prepareBall.ball.type, this.ballR);
+        }
+    }
+
+    rotateLeft() {
+        this.player.rotateLeft();
+        if (this.prepareBall !== null) {
+            this.prepareBall = new MoveBall(this.player, this.prepareBall.ball.type, this.ballR);
+        }
+    }
+
+    rotateRight() {
+        this.player.rotateRight();
         if (this.prepareBall !== null) {
             this.prepareBall = new MoveBall(this.player, this.prepareBall.ball.type, this.ballR);
         }
@@ -341,6 +363,14 @@ class Player {
             this.r = Math.atan((x - this.centerX) / (this.centerY - y)) + Math.PI;
         }
     }
+
+    rotateLeft() {
+        this.r += Math.PI / 45;
+    }
+
+    rotateRight() {
+        this.r -= Math.PI / 45;
+    }
 }
 
 const States = {
@@ -358,27 +388,59 @@ class GameController {
         window.onresize = function () {
             zuma.resize();
         };
-        zuma.gameContainer.addEventListener("touchend", function (event) {
-            event.preventDefault();
-            g.onClick(zuma);
-        });
-        zuma.gameContainer.addEventListener("click", function (event) {
-            event.preventDefault();
-            g.onClick(zuma);
-        });
+        let isDrag = false;
+        let timerFlag = null;
+
+
         let touchStartClientX, touchStartClientY;
-        zuma.gameContainer.addEventListener("touchstart", function (e) {
+
+        function onTouchStart(event) {
             event.preventDefault();
             touchStartClientX = event.touches[0].clientX;
             touchStartClientY = event.touches[0].clientY;
-        });
-        zuma.gameContainer.addEventListener("touchmove", function (e) {
+            timerFlag = setTimeout(function () {
+                isDrag = true;
+            }, 500)
+        }
+
+        function onTouchMove(event) {
             event.preventDefault();
             let touchX = event.changedTouches[0].clientX;
             let touchY = event.changedTouches[0].clientY;
             zuma.rotateTo(touchX, touchY)
-        })
+        }
+
+        function onTouchEnd(event) {
+            event.preventDefault();
+            clearTimeout(timerFlag);
+            if (isDrag) {
+                isDrag = false;
+                return;
+            }
+            g.onClick(zuma);
+        }
+
+        zuma.gameContainer.addEventListener("touchend", onTouchEnd);
+        zuma.gameContainer.addEventListener("touchstart", onTouchStart);
+        zuma.gameContainer.addEventListener("touchmove", onTouchMove);
+
+
+        window.addEventListener('keydown', function (event) {
+            switch (event.keyCode) {
+                // 注册空格键发射事件
+                case 32 :
+                    g.onClick(zuma);
+                    break;
+                case 37://Left
+                    zuma.rotateLeft()
+                    break;
+                case 39://Right
+                    zuma.rotateRight()
+                    break;
+            }
+        });
     }
+
 
     onClick(zuma) {
         if (zuma.state === States.GAMEOVER) { // 游戏结束时
