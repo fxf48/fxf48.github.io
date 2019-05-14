@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+        "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="320" height="320" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 160
+    A150 150 0 0 1 310 160
+    A125 125 0 0 1 60 160
+    A100 100 0 0 1 260 160
+    A75 75 0 0 1 110 160"
+          style="fill:none;
+          stroke:black;
+          stroke-width:2:
+          fill-opacity:0.1;"/>
+</svg>
