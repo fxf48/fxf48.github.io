@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+
+
+.game .list1 {
+    background: url("../images/tony/1.jpg");
+    background-size: cover;
+}
+
+.game .list2 {
+    background: url("../images/tony/2.jpg");
+    background-size: cover;
+}
+
+.game .list3 {
+    background: url("../images/tony/3.jpg");
+    background-size: cover;
+}
+
+.game .list4 {
+    background: url("../images/tony/4.jpg");
+    background-size: cover;
+}
+
+.game .list5 {
+    background: url("../images/tony/5.jpg");
+    background-size: cover;
+}
+
+.game .list6 {
+    background: url("../images/tony/6.jpg");
+    background-size: cover;
+}
+
+.game .list7 {
+    background: url("../images/tony/7.jpg");
+    background-size: cover;
+}
+
+.game .list8 {
+    background: url("../images/tony/8.jpg");
+    background-size: cover;
+}
+
+.game .list9 {
+    background: url("../images/tony/9.jpg");
+    background-size: cover;
+}
+
+.game .list10 {
+    background: url("../images/tony/10.jpg");
+    background-size: cover;
+}
+
+
