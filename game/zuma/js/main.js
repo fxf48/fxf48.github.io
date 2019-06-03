@@ -1,10 +1,9 @@
 class Zuma {
 
-    constructor(lv, gameContainer, colorList) {
+    constructor(lv, gameContainer) {
         this.lv = lv;
         this.gameContainer = gameContainer;
         this.timer = null;
-        this.colorList = colorList;
         this.init();
     }
 
@@ -22,7 +21,7 @@ class Zuma {
         this.gameContainer.width = this.width;
         this.gameContainer.height = this.height;
 
-        this.game = new Game(this.width, this.height, this.lv, this.colorList, this);
+        this.game = new Game(this.width, this.height, this.lv, this);
         this.game.draw(this.ctx);
     }
 
@@ -62,7 +61,7 @@ class Zuma {
 }
 
 class Game {
-    constructor(cw, ch, lv, colorList, zuma) {
+    constructor(cw, ch, lv, zuma) {
         this.cw = cw;
         this.ch = ch;
         this.lv = lv;
@@ -70,13 +69,12 @@ class Game {
         this.prepareBall = null;
         this.moveBallList = [];
         this.ballList = [];
-        this.colorList = colorList;
         this.zuma = zuma;
         this.ballR = 10;
         this.ballStartX = (cw - 320) / 2;
         this.ballStartY = ch / 2;
         this.frameCnt = 0;
-        this.nextType = Math.floor(Math.random() * this.colorList.length);
+        this.nextBallType = new Ball(this.cw / 2, 50, Ball.getRandomType(), this.ballR);
         this.pathElement = document.createElementNS("http://www.w3.org/2000/svg", "path");
         this.score = 0;
         const path = "M" + this.ballStartX + " " + this.ballStartY +
@@ -93,13 +91,13 @@ class Game {
             || this.zuma.state === States.RUNNING) {
             this.player.draw(ctx);
             if (this.prepareBall != null) {
-                this.prepareBall.draw(ctx, this.colorList);
+                this.prepareBall.draw(ctx);
             }
             for (let i = 0; i < this.moveBallList.length; i++) {
-                this.moveBallList[i].draw(ctx, this.colorList)
+                this.moveBallList[i].draw(ctx)
             }
             for (let i = 0; i < this.ballList.length; i++) {
-                this.ballList[i].draw(ctx, this.colorList)
+                this.ballList[i].draw(ctx)
             }
             this.drawNextType(ctx);
         } else if (this.zuma.state === States.UPDATE) {
@@ -109,6 +107,21 @@ class Game {
         }
         this.drawTitle(ctx);
         this.drawScore(ctx);
+        this.drawEndPlace(ctx)
+    }
+
+    drawEndPlace(ctx) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(this.ballStartX + 100, this.ballStartY, this.ballR*1.2, 0, 2 * Math.PI);
+        ctx.closePath();
+        const grad = ctx.createRadialGradient(this.ballStartX + 100, this.ballStartY, this.ballR*0.7, this.ballStartX + 100, this.ballStartY, this.ballR*1.2); //创建一个渐变色线性对象
+        grad.addColorStop(0, "#666");                  //定义渐变色颜色
+        grad.addColorStop(1, "#ccc");
+        ctx.fillStyle = grad;
+        // ctx.fillStyle = "grey";
+        ctx.fill();
+        ctx.restore();
     }
 
     drawGameUpdate(ctx) {
@@ -141,13 +154,7 @@ class Game {
         let text = "下一个";
         ctx.fillText(text, (this.cw - ctx.measureText(text).width) / 2, 32);
         ctx.restore();
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(this.cw / 2, 50, this.ballR, 0, 2 * Math.PI);
-        ctx.closePath();
-        ctx.fillStyle = this.colorList[this.nextType];
-        ctx.fill();
-        ctx.restore();
+        this.nextBallType.draw(ctx);
     }
 
     drawScore(ctx) {
@@ -183,6 +190,7 @@ class Game {
         if (this.prepareBall != null) {
             this.moveBallList.push(this.prepareBall);
             this.prepareBall = null;
+            sound.play();
         }
     }
 
@@ -195,11 +203,11 @@ class Game {
             this.moveBallList[i].move()
         }
         if (this.frameCnt === 0) {
-            let type = Math.floor(Math.random() * this.colorList.length);
+            let type = Ball.getRandomType();
             this.ballList.push(new Ball(this.ballStartX, this.ballStartY, type, this.ballR));
             if (this.prepareBall === null) {
-                this.prepareBall = new MoveBall(this.player, this.nextType, this.ballR);
-                this.nextType = Math.floor(Math.random() * this.colorList.length);
+                this.prepareBall = new MoveBall(this.player, this.nextBallType.type, this.ballR);
+                this.nextBallType.type = Ball.getRandomType();
             }
         }
         let ballListLen = this.ballList.length;
@@ -295,9 +303,9 @@ class MoveBall {
         this.ball = new Ball(x, y, type, ballR);
     }
 
-    draw(ctx, colorList) {
+    draw(ctx) {
         ctx.save();
-        this.ball.draw(ctx, colorList);
+        this.ball.draw(ctx);
         ctx.restore();
     }
 
@@ -310,7 +318,19 @@ class MoveBall {
     }
 }
 
+const ballText = ["虎", "火", "发", "动"];
+const colorList = [
+    "#93cbec",
+    "#9385bd",
+    "#eea002",
+    "#b2d717",
+];
+
 class Ball {
+    static getRandomType() {
+        return Math.floor(Math.random() * colorList.length);
+    }
+
     constructor(x, y, type, r) {
         this.r = r;
         this.x = x;
@@ -318,13 +338,15 @@ class Ball {
         this.type = type;
     }
 
-    draw(ctx, colorList) {
+    draw(ctx) {
         ctx.save();
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
         ctx.closePath();
         ctx.fillStyle = colorList[this.type];
         ctx.fill();
+        ctx.fillStyle = "#fff";
+        ctx.fillText(ballText[this.type], this.x - this.r / 2, this.y + this.r / 2);
         ctx.restore();
     }
 
@@ -453,16 +475,15 @@ class GameController {
     }
 }
 
-var zuma = new Zuma(0, document.getElementById("gameContainer"),
-    [
-        "#93cbec",
-        "#9385bd",
-        "#eea002",
-        "#b2d717",
-    ]);
+var sound = new Howl({
+    src: ['../audio/sound.mp3'],
+    volume: 0.5
+});
+
+var zuma = new Zuma(0, document.getElementById("gameContainer"));
 window.onload = function () {
     zuma.start();
-}
+};
 
 
 
