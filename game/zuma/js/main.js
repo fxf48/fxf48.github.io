@@ -113,9 +113,9 @@ class Game {
     drawEndPlace(ctx) {
         ctx.save();
         ctx.beginPath();
-        ctx.arc(this.ballStartX + 100, this.ballStartY, this.ballR*1.2, 0, 2 * Math.PI);
+        ctx.arc(this.ballStartX + 100, this.ballStartY, this.ballR * 1.2, 0, 2 * Math.PI);
         ctx.closePath();
-        const grad = ctx.createRadialGradient(this.ballStartX + 100, this.ballStartY, this.ballR*0.7, this.ballStartX + 100, this.ballStartY, this.ballR*1.2); //创建一个渐变色线性对象
+        const grad = ctx.createRadialGradient(this.ballStartX + 100, this.ballStartY, this.ballR * 0.7, this.ballStartX + 100, this.ballStartY, this.ballR * 1.2); //创建一个渐变色线性对象
         grad.addColorStop(0, "#666");                  //定义渐变色颜色
         grad.addColorStop(1, "#ccc");
         ctx.fillStyle = grad;
@@ -188,9 +188,10 @@ class Game {
 
     fire() {
         if (this.prepareBall != null) {
+            var type = this.prepareBall.ball.type;
             this.moveBallList.push(this.prepareBall);
             this.prepareBall = null;
-            sound.play();
+            soundPool[type].play();
         }
     }
 
@@ -268,6 +269,7 @@ class Game {
                 if (cnt > (this.lv + 3)) {
                     this.score += cnt;
                     this.ballList.splice(startIndex, cnt);
+                    soundClear.play();
                 }
                 continue
             }
@@ -281,10 +283,13 @@ class Game {
         let pahtLen = v * ballListLen;
         if (pahtLen >= this.pathElement.getTotalLength()) {
             this.zuma.state = States.GAMEOVER;
+            soundOver.play()
         }
         //检测是否达到积分
         if (this.score >= 50) {
             this.zuma.state = States.UPDATE;
+            soundClear.stop();
+            soundUpdate.play();
         }
     }
 }
@@ -475,11 +480,35 @@ class GameController {
     }
 }
 
-var sound = new Howl({
-    src: ['../audio/sound.mp3'],
+var sound0 = new Howl({
+    src: ['audio/bobo.mp3'],
     volume: 0.5
 });
-
+var sound1 = new Howl({
+    src: ['audio/do.mp3'],
+    volume: 0.5
+});
+var sound2 = new Howl({
+    src: ['audio/mi.mp3'],
+    volume: 0.25
+});
+var sound3 = new Howl({
+    src: ['audio/sol.mp3'],
+    volume: 0.5
+});
+var soundClear = new Howl({
+    src: ['audio/clear.mp3'],
+    volume: 0.25
+});
+var soundOver = new Howl({
+    src: ['audio/over.mp3'],
+    volume: 0.5
+});
+var soundUpdate = new Howl({
+    src: ['audio/update.mp3'],
+    volume: 0.25
+});
+var soundPool = [sound0, sound1, sound2, sound3];
 var zuma = new Zuma(0, document.getElementById("gameContainer"));
 window.onload = function () {
     zuma.start();
