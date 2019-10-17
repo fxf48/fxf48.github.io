@@ -1,3 +1,2 @@
 User-agent: *
 Disallow:
-Host: fxf48.com
