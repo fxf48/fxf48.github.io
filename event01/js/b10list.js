@@ -295,47 +295,47 @@ const playerlist = [
     {
         name: '时光正好',
         artist: "xky_ike 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/1a10f00e40421ce2806cf8405fccae04.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/9ff63d1240a839e98077ca1e921f16ef.m4a'
     },
     {
         name: '一人我饮酒醉',
         artist: "日益沉迷fxf 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/a1754f0b40e1d08b80057fd53044aee4.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/0908a569408b4da0800684174cb22086.m4a'
     },
     {
         name: '成长的路口',
         artist: "大象鼻子 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/92d68163404b07ab80007733841d4971.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/374bb6ef406a427980d9202f1028b8c1.m4a'
     }, {
         name: '人质',
         artist: "初一 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/94f2fba44018104a801a6fc886260dd3.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/ab46a75e40f47ce9805181a7cfe78e1f.m4a'
     }, {
         name: '黑天鹅',
         artist: "玖恩 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/10f8431240975b1c8076ebc769f1258e.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/a18f6661403ca39080e74a562202fa84.m4a'
     }, {
         name: '红昭愿',
         artist: "南铉Nexo 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/9cf123584002da8b804d15db6bb0d373.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/b40964a840547f4c8003ee63f36f9ae9.m4a'
     }, {
         name: '小手拉大手',
         artist: "Yuki 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/6f49df8d40251b2b8079a99cff4f7c68.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/f33fc5ce40e14816803146428b6189c3.m4a'
     }, {
         name: '掉了',
         artist: "MZ 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/1831cb6840e5debb8050798f7a5144f4.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/0587b6f440f9a6a6804766fcca64e20e.m4a'
     },
     {
         name: '夜蝶',
         artist: "大A&13 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/3394ffc8405a619780ee3c4e982f4da3.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/30709db14011153b804f3f86a07c1f3d.m4a'
     },
     {
         name: '新贵妃醉酒',
         artist: "光转琉璃 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/cc47200140a8f2d9801b6415af1359cf.mp3'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/86216c3e406ea0da80ae5fb2d90f0f47.mp3'
     }
 ];
 
