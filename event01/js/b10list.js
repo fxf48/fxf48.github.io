@@ -65,37 +65,37 @@ const playerlist = [
     {
         name: '演员',
         artist: "小朋友初一 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/b38917ea402acd5e8027fdbb6b7038c5.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/0969be7a40fb80f98023953cc63d52b9.m4a'
     },
     {
         name: '双生花',
         artist: "阿七 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/3c38d841409dade38059fdda56578a03.mp3'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/0809555c40f5a29c80ca4dc61014ec57.mp3'
     },
     {
         name: '繁华落尽',
         artist: "是你的小白丶 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/f354eebe409df6748068c6af8d4e1026.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/a696f5be4046e3c28061acee5def8cd2.m4a'
     }, {
         name: '至此流落天涯',
         artist: "浪里白嫖 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/bc10b09d40ef5fee800477903464cc83.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/badcb5a24010ee41802f31754fac42d9.m4a'
     }, {
         name: '南山南',
         artist: "凉城旧梦 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/8bde5926409cecff8046a2192063303c.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/7ec4e57b40a7c22c80f01ca95c4eedda.m4a'
     }, {
         name: '新航路',
         artist: "向阳花开的地方 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/850c6abd40885f0380aa8c05b584baba.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/bbb41ad3400131f880703c27b39b987a.m4a'
     }, {
         name: '美しき者',
         artist: "阿钰 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/1e27ef6340dd1773804e4ef1252a04f2.m4a'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/d320257c40a766c880c8bb4242e35a55.m4a'
     }, {
         name: 'When we are to you',
         artist: "阿七米德 完整版",
-        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/5657787240b533228026aaf2f8a930e1.mp3'
+        url: 'https://bmob-cdn-7875.bmobpay.com/2019/12/19/698b54df400c8208802b449446a843d3.mp3'
     }, {
         name: '南山南',
         artist: "北婶 完整版",
